@@ -10,8 +10,11 @@ string_cull <- function(s, pattern) {
   output
   
 }
-s_cull <- string_cull
-cull   <- string_cull
+s_cull         <- string_cull
+cull           <- string_cull
+string_extract <- string_cull
+s_extract      <- string_cull
+extract        <- string_cull
 
 string_left <- function(s, n) substr(s, 1, n)
 s_left      <- string_left

@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "7F3D41B2",
-    "lastKnownWriteTime" : 1596005317,
-    "last_content_update" : 1596005317695,
+    "lastKnownWriteTime" : 1596005624,
+    "last_content_update" : 1596005624911,
     "path" : "~/MEGA/Personal/Scripts/R/stringops/R/s_cull.R",
     "project_path" : "R/s_cull.R",
     "properties" : {
-        "cursorPosition" : "15,13",
-        "scrollLine" : "2",
+        "cursorPosition" : "13,29",
+        "scrollLine" : "0",
         "tempName" : "Untitled1"
     },
     "relative_order" : 4,
