@@ -1,3 +1,3 @@
 # stringops *[WORK IN PROGRESS]*
 
- A collection of functions for processing strings in R.
+ A collection of functions for string-processing operations for R.
