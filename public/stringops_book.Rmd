@@ -1,0 +1,107 @@
+---
+documentclass: book
+title:  Handbook for the `stringops` R Package
+author: "Robert Schnitman"
+date: "`r paste0('August 08, 2020 (Last updated: ', format(Sys.Date(), '%B %d, %Y'), ')')`"
+url: 'https\://rs-stringops.netlify.app/'
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook: 
+    config:
+      toc:
+        collapse: section
+      search: yes
+      fontsettings:
+        theme: white
+      download: ["PDF"]
+  bookdown::pdf_book: default
+biblio-style: apalike
+link-citations: yes
+description: "The purpose of the stringops package is to provide tools and synonyms for string processing in R."
+---
+
+# Introduction {-#index}
+
+# string_cases
+
+## `string_lower()`
+
+## `string_upper()`
+
+## `string_swapcase()`
+
+# string_chomp
+
+## `string_chomp()`
+
+## `string_chop()`
+
+## `string_trim()`
+
+# string_compare
+
+## `string_isblank()`
+
+## `%like%`
+
+# string_concat
+
+## `%&%` (concatenation operator)
+
+## `string_prefix()`
+
+## `string_suffix()`
+
+# string_cull
+
+## `string_cull()`
+
+## `string_left/right/mid()`
+
+# string_find
+
+## `string_find()`
+
+## `string_findi()`
+
+## `string_findl()`
+
+## `string_findm()`
+
+## `string_remove()`
+
+## `string_replace()`
+
+# string_join
+
+# string_misc
+
+## `string_dup()`
+
+## `string_insert()`
+
+## `string_len()`
+
+## `string_reverse()`
+
+## `string_split()`
+
+# Conclusion {-}
+
+# References {-}
+
+AutoIt. Operators. https://www.autoitscript.com/autoit3/docs/intro/lang_operators.htm
+
+Excel. `LEFT()`. https://support.microsoft.com/en-us/office/left-leftb-functions-9203d2d2-7960-479b-84c6-1ea52b99640c
+
+Gagolewski, Marek. `stringi`. http://www.gagolewski.com/software/stringi/
+
+Ruby. String Class. https://ruby-doc.org/core-2.7.1/String.html
+
+Tidyverse. `stringr`. https://stringr.tidyverse.org/
+
+# See also {-}
+
+`stringops` GitHub Page. https://github.com/robertschnitman/stringops
+
+Robert Schnitman. Personal Webpage. https://robertschnitman.netlify.app/
