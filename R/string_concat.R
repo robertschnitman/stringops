@@ -25,7 +25,8 @@
 #' @seealso \url{https://github.com/robertschnitman/stringops}
 
 #' @rdname string_concat
-`%&%` <- function(a, b) paste0(a, b)
+string_concat <- function(a, b) paste0(a, b)
+`%&%` <- string_concat
 
 #' @rdname string_prefix
 string_prefix <- function(s, prefix) prefix %&% s
