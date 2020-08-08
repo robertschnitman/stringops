@@ -13,6 +13,9 @@ lower(s)
 string_swapcase(s)
 s_swapcase(s)
 swapcase(s)
+string_titlecase(s)
+s_titlecase(s)
+titlecase(s)
 }
 \arguments{
 \item{s}{A string (character) vector.}
@@ -24,7 +27,7 @@ Character vector.
 Modify the case of the string.
 }
 \details{
-The \code{upper} functions make all characters in a string vector in their capitalized case. The \code{lower} functions makes the same vector in their lower case. The \code{swapcase} functions switches the case for each character in a string vector.
+The \code{upper} functions make all characters in a string vector in their capitalized case. The \code{lower} functions makes the same vector in their lower case. The \code{swapcase} functions switches the case for each character in a string vector. The \code{titlecase} functions converts the first character of each word to uppercase.
 }
 \examples{
 upper(rownames(mtcars))

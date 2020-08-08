@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1596927648472.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8F432284",
+    "lastKnownWriteTime" : 1596915521,
+    "last_content_update" : 1596915521,
+    "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_concat.R",
+    "project_path" : "R/string_concat.R",
+    "properties" : {
+        "cursorPosition" : "42,30",
+        "scrollLine" : "15"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
