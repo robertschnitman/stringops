@@ -18,6 +18,7 @@ string_dup(rownames(mtcars), 3)
 string_insert("abcd", "Z", 3)
 string_len(rownames(mtcars))
 string_reverse(rownames(mtcars))
+string_split(rownames(mtcars), " ")
 
 }
 \seealso{
