@@ -2,7 +2,7 @@
 #' 
 #' @description Concatenate strings together.
 #' 
-#' @usage %&%
+#' @usage `%&%`
 #' string_prefix(s, prefix)
 #' s_prefix(s, prefix)
 #' prefix(s, prefix)
