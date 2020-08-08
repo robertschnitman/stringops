@@ -165,12 +165,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="find-strings.html"><a href="find-strings.html"><i class="fa fa-check"></i><b>6</b> Find Strings</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="find-strings.html"><a href="find-strings.html#string_find"><i class="fa fa-check"></i><b>6.1</b> <code>string_find()</code></a></li>
-<li class="chapter" data-level="6.2" data-path="find-strings.html"><a href="find-strings.html#string_findi"><i class="fa fa-check"></i><b>6.2</b> <code>string_findi()</code></a></li>
-<li class="chapter" data-level="6.3" data-path="find-strings.html"><a href="find-strings.html#string_findl"><i class="fa fa-check"></i><b>6.3</b> <code>string_findl()</code></a></li>
-<li class="chapter" data-level="6.4" data-path="find-strings.html"><a href="find-strings.html#string_findm"><i class="fa fa-check"></i><b>6.4</b> <code>string_findm()</code></a></li>
-<li class="chapter" data-level="6.5" data-path="find-strings.html"><a href="find-strings.html#string_remove"><i class="fa fa-check"></i><b>6.5</b> <code>string_remove()</code></a></li>
-<li class="chapter" data-level="6.6" data-path="find-strings.html"><a href="find-strings.html#string_replace"><i class="fa fa-check"></i><b>6.6</b> <code>string_replace()</code></a></li>
+<li class="chapter" data-level="6.1" data-path="find-strings.html"><a href="find-strings.html#string_count"><i class="fa fa-check"></i><b>6.1</b> <code>string_count()</code></a></li>
+<li class="chapter" data-level="6.2" data-path="find-strings.html"><a href="find-strings.html#string_find"><i class="fa fa-check"></i><b>6.2</b> <code>string_find()</code></a></li>
+<li class="chapter" data-level="6.3" data-path="find-strings.html"><a href="find-strings.html#string_findi"><i class="fa fa-check"></i><b>6.3</b> <code>string_findi()</code></a></li>
+<li class="chapter" data-level="6.4" data-path="find-strings.html"><a href="find-strings.html#string_findl"><i class="fa fa-check"></i><b>6.4</b> <code>string_findl()</code></a></li>
+<li class="chapter" data-level="6.5" data-path="find-strings.html"><a href="find-strings.html#string_findm"><i class="fa fa-check"></i><b>6.5</b> <code>string_findm()</code></a></li>
+<li class="chapter" data-level="6.6" data-path="find-strings.html"><a href="find-strings.html#string_remove"><i class="fa fa-check"></i><b>6.6</b> <code>string_remove()</code></a></li>
+<li class="chapter" data-level="6.7" data-path="find-strings.html"><a href="find-strings.html#string_replace"><i class="fa fa-check"></i><b>6.7</b> <code>string_replace()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="join-strings.html"><a href="join-strings.html"><i class="fa fa-check"></i><b>7</b> Join Strings</a>
 <ul>
@@ -211,7 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">7.1</span> <code>string_join()</code></h2>
 <p><strong>synonyms: <code>s_join()</code>, <code>join()</code></strong></p>
 <p>Join (collapse) a vector of elements into a single string.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="join-strings.html#cb75-1"></a><span class="kw">string_join</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;, &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="join-strings.html#cb77-1"></a><span class="kw">string_join</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;, &quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Mazda RX4, Mazda RX4 Wag, Datsun 710, Hornet 4 Drive, Hornet Sportabout, Valiant, Duster 360, Merc 240D, Merc 230, Merc 280, Merc 280C, Merc 450SE, Merc 450SL, Merc 450SLC, Cadillac Fleetwood, Lincoln Continental, Chrysler Imperial, Fiat 128, Honda Civic, Toyota Corolla, Toyota Corona, Dodge Challenger, AMC Javelin, Camaro Z28, Pontiac Firebird, Fiat X1-9, Porsche 914-2, Lotus Europa, Ford Pantera L, Ferrari Dino, Maserati Bora, Volvo 142E, &quot;</code></pre>
 </div>
 </div>

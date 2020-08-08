@@ -165,7 +165,7 @@ The functions in this chapter compares strings, outputting a Boolean vector.
 
 ## `string_isblank()`
 
-**synonyms: `s_isblank()`, `isblank()`, `is.blank()`
+**synonyms: `s_isblank()`, `isblank()`, `is.blank()`**
 
 The function `string_isblank()` tests whether a vector consists of only blank characters.
 
