@@ -15,7 +15,7 @@
 #' @param b A string (character) vector.
 #' @param collapse A string by which to separate the elements of a vector.
 #' 
-#' @return The \code{\%\&\%} operator acts similar to BASIC's \code{\&}, concatenating two elements together.
+#' @return The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two elements together.
 #' 
 #' \code{string_prefix} and its synonyms prefix a string to a vector, while \code{string_suffix} and its synonyms suffix a string to a vector.
 #'
