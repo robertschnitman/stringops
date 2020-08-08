@@ -3,7 +3,7 @@ documentclass: book
 title:  Handbook for the `stringops` R Package
 author: "Robert Schnitman"
 date: "`r paste0('August 08, 2020 (Last updated: ', format(Sys.Date(), '%B %d, %Y'), ')')`"
-url: 'https\://rs-stringops.netlify.app/'
+# url: 'https\://rs-stringops.netlify.app/'
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook: 
