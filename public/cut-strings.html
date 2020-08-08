@@ -263,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="cut-strings.html#cb31-1"></a><span class="kw">string_trim</span>(s, <span class="st">&#39;right&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;   s&quot;</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="cut-strings.html#cb33-1"></a><span class="kw">string_trim</span>(s, <span class="st">&#39;both&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;  s&quot;</code></pre>
+<pre><code>## [1] &quot;s&quot;</code></pre>
 <div id="source-code-of-trimws-vs.-string_trim" class="section level3" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Source code of <code>trimws()</code> vs. <code>string_trim()</code></h3>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="cut-strings.html#cb35-1"></a>trimws</span></code></pre></div>
@@ -275,7 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##         x), right = mysub(paste0(whitespace, &quot;+$&quot;), x), both = mysub(paste0(whitespace, 
 ##         &quot;+$&quot;), mysub(paste0(&quot;^&quot;, whitespace, &quot;+&quot;), x)))
 ## }
-## &lt;bytecode: 0x0000000018c53d08&gt;
+## &lt;bytecode: 0x0000000018c4e570&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="cut-strings.html#cb37-1"></a>string_trim</span></code></pre></div>
 <pre><code>## function (s, which = c(&quot;both&quot;, &quot;left&quot;, &quot;right&quot;), whitespace = &quot;[ \t\r\n]&quot;) 
@@ -285,14 +285,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##     switch_out &lt;- function(x, ...) sapply(x, switch, ...)
 ##     cond_beg &lt;- &quot;^&quot; %&amp;% whitespace %&amp;% &quot;+&quot;
 ##     cond_end &lt;- whitespace %&amp;% &quot;+$&quot;
-##     cond_both &lt;- &quot;^&quot; %&amp;% whitespace %&amp;% &quot;|&quot; %&amp;% whitespace %&amp;% 
-##         &quot;+$&quot;
+##     cond_both &lt;- &quot;^&quot; %&amp;% whitespace %&amp;% &quot;*|&quot; %&amp;% whitespace %&amp;% 
+##         &quot;*+$&quot;
 ##     output &lt;- switch_out(which, left = sub_out(s, cond_beg), 
 ##         right = sub_out(s, cond_end), both = sub_out(s, cond_both))
 ##     output &lt;- as.vector(output)
 ##     output
 ## }
-## &lt;bytecode: 0x00000000189a4228&gt;
+## &lt;bytecode: 0x000000001899ea90&gt;
 ## &lt;environment: namespace:stringops&gt;</code></pre>
 </div>
 </div>

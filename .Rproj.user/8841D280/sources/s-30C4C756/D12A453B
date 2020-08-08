@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "D12A453B",
-    "lastKnownWriteTime" : 1596929079,
-    "last_content_update" : 1596929081917,
+    "lastKnownWriteTime" : 1596929608,
+    "last_content_update" : 1596929608053,
     "path" : "~/MEGA/Personal/Scripts/R/stringops/public/stringops_book.Rmd",
     "project_path" : "public/stringops_book.Rmd",
     "properties" : {
-        "cursorPosition" : "33,17",
-        "scrollLine" : "27"
+        "cursorPosition" : "387,15",
+        "scrollLine" : "380"
     },
     "relative_order" : 4,
     "source_on_save" : false,

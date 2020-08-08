@@ -293,7 +293,7 @@ string_findm(rownames(mtcars), '^M')
 
 ## `string_remove()`
 
-**synonyms: `s_remove()`, `remove()`
+**synonyms: `s_remove()`, `remove()`**
 
 `string_remove()` replaces a given string with a blank character.
 
@@ -314,7 +314,7 @@ string_replace(rownames(mtcars), "^M", "Z")
 
 # Join Strings
 
-The functions in this chapter joins (collapse) a vector of elements into a single string.
+The functions in this chapter joins (collapses) a vector of elements into a single string.
 
 ## `string_join()`
 
