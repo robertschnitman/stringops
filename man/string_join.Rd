@@ -2,7 +2,7 @@
 % Please edit documentation in R/string_join.R
 \name{string_join}
 \alias{string_join}
-\title{Join a vector elements into a single string.}
+\title{Join vector elements into a single string.}
 \usage{
 string_join(s, collapse)
 }
