@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>See also | Handbook for the stringops R Package</title>
+  <title>7 Join Strings | Handbook for the stringops R Package</title>
   <meta name="description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="See also | Handbook for the stringops R Package" />
+  <meta property="og:title" content="7 Join Strings | Handbook for the stringops R Package" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="See also | Handbook for the stringops R Package" />
+  <meta name="twitter:title" content="7 Join Strings | Handbook for the stringops R Package" />
   
   <meta name="twitter:description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-
+<link rel="prev" href="find-strings.html"/>
+<link rel="next" href="miscellaneous-string-functions.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,18 +202,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="see-also" class="section level1 unnumbered" number="">
-<h1>See also</h1>
-<p><code>stringops</code> GitHub Page. <a href="https://github.com/robertschnitman/stringops" class="uri">https://github.com/robertschnitman/stringops</a></p>
-<p>Robert Schnitman. Personal Webpage. <a href="https://robertschnitman.netlify.app/" class="uri">https://robertschnitman.netlify.app/</a></p>
+<div id="join-strings" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Join Strings</h1>
+<p>The functions in this chapter joins (collapse) a vector of elements into a single string.</p>
+<div id="string_join" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> <code>string_join()</code></h2>
+<p><strong>synonyms: <code>s_join()</code>, <code>join()</code></strong></p>
+<p>Join (collapse) a vector of elements into a single string.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="join-strings.html#cb67-1"></a><span class="kw">string_join</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;, &quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Mazda RX4, Mazda RX4 Wag, Datsun 710, Hornet 4 Drive, Hornet Sportabout, Valiant, Duster 360, Merc 240D, Merc 230, Merc 280, Merc 280C, Merc 450SE, Merc 450SL, Merc 450SLC, Cadillac Fleetwood, Lincoln Continental, Chrysler Imperial, Fiat 128, Honda Civic, Toyota Corolla, Toyota Corona, Dodge Challenger, AMC Javelin, Camaro Z28, Pontiac Firebird, Fiat X1-9, Porsche 914-2, Lotus Europa, Ford Pantera L, Ferrari Dino, Maserati Bora, Volvo 142E, &quot;</code></pre>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="find-strings.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="miscellaneous-string-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

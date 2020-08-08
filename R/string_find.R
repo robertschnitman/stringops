@@ -38,7 +38,7 @@
 #' 
 #' The function \code{string_findl} detects whether a pattern exists in a vector. Its synonyms are \code{s_findl} and \code{findl}.
 #' 
-#' The \code{findm} functions are synonyms of \code{string_cull}.
+#' The \code{findm} functions finds pattern matches and returns NA if none are found.
 #' 
 #' The \code{*_replace} functions act the same as \code{gsub}.
 #' 

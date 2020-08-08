@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>See also | Handbook for the stringops R Package</title>
+  <title>4 Concatenate Strings | Handbook for the stringops R Package</title>
   <meta name="description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="See also | Handbook for the stringops R Package" />
+  <meta property="og:title" content="4 Concatenate Strings | Handbook for the stringops R Package" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="See also | Handbook for the stringops R Package" />
+  <meta name="twitter:title" content="4 Concatenate Strings | Handbook for the stringops R Package" />
   
   <meta name="twitter:description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-
+<link rel="prev" href="compare-strings.html"/>
+<link rel="next" href="cull-strings.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,18 +202,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="see-also" class="section level1 unnumbered" number="">
-<h1>See also</h1>
-<p><code>stringops</code> GitHub Page. <a href="https://github.com/robertschnitman/stringops" class="uri">https://github.com/robertschnitman/stringops</a></p>
-<p>Robert Schnitman. Personal Webpage. <a href="https://robertschnitman.netlify.app/" class="uri">https://robertschnitman.netlify.app/</a></p>
+<div id="concatenate-strings" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Concatenate Strings</h1>
+<p>The functions in this chapter allow you to concatenate strings together.</p>
+<div id="concatenation-operator" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> <code>%&amp;%</code> (concatenation operator)</h2>
+<p>The <code>%&amp;%</code> operator acts similar to BASIC’s <code>&amp;</code>, concatenating two elements together.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="concatenate-strings.html#cb37-1"></a><span class="st">&#39;a&#39;</span> <span class="op">%&amp;%</span><span class="st"> &#39;b&#39;</span></span></code></pre></div>
+<pre><code>## [1] &quot;ab&quot;</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="concatenate-strings.html#cb39-1"></a><span class="st">&quot;Car: &quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="kw">rownames</span>(mtcars)</span></code></pre></div>
+<pre><code>##  [1] &quot;Car: Mazda RX4&quot;           &quot;Car: Mazda RX4 Wag&quot;      
+##  [3] &quot;Car: Datsun 710&quot;          &quot;Car: Hornet 4 Drive&quot;     
+##  [5] &quot;Car: Hornet Sportabout&quot;   &quot;Car: Valiant&quot;            
+##  [7] &quot;Car: Duster 360&quot;          &quot;Car: Merc 240D&quot;          
+##  [9] &quot;Car: Merc 230&quot;            &quot;Car: Merc 280&quot;           
+## [11] &quot;Car: Merc 280C&quot;           &quot;Car: Merc 450SE&quot;         
+## [13] &quot;Car: Merc 450SL&quot;          &quot;Car: Merc 450SLC&quot;        
+## [15] &quot;Car: Cadillac Fleetwood&quot;  &quot;Car: Lincoln Continental&quot;
+## [17] &quot;Car: Chrysler Imperial&quot;   &quot;Car: Fiat 128&quot;           
+## [19] &quot;Car: Honda Civic&quot;         &quot;Car: Toyota Corolla&quot;     
+## [21] &quot;Car: Toyota Corona&quot;       &quot;Car: Dodge Challenger&quot;   
+## [23] &quot;Car: AMC Javelin&quot;         &quot;Car: Camaro Z28&quot;         
+## [25] &quot;Car: Pontiac Firebird&quot;    &quot;Car: Fiat X1-9&quot;          
+## [27] &quot;Car: Porsche 914-2&quot;       &quot;Car: Lotus Europa&quot;       
+## [29] &quot;Car: Ford Pantera L&quot;      &quot;Car: Ferrari Dino&quot;       
+## [31] &quot;Car: Maserati Bora&quot;       &quot;Car: Volvo 142E&quot;</code></pre>
+</div>
+<div id="string_prefix" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> <code>string_prefix()</code></h2>
+<p><strong>synonyms: <code>s_prefix()</code>, <code>prefix()</code></strong></p>
+<p><code>string_prefix()</code> appends a string to the beginning of another string.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="concatenate-strings.html#cb41-1"></a><span class="kw">string_prefix</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;A &quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;A Mazda RX4&quot;           &quot;A Mazda RX4 Wag&quot;       &quot;A Datsun 710&quot;         
+##  [4] &quot;A Hornet 4 Drive&quot;      &quot;A Hornet Sportabout&quot;   &quot;A Valiant&quot;            
+##  [7] &quot;A Duster 360&quot;          &quot;A Merc 240D&quot;           &quot;A Merc 230&quot;           
+## [10] &quot;A Merc 280&quot;            &quot;A Merc 280C&quot;           &quot;A Merc 450SE&quot;         
+## [13] &quot;A Merc 450SL&quot;          &quot;A Merc 450SLC&quot;         &quot;A Cadillac Fleetwood&quot; 
+## [16] &quot;A Lincoln Continental&quot; &quot;A Chrysler Imperial&quot;   &quot;A Fiat 128&quot;           
+## [19] &quot;A Honda Civic&quot;         &quot;A Toyota Corolla&quot;      &quot;A Toyota Corona&quot;      
+## [22] &quot;A Dodge Challenger&quot;    &quot;A AMC Javelin&quot;         &quot;A Camaro Z28&quot;         
+## [25] &quot;A Pontiac Firebird&quot;    &quot;A Fiat X1-9&quot;           &quot;A Porsche 914-2&quot;      
+## [28] &quot;A Lotus Europa&quot;        &quot;A Ford Pantera L&quot;      &quot;A Ferrari Dino&quot;       
+## [31] &quot;A Maserati Bora&quot;       &quot;A Volvo 142E&quot;</code></pre>
+</div>
+<div id="string_suffix" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> <code>string_suffix()</code></h2>
+<p><strong>synonyms: <code>s_suffix()</code>, <code>suffix()</code></strong></p>
+<p><code>string_suffix()</code> appends a string to the end of another string.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="concatenate-strings.html#cb43-1"></a><span class="kw">string_suffix</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot; model&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;Mazda RX4 model&quot;           &quot;Mazda RX4 Wag model&quot;      
+##  [3] &quot;Datsun 710 model&quot;          &quot;Hornet 4 Drive model&quot;     
+##  [5] &quot;Hornet Sportabout model&quot;   &quot;Valiant model&quot;            
+##  [7] &quot;Duster 360 model&quot;          &quot;Merc 240D model&quot;          
+##  [9] &quot;Merc 230 model&quot;            &quot;Merc 280 model&quot;           
+## [11] &quot;Merc 280C model&quot;           &quot;Merc 450SE model&quot;         
+## [13] &quot;Merc 450SL model&quot;          &quot;Merc 450SLC model&quot;        
+## [15] &quot;Cadillac Fleetwood model&quot;  &quot;Lincoln Continental model&quot;
+## [17] &quot;Chrysler Imperial model&quot;   &quot;Fiat 128 model&quot;           
+## [19] &quot;Honda Civic model&quot;         &quot;Toyota Corolla model&quot;     
+## [21] &quot;Toyota Corona model&quot;       &quot;Dodge Challenger model&quot;   
+## [23] &quot;AMC Javelin model&quot;         &quot;Camaro Z28 model&quot;         
+## [25] &quot;Pontiac Firebird model&quot;    &quot;Fiat X1-9 model&quot;          
+## [27] &quot;Porsche 914-2 model&quot;       &quot;Lotus Europa model&quot;       
+## [29] &quot;Ford Pantera L model&quot;      &quot;Ferrari Dino model&quot;       
+## [31] &quot;Maserati Bora model&quot;       &quot;Volvo 142E model&quot;</code></pre>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="compare-strings.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cull-strings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

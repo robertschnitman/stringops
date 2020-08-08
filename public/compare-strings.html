@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>See also | Handbook for the stringops R Package</title>
+  <title>3 Compare Strings | Handbook for the stringops R Package</title>
   <meta name="description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="See also | Handbook for the stringops R Package" />
+  <meta property="og:title" content="3 Compare Strings | Handbook for the stringops R Package" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="See also | Handbook for the stringops R Package" />
+  <meta name="twitter:title" content="3 Compare Strings | Handbook for the stringops R Package" />
   
   <meta name="twitter:description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-
+<link rel="prev" href="cut-strings.html"/>
+<link rel="next" href="concatenate-strings.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,18 +202,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="see-also" class="section level1 unnumbered" number="">
-<h1>See also</h1>
-<p><code>stringops</code> GitHub Page. <a href="https://github.com/robertschnitman/stringops" class="uri">https://github.com/robertschnitman/stringops</a></p>
-<p>Robert Schnitman. Personal Webpage. <a href="https://robertschnitman.netlify.app/" class="uri">https://robertschnitman.netlify.app/</a></p>
+<div id="compare-strings" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Compare Strings</h1>
+<p>The functions in this chapter compares strings, outputting a Boolean vector.</p>
+<div id="string_isblank" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> <code>string_isblank()</code></h2>
+<p>**synonyms: <code>s_isblank()</code>, <code>isblank()</code>, <code>is.blank()</code></p>
+<p>The function <code>string_isblank()</code> tests whether a vector consists of only blank characters.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="compare-strings.html#cb31-1"></a><span class="kw">string_isblank</span>(<span class="st">&quot;         &quot;</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="compare-strings.html#cb33-1"></a><span class="kw">string_isblank</span>(<span class="st">&quot;    string     &quot;</span>)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div id="like" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> <code>%like%</code></h2>
+<p>The <code>%like%</code> operator tests whether a pattern match is found in a string.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="compare-strings.html#cb35-1"></a><span class="kw">rownames</span>(mtcars) <span class="op">%like%</span><span class="st"> &quot;^M&quot;</span></span></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [13]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [25] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="cut-strings.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="concatenate-strings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

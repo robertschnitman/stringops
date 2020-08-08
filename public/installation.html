@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>See also | Handbook for the stringops R Package</title>
+  <title>Installation | Handbook for the stringops R Package</title>
   <meta name="description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="See also | Handbook for the stringops R Package" />
+  <meta property="og:title" content="Installation | Handbook for the stringops R Package" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="See also | Handbook for the stringops R Package" />
+  <meta name="twitter:title" content="Installation | Handbook for the stringops R Package" />
   
   <meta name="twitter:description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="case-manipulation.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,18 +202,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="see-also" class="section level1 unnumbered" number="">
-<h1>See also</h1>
-<p><code>stringops</code> GitHub Page. <a href="https://github.com/robertschnitman/stringops" class="uri">https://github.com/robertschnitman/stringops</a></p>
-<p>Robert Schnitman. Personal Webpage. <a href="https://robertschnitman.netlify.app/" class="uri">https://robertschnitman.netlify.app/</a></p>
+<div id="installation" class="section level1 unnumbered" number="">
+<h1>Installation</h1>
+<p>This package currently is only available on GitHub–there are no plans to submit this package to CRAN at this time. As such, please use the <code>devtools</code> library to install <code>stringops</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="installation.html#cb1-1"></a><span class="co"># install.packages(&#39;devtools&#39;)</span></span>
+<span id="cb1-2"><a href="installation.html#cb1-2"></a></span>
+<span id="cb1-3"><a href="installation.html#cb1-3"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;robertschnitman/stringops&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="installation.html#cb2-1"></a><span class="kw">library</span>(stringops)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;stringops&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:utils&#39;:
+## 
+##     find</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="case-manipulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

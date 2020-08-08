@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>See also | Handbook for the stringops R Package</title>
+  <title>1 Case Manipulation | Handbook for the stringops R Package</title>
   <meta name="description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="See also | Handbook for the stringops R Package" />
+  <meta property="og:title" content="1 Case Manipulation | Handbook for the stringops R Package" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="See also | Handbook for the stringops R Package" />
+  <meta name="twitter:title" content="1 Case Manipulation | Handbook for the stringops R Package" />
   
   <meta name="twitter:description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-
+<link rel="prev" href="installation.html"/>
+<link rel="next" href="cut-strings.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,18 +202,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="see-also" class="section level1 unnumbered" number="">
-<h1>See also</h1>
-<p><code>stringops</code> GitHub Page. <a href="https://github.com/robertschnitman/stringops" class="uri">https://github.com/robertschnitman/stringops</a></p>
-<p>Robert Schnitman. Personal Webpage. <a href="https://robertschnitman.netlify.app/" class="uri">https://robertschnitman.netlify.app/</a></p>
+<div id="case-manipulation" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Case Manipulation</h1>
+<p>The functions in this chapter allow you to modify the case of the string.</p>
+<div id="string_lower" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> <code>string_lower()</code></h2>
+<p><strong>synonyms: <code>s_lower()</code>, <code>lower()</code></strong></p>
+<p>The  functions makes the same vector in their lower case.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="case-manipulation.html#cb5-1"></a><span class="kw">string_lower</span>(<span class="st">&#39;UPPER&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;upper&quot;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="case-manipulation.html#cb7-1"></a><span class="kw">string_lower</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
+<pre><code>##  [1] &quot;mazda rx4&quot;           &quot;mazda rx4 wag&quot;       &quot;datsun 710&quot;         
+##  [4] &quot;hornet 4 drive&quot;      &quot;hornet sportabout&quot;   &quot;valiant&quot;            
+##  [7] &quot;duster 360&quot;          &quot;merc 240d&quot;           &quot;merc 230&quot;           
+## [10] &quot;merc 280&quot;            &quot;merc 280c&quot;           &quot;merc 450se&quot;         
+## [13] &quot;merc 450sl&quot;          &quot;merc 450slc&quot;         &quot;cadillac fleetwood&quot; 
+## [16] &quot;lincoln continental&quot; &quot;chrysler imperial&quot;   &quot;fiat 128&quot;           
+## [19] &quot;honda civic&quot;         &quot;toyota corolla&quot;      &quot;toyota corona&quot;      
+## [22] &quot;dodge challenger&quot;    &quot;amc javelin&quot;         &quot;camaro z28&quot;         
+## [25] &quot;pontiac firebird&quot;    &quot;fiat x1-9&quot;           &quot;porsche 914-2&quot;      
+## [28] &quot;lotus europa&quot;        &quot;ford pantera l&quot;      &quot;ferrari dino&quot;       
+## [31] &quot;maserati bora&quot;       &quot;volvo 142e&quot;</code></pre>
+</div>
+<div id="string_upper" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> <code>string_upper()</code></h2>
+<p><strong>synonyms: <code>s_upper()</code>, <code>upper()</code></strong></p>
+<p>The  functions make all characters in a string vector in their capitalized case.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="case-manipulation.html#cb9-1"></a><span class="kw">string_upper</span>(<span class="st">&#39;lower&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;LOWER&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="case-manipulation.html#cb11-1"></a><span class="kw">string_upper</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
+<pre><code>##  [1] &quot;MAZDA RX4&quot;           &quot;MAZDA RX4 WAG&quot;       &quot;DATSUN 710&quot;         
+##  [4] &quot;HORNET 4 DRIVE&quot;      &quot;HORNET SPORTABOUT&quot;   &quot;VALIANT&quot;            
+##  [7] &quot;DUSTER 360&quot;          &quot;MERC 240D&quot;           &quot;MERC 230&quot;           
+## [10] &quot;MERC 280&quot;            &quot;MERC 280C&quot;           &quot;MERC 450SE&quot;         
+## [13] &quot;MERC 450SL&quot;          &quot;MERC 450SLC&quot;         &quot;CADILLAC FLEETWOOD&quot; 
+## [16] &quot;LINCOLN CONTINENTAL&quot; &quot;CHRYSLER IMPERIAL&quot;   &quot;FIAT 128&quot;           
+## [19] &quot;HONDA CIVIC&quot;         &quot;TOYOTA COROLLA&quot;      &quot;TOYOTA CORONA&quot;      
+## [22] &quot;DODGE CHALLENGER&quot;    &quot;AMC JAVELIN&quot;         &quot;CAMARO Z28&quot;         
+## [25] &quot;PONTIAC FIREBIRD&quot;    &quot;FIAT X1-9&quot;           &quot;PORSCHE 914-2&quot;      
+## [28] &quot;LOTUS EUROPA&quot;        &quot;FORD PANTERA L&quot;      &quot;FERRARI DINO&quot;       
+## [31] &quot;MASERATI BORA&quot;       &quot;VOLVO 142E&quot;</code></pre>
+</div>
+<div id="string_swapcase" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> <code>string_swapcase()</code></h2>
+<p><strong>synonyms: <code>s_swapcase()</code>, <code>swapcase()</code></strong></p>
+<p>The  functions switches the case for each character in a string vector.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="case-manipulation.html#cb13-1"></a><span class="kw">string_swapcase</span>(<span class="st">&#39;strangeCASING&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;STRANGEcasing&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="case-manipulation.html#cb15-1"></a><span class="kw">string_swapcase</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
+<pre><code>##  [1] &quot;mAZDA rx4&quot;           &quot;mAZDA rx4 wAG&quot;       &quot;dATSUN 710&quot;         
+##  [4] &quot;hORNET 4 dRIVE&quot;      &quot;hORNET sPORTABOUT&quot;   &quot;vALIANT&quot;            
+##  [7] &quot;dUSTER 360&quot;          &quot;mERC 240d&quot;           &quot;mERC 230&quot;           
+## [10] &quot;mERC 280&quot;            &quot;mERC 280c&quot;           &quot;mERC 450se&quot;         
+## [13] &quot;mERC 450sl&quot;          &quot;mERC 450slc&quot;         &quot;cADILLAC fLEETWOOD&quot; 
+## [16] &quot;lINCOLN cONTINENTAL&quot; &quot;cHRYSLER iMPERIAL&quot;   &quot;fIAT 128&quot;           
+## [19] &quot;hONDA cIVIC&quot;         &quot;tOYOTA cOROLLA&quot;      &quot;tOYOTA cORONA&quot;      
+## [22] &quot;dODGE cHALLENGER&quot;    &quot;amc jAVELIN&quot;         &quot;cAMARO z28&quot;         
+## [25] &quot;pONTIAC fIREBIRD&quot;    &quot;fIAT x1-9&quot;           &quot;pORSCHE 914-2&quot;      
+## [28] &quot;lOTUS eUROPA&quot;        &quot;fORD pANTERA l&quot;      &quot;fERRARI dINO&quot;       
+## [31] &quot;mASERATI bORA&quot;       &quot;vOLVO 142e&quot;</code></pre>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="installation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cut-strings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

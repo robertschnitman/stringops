@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>See also | Handbook for the stringops R Package</title>
+  <title>8 Miscellaneous String Functions | Handbook for the stringops R Package</title>
   <meta name="description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="See also | Handbook for the stringops R Package" />
+  <meta property="og:title" content="8 Miscellaneous String Functions | Handbook for the stringops R Package" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="See also | Handbook for the stringops R Package" />
+  <meta name="twitter:title" content="8 Miscellaneous String Functions | Handbook for the stringops R Package" />
   
   <meta name="twitter:description" content="The purpose of the stringops package is to provide tools and synonyms for string processing in R." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-
+<link rel="prev" href="join-strings.html"/>
+<link rel="next" href="conclusion.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,18 +202,188 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="see-also" class="section level1 unnumbered" number="">
-<h1>See also</h1>
-<p><code>stringops</code> GitHub Page. <a href="https://github.com/robertschnitman/stringops" class="uri">https://github.com/robertschnitman/stringops</a></p>
-<p>Robert Schnitman. Personal Webpage. <a href="https://robertschnitman.netlify.app/" class="uri">https://robertschnitman.netlify.app/</a></p>
+<div id="miscellaneous-string-functions" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Miscellaneous String Functions</h1>
+<p>The functions in this chapter do not have common functionalities with the previous chapters: they deal with a myriad of circumstances.</p>
+<div id="string_dup" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> <code>string_dup()</code></h2>
+<p><strong>synonyms: <code>s_dup()</code>, <code>dup()</code></strong></p>
+<p><code>string_dup()</code> acts the same as <code>strrep()</code>: it repeats a string <code>n</code> number of times.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="miscellaneous-string-functions.html#cb69-1"></a><span class="kw">string_dup</span>(<span class="kw">rownames</span>(mtcars), <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;Mazda RX4Mazda RX4Mazda RX4&quot;                              
+##  [2] &quot;Mazda RX4 WagMazda RX4 WagMazda RX4 Wag&quot;                  
+##  [3] &quot;Datsun 710Datsun 710Datsun 710&quot;                           
+##  [4] &quot;Hornet 4 DriveHornet 4 DriveHornet 4 Drive&quot;               
+##  [5] &quot;Hornet SportaboutHornet SportaboutHornet Sportabout&quot;      
+##  [6] &quot;ValiantValiantValiant&quot;                                    
+##  [7] &quot;Duster 360Duster 360Duster 360&quot;                           
+##  [8] &quot;Merc 240DMerc 240DMerc 240D&quot;                              
+##  [9] &quot;Merc 230Merc 230Merc 230&quot;                                 
+## [10] &quot;Merc 280Merc 280Merc 280&quot;                                 
+## [11] &quot;Merc 280CMerc 280CMerc 280C&quot;                              
+## [12] &quot;Merc 450SEMerc 450SEMerc 450SE&quot;                           
+## [13] &quot;Merc 450SLMerc 450SLMerc 450SL&quot;                           
+## [14] &quot;Merc 450SLCMerc 450SLCMerc 450SLC&quot;                        
+## [15] &quot;Cadillac FleetwoodCadillac FleetwoodCadillac Fleetwood&quot;   
+## [16] &quot;Lincoln ContinentalLincoln ContinentalLincoln Continental&quot;
+## [17] &quot;Chrysler ImperialChrysler ImperialChrysler Imperial&quot;      
+## [18] &quot;Fiat 128Fiat 128Fiat 128&quot;                                 
+## [19] &quot;Honda CivicHonda CivicHonda Civic&quot;                        
+## [20] &quot;Toyota CorollaToyota CorollaToyota Corolla&quot;               
+## [21] &quot;Toyota CoronaToyota CoronaToyota Corona&quot;                  
+## [22] &quot;Dodge ChallengerDodge ChallengerDodge Challenger&quot;         
+## [23] &quot;AMC JavelinAMC JavelinAMC Javelin&quot;                        
+## [24] &quot;Camaro Z28Camaro Z28Camaro Z28&quot;                           
+## [25] &quot;Pontiac FirebirdPontiac FirebirdPontiac Firebird&quot;         
+## [26] &quot;Fiat X1-9Fiat X1-9Fiat X1-9&quot;                              
+## [27] &quot;Porsche 914-2Porsche 914-2Porsche 914-2&quot;                  
+## [28] &quot;Lotus EuropaLotus EuropaLotus Europa&quot;                     
+## [29] &quot;Ford Pantera LFord Pantera LFord Pantera L&quot;               
+## [30] &quot;Ferrari DinoFerrari DinoFerrari Dino&quot;                     
+## [31] &quot;Maserati BoraMaserati BoraMaserati Bora&quot;                  
+## [32] &quot;Volvo 142EVolvo 142EVolvo 142E&quot;</code></pre>
+</div>
+<div id="string_insert" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> <code>string_insert()</code></h2>
+<p><strong>synonyms: <code>s_insert()</code>, <code>insert()</code></strong></p>
+<p><code>string_insert()</code> inserts a string at a specified position.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="miscellaneous-string-functions.html#cb71-1"></a><span class="kw">string_insert</span>(<span class="st">&quot;abcd&quot;</span>, <span class="st">&quot;Z&quot;</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;abZcd&quot;</code></pre>
+</div>
+<div id="string_len" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> <code>string_len()</code></h2>
+<p><strong>synonyms: <code>s_len()</code>, <code>len()</code></strong></p>
+<p><code>stirng_len()</code> acts the same as <code>nchar()</code>: it counts the number of characters per vector element.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="miscellaneous-string-functions.html#cb73-1"></a><span class="kw">string_len</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
+<pre><code>##  [1]  9 13 10 14 17  7 10  9  8  8  9 10 10 11 18 19 17  8 11 14 13 16 11 10 16
+## [26]  9 13 12 14 12 13 10</code></pre>
+</div>
+<div id="string_reverse" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> <code>string_reverse()</code></h2>
+<p><strong>synonyms: <code>s_reverse()</code>, <code>reverse()</code></strong></p>
+<p><code>string_reverse()</code> reverses the characters in a string.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="miscellaneous-string-functions.html#cb75-1"></a><span class="kw">string_reverse</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
+<pre><code>##  [1] &quot;4XR adzaM&quot;           &quot;gaW 4XR adzaM&quot;       &quot;017 nustaD&quot;         
+##  [4] &quot;evirD 4 tenroH&quot;      &quot;tuobatropS tenroH&quot;   &quot;tnailaV&quot;            
+##  [7] &quot;063 retsuD&quot;          &quot;D042 creM&quot;           &quot;032 creM&quot;           
+## [10] &quot;082 creM&quot;            &quot;C082 creM&quot;           &quot;ES054 creM&quot;         
+## [13] &quot;LS054 creM&quot;          &quot;CLS054 creM&quot;         &quot;doowteelF callidaC&quot; 
+## [16] &quot;latnenitnoC nlocniL&quot; &quot;lairepmI relsyrhC&quot;   &quot;821 taiF&quot;           
+## [19] &quot;civiC adnoH&quot;         &quot;alloroC atoyoT&quot;      &quot;anoroC atoyoT&quot;      
+## [22] &quot;regnellahC egdoD&quot;    &quot;nilevaJ CMA&quot;         &quot;82Z oramaC&quot;         
+## [25] &quot;driberiF caitnoP&quot;    &quot;9-1X taiF&quot;           &quot;2-419 ehcsroP&quot;      
+## [28] &quot;aporuE sutoL&quot;        &quot;L aretnaP droF&quot;      &quot;oniD irarreF&quot;       
+## [31] &quot;aroB itaresaM&quot;       &quot;E241 ovloV&quot;</code></pre>
+</div>
+<div id="string_split" class="section level2" number="8.5">
+<h2><span class="header-section-number">8.5</span> <code>string_split()</code></h2>
+<p><strong>synonym: <code>s_split()</code></strong></p>
+<p><code>string_split()</code> acts the same as <code>strsplit()</code>: it splits a string by a specified character.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="miscellaneous-string-functions.html#cb77-1"></a><span class="kw">string_split</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot; &quot;</span>)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;Mazda&quot; &quot;RX4&quot;  
+## 
+## [[2]]
+## [1] &quot;Mazda&quot; &quot;RX4&quot;   &quot;Wag&quot;  
+## 
+## [[3]]
+## [1] &quot;Datsun&quot; &quot;710&quot;   
+## 
+## [[4]]
+## [1] &quot;Hornet&quot; &quot;4&quot;      &quot;Drive&quot; 
+## 
+## [[5]]
+## [1] &quot;Hornet&quot;     &quot;Sportabout&quot;
+## 
+## [[6]]
+## [1] &quot;Valiant&quot;
+## 
+## [[7]]
+## [1] &quot;Duster&quot; &quot;360&quot;   
+## 
+## [[8]]
+## [1] &quot;Merc&quot; &quot;240D&quot;
+## 
+## [[9]]
+## [1] &quot;Merc&quot; &quot;230&quot; 
+## 
+## [[10]]
+## [1] &quot;Merc&quot; &quot;280&quot; 
+## 
+## [[11]]
+## [1] &quot;Merc&quot; &quot;280C&quot;
+## 
+## [[12]]
+## [1] &quot;Merc&quot;  &quot;450SE&quot;
+## 
+## [[13]]
+## [1] &quot;Merc&quot;  &quot;450SL&quot;
+## 
+## [[14]]
+## [1] &quot;Merc&quot;   &quot;450SLC&quot;
+## 
+## [[15]]
+## [1] &quot;Cadillac&quot;  &quot;Fleetwood&quot;
+## 
+## [[16]]
+## [1] &quot;Lincoln&quot;     &quot;Continental&quot;
+## 
+## [[17]]
+## [1] &quot;Chrysler&quot; &quot;Imperial&quot;
+## 
+## [[18]]
+## [1] &quot;Fiat&quot; &quot;128&quot; 
+## 
+## [[19]]
+## [1] &quot;Honda&quot; &quot;Civic&quot;
+## 
+## [[20]]
+## [1] &quot;Toyota&quot;  &quot;Corolla&quot;
+## 
+## [[21]]
+## [1] &quot;Toyota&quot; &quot;Corona&quot;
+## 
+## [[22]]
+## [1] &quot;Dodge&quot;      &quot;Challenger&quot;
+## 
+## [[23]]
+## [1] &quot;AMC&quot;     &quot;Javelin&quot;
+## 
+## [[24]]
+## [1] &quot;Camaro&quot; &quot;Z28&quot;   
+## 
+## [[25]]
+## [1] &quot;Pontiac&quot;  &quot;Firebird&quot;
+## 
+## [[26]]
+## [1] &quot;Fiat&quot; &quot;X1-9&quot;
+## 
+## [[27]]
+## [1] &quot;Porsche&quot; &quot;914-2&quot;  
+## 
+## [[28]]
+## [1] &quot;Lotus&quot;  &quot;Europa&quot;
+## 
+## [[29]]
+## [1] &quot;Ford&quot;    &quot;Pantera&quot; &quot;L&quot;      
+## 
+## [[30]]
+## [1] &quot;Ferrari&quot; &quot;Dino&quot;   
+## 
+## [[31]]
+## [1] &quot;Maserati&quot; &quot;Bora&quot;    
+## 
+## [[32]]
+## [1] &quot;Volvo&quot; &quot;142E&quot;</code></pre>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="join-strings.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
