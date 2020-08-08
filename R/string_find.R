@@ -1,3 +1,62 @@
+#' Find patterns in strings
+#' 
+#' @description Find strings.
+#' 
+#' @usage string_find(s, pattern)
+#' s_find(s, pattern)
+#' find(s, pattern)
+#' string_findi(s, pattern)
+#' s_findi(s, pattern)
+#' findi(s, pattern)
+#' string_findl(s, pattern)
+#' s_findl(s, pattern)
+#' findl(s, pattern)
+#' string_findm(s, pattern)
+#' s_findm(s, pattern)
+#' findm(s, pattern)
+#' string_replace(s, search, replace)
+#' s_replace(s, search, replace)
+#' find_replace(s, search, replace)
+#' fr(s, search, replace)
+#' search_replace(s, search, replace)
+#' sr(s, search, replace)
+#' string_remove(s, remove)
+#' s_remove(s, remove)
+#' remove(s, remove)
+#'
+#' @param s A string (character) vector.
+#' @param pattern A regular expression pattern.
+#' @param search A pattern to search.
+#' @param replace The string to replace the searched pattern.
+#' @param remove The string to remove.
+#' 
+#' @return Character vector for all functions except the \code{findl} functions, which produce a Boolean vector.
+#' 
+#' @details The function \code{string_find} subsets a vector to the values matching a given pattern. Its synonyms are \code{s_find} and \code{find}.
+#' 
+#' The function \code{string_findi} provides the indices where a pattern in a vector is found. Its synonyms are \code{s_findi} and \code{findi}.
+#' 
+#' The function \code{string_findl} detects whether a pattern exists in a vector. Its synonyms are \code{s_findl} and \code{findl}.
+#' 
+#' The \code{findm} functions are synonyms of \code{string_cull}.
+#' 
+#' The \code{*_replace} functions act the same as \code{gsub}.
+#' 
+#' The \code{remove} functions blanks out a matching pattern.
+#'
+#' @examples
+#' rn <- rownames(mtcars)
+#' 
+#' string_find(rn, "^M")
+#' string_findi(rn, "^M")
+#' string_findl(rn, "^M")
+#' string_findm(rn, "^M")
+#' 
+#' string_replace(rn, "^M", "Z")
+#' string_remove(rn, "^M")
+#' 
+#' @seealso \url{https://github.com/robertschnitman/stringops}
+
 string_find  <- function(s, pattern) grep(pattern, s, value = TRUE)
 s_find       <- string_find
 find         <- string_find

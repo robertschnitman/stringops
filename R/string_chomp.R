@@ -1,11 +1,45 @@
+#' Remove (empty) characters from a string as inspired by Ruby
+#' 
+#' @description Remove (empty) characters from a string as inspired by Ruby.
+#' 
+#' @usage string_chomp(s)
+#' s_chomp(s)
+#' chomp(s)
+#' string_chop(s)
+#' s_chop(s)
+#' chop(s)
+#' string_trim(s, which, whitespace)
+#' s_trim(s, which, whitespace)
+#' trim(s, which, whitespace)
+#'
+#' @param s A string (character) vector.
+#' @param which Denotes how to trim a vector (both, left only, or right only).
+#' @param whitespace Denotes which whitespace characters to remove.
+#' 
+#' @details As inspired by Ruby, \code{string_chomp} removes all whitespace characters in a string. The function \code{string_chop} removes the last character from a string. The function \code{string_trim} acts the same as \code{trimws} but has a more readable source code.
+#' 
+#' @return Character vector.
+#'
+#' @examples
+#' string_chomp(rownames(mtcars))
+#' string_chop(rownames(mtcars))
+#' string_trim("   s   ")
+#' 
+#' @seealso \url{https://github.com/robertschnitman/stringops}
+
+#' @rdname string_chomp
+
 string_chomp <- function(s) gsub(" |\n|\t|\r", "", s)
 s_chomp      <- string_chomp
 chomp        <- string_chomp
 
+#' @rdname string_chop
 string_chop <- function(s) substr(s, 1, nchar(s) - 1)
 s_chop      <- string_chop
 chop        <- string_chop
 
+
+#' @rdname string_trim
 string_trim <- function(s, which = c('both', 'left', 'right'), whitespace = '[ \t\r\n]') {
   
   # Make sure arguments match "which".

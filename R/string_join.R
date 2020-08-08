@@ -1,3 +1,21 @@
+#' Join a vector elements into a single string.
+#' 
+#' @description Join (collapse) a vector of elements into a single string.
+#' 
+#' @usage string_join(s, collapse)
+#'
+#' @param s A string (character) vector.
+#' @param collapse A string by which to separate the elements of a vector.
+#' 
+#' @return Character vector.
+#'
+#' @examples
+#' string_join(rownames(mtcars), ", ")
+#' 
+#' @seealso \url{https://github.com/robertschnitman/stringops}
+
+
+#' @rdname string_join
 string_join <- function(..., collapse = "") paste0(..., collapse = collapse)
 s_join      <- string_join
 join        <- string_join

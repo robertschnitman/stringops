@@ -1,3 +1,44 @@
+#' Cull/extract patterns from strings
+#' 
+#' @description Cull or extract patterns from strings.
+#' 
+#' @usage string_cull(s, pattern)
+#' s_cull(s, pattern)
+#' cull(s, pattern)
+#' string_extract(s, pattern)
+#' s_extract(s, pattern)
+#' extract(s, pattern)
+#' string_left(s, n)
+#' s_left(s, n)
+#' left(s, n)
+#' string_right(s, n)
+#' s_right(s, n)
+#' right(s, n)
+#' string_mid(s, start, stop)
+#' s_mid(s, start, stop)
+#' mid(s, start, stop)
+#'
+#' @param s A string (character) vector.
+#' @param pattern A regular expression pattern.
+#' @param n The number of characters.
+#' @param start The position in a string at which to start.
+#' @param stop The position in string at which to stop.
+#' 
+#' @return Character vector.
+#' 
+#' @details The function \code{string_cull} (and its synonyms \code{s_cull}, \code{cull}, \code{string_extract}, \code{s_extract}, \code{extract}) culls (or extracts) a pattern from a string vector--if no pattern is found, \code{NA} is returned.
+#' 
+#' The functions \code{string_left}/\code{s_left}/\code{left} and \code{string_right}/\code{s_right}/\code{right} act the same as Excel's \code{LEFT} and \code{RIGHT} functions. The \code{mid} functions act the same as Excel's \code{MID} function.
+#'
+#' @examples
+#' string_cull(rownames(mtcars), '^M.*')
+#' string_left(rownames(mtcars), 3)
+#' string_right(rownames(mtcars), 3)
+#' string_mid(rownames(mtcars), 2, 4)
+#' 
+#' @seealso \url{https://github.com/robertschnitman/stringops}
+
+#' @rdname string_cull
 string_cull <- function(s, pattern) {
   
   greg <- gregexpr(pattern, s)
@@ -16,14 +57,17 @@ string_extract <- string_cull
 s_extract      <- string_cull
 extract        <- string_cull
 
+#' @rdname string_left
 string_left <- function(s, n) substr(s, 1, n)
 s_left      <- string_left
 left        <- string_left
 
+#' @rdname string_right
 string_right <- function(s, n) substr(s, nchar(s) - n + 1, nchar(s))
 s_right      <- string_right
 right        <- string_right
 
+#' @rdname string_mid
 string_mid <- substr
 s_mid      <- string_mid
 mid        <- string_mid
