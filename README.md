@@ -65,15 +65,6 @@ the `%&%` (concatenation) operator joins two strings together. This
 operator facilitates readable code by avoiding the function syntax of
 the `paste/paste0()`.
 
-*Note: The operator currently is not loaded when installing the package,
-but it works locally if you assign it `string_concat`. This is a bug
-that I’m trying to fix at this time!*
-
-``` r
-# Temporary fix
-`%&%` <- string_concat
-```
-
 ``` r
 'a' %&% 'b'
 ```
