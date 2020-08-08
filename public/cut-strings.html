@@ -135,14 +135,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="case-manipulation.html"><a href="case-manipulation.html#string_lower"><i class="fa fa-check"></i><b>1.1</b> <code>string_lower()</code></a></li>
 <li class="chapter" data-level="1.2" data-path="case-manipulation.html"><a href="case-manipulation.html#string_upper"><i class="fa fa-check"></i><b>1.2</b> <code>string_upper()</code></a></li>
 <li class="chapter" data-level="1.3" data-path="case-manipulation.html"><a href="case-manipulation.html#string_swapcase"><i class="fa fa-check"></i><b>1.3</b> <code>string_swapcase()</code></a></li>
+<li class="chapter" data-level="1.4" data-path="case-manipulation.html"><a href="case-manipulation.html#string_titlecase"><i class="fa fa-check"></i><b>1.4</b> <code>string_titlecase()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="cut-strings.html"><a href="cut-strings.html"><i class="fa fa-check"></i><b>2</b> Cut Strings</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="cut-strings.html"><a href="cut-strings.html#string_chomp"><i class="fa fa-check"></i><b>2.1</b> <code>string_chomp()</code></a></li>
 <li class="chapter" data-level="2.2" data-path="cut-strings.html"><a href="cut-strings.html#string_chop"><i class="fa fa-check"></i><b>2.2</b> <code>string_chop()</code></a></li>
-<li class="chapter" data-level="2.3" data-path="cut-strings.html"><a href="cut-strings.html#string_trim"><i class="fa fa-check"></i><b>2.3</b> <code>string_trim()</code></a>
+<li class="chapter" data-level="2.3" data-path="cut-strings.html"><a href="cut-strings.html#string_cut"><i class="fa fa-check"></i><b>2.3</b> <code>string_cut()</code></a></li>
+<li class="chapter" data-level="2.4" data-path="cut-strings.html"><a href="cut-strings.html#string_trim"><i class="fa fa-check"></i><b>2.4</b> <code>string_trim()</code></a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="cut-strings.html"><a href="cut-strings.html#source-code-of-trimws-vs.-string_trim"><i class="fa fa-check"></i><b>2.3.1</b> Source code of <code>trimws()</code> vs. <code>string_trim()</code></a></li>
+<li class="chapter" data-level="2.4.1" data-path="cut-strings.html"><a href="cut-strings.html#source-code-of-trimws-vs.-string_trim"><i class="fa fa-check"></i><b>2.4.1</b> Source code of <code>trimws()</code> vs. <code>string_trim()</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="compare-strings.html"><a href="compare-strings.html"><i class="fa fa-check"></i><b>3</b> Compare Strings</a>
@@ -209,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> <code>string_chomp()</code></h2>
 <p><strong>synonyms: <code>s_chomp()</code>, <code>chomp()</code></strong></p>
 <p>Remove all whitespace characters from a string.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="cut-strings.html#cb17-1"></a><span class="kw">string_chomp</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="cut-strings.html#cb19-1"></a><span class="kw">string_chomp</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
 <pre><code>##  [1] &quot;MazdaRX4&quot;           &quot;MazdaRX4Wag&quot;        &quot;Datsun710&quot;         
 ##  [4] &quot;Hornet4Drive&quot;       &quot;HornetSportabout&quot;   &quot;Valiant&quot;           
 ##  [7] &quot;Duster360&quot;          &quot;Merc240D&quot;           &quot;Merc230&quot;           
@@ -226,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.2</span> <code>string_chop()</code></h2>
 <p><strong>synonyms: <code>s_chop()</code>, <code>chop()</code></strong></p>
 <p>Remove the last character from a string.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="cut-strings.html#cb19-1"></a><span class="kw">string_chop</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="cut-strings.html#cb21-1"></a><span class="kw">string_chop</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
 <pre><code>##  [1] &quot;Mazda RX&quot;           &quot;Mazda RX4 Wa&quot;       &quot;Datsun 71&quot;         
 ##  [4] &quot;Hornet 4 Driv&quot;      &quot;Hornet Sportabou&quot;   &quot;Valian&quot;            
 ##  [7] &quot;Duster 36&quot;          &quot;Merc 240&quot;           &quot;Merc 23&quot;           
@@ -239,21 +241,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [28] &quot;Lotus Europ&quot;        &quot;Ford Pantera &quot;      &quot;Ferrari Din&quot;       
 ## [31] &quot;Maserati Bor&quot;       &quot;Volvo 142&quot;</code></pre>
 </div>
-<div id="string_trim" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> <code>string_trim()</code></h2>
+<div id="string_cut" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> <code>string_cut()</code></h2>
+<p><strong>synonym: <code>s_cut()</code></strong></p>
+<p>Remove characters from either the left, right, or both ends of a string.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="cut-strings.html#cb23-1"></a><span class="kw">string_cut</span>(<span class="st">&quot;cut this please&quot;</span>, <span class="dt">which =</span> <span class="st">&#39;left&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;ut this please&quot;</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="cut-strings.html#cb25-1"></a><span class="kw">string_cut</span>(<span class="st">&quot;cut this please&quot;</span>, <span class="dt">which =</span> <span class="st">&#39;right&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;cut this pleas&quot;</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="cut-strings.html#cb27-1"></a><span class="kw">string_cut</span>(<span class="st">&quot;cut this please&quot;</span>, <span class="dt">which =</span> <span class="st">&#39;both&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;ut this pleas&quot;</code></pre>
+</div>
+<div id="string_trim" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> <code>string_trim()</code></h2>
 <p><strong>synonyms: <code>s_trim()</code>, <code>trim()</code></strong></p>
 <p>Remove whitespace characters from a specific direction. Acts the same as <code>trimws()</code>, but the source code is more readable.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="cut-strings.html#cb21-1"></a>s &lt;-<span class="st"> &quot;   s  &quot;</span></span>
-<span id="cb21-2"><a href="cut-strings.html#cb21-2"></a></span>
-<span id="cb21-3"><a href="cut-strings.html#cb21-3"></a><span class="kw">string_trim</span>(s, <span class="st">&#39;left&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="cut-strings.html#cb29-1"></a>s &lt;-<span class="st"> &quot;   s  &quot;</span></span>
+<span id="cb29-2"><a href="cut-strings.html#cb29-2"></a></span>
+<span id="cb29-3"><a href="cut-strings.html#cb29-3"></a><span class="kw">string_trim</span>(s, <span class="st">&#39;left&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;s  &quot;</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="cut-strings.html#cb23-1"></a><span class="kw">string_trim</span>(s, <span class="st">&#39;right&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="cut-strings.html#cb31-1"></a><span class="kw">string_trim</span>(s, <span class="st">&#39;right&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;   s&quot;</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="cut-strings.html#cb25-1"></a><span class="kw">string_trim</span>(s, <span class="st">&#39;both&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="cut-strings.html#cb33-1"></a><span class="kw">string_trim</span>(s, <span class="st">&#39;both&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;  s&quot;</code></pre>
-<div id="source-code-of-trimws-vs.-string_trim" class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Source code of <code>trimws()</code> vs. <code>string_trim()</code></h3>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="cut-strings.html#cb27-1"></a>trimws</span></code></pre></div>
+<div id="source-code-of-trimws-vs.-string_trim" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Source code of <code>trimws()</code> vs. <code>string_trim()</code></h3>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="cut-strings.html#cb35-1"></a>trimws</span></code></pre></div>
 <pre><code>## function (x, which = c(&quot;both&quot;, &quot;left&quot;, &quot;right&quot;), whitespace = &quot;[ \t\r\n]&quot;) 
 ## {
 ##     which &lt;- match.arg(which)
@@ -262,9 +275,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##         x), right = mysub(paste0(whitespace, &quot;+$&quot;), x), both = mysub(paste0(whitespace, 
 ##         &quot;+$&quot;), mysub(paste0(&quot;^&quot;, whitespace, &quot;+&quot;), x)))
 ## }
-## &lt;bytecode: 0x00000000187255c8&gt;
+## &lt;bytecode: 0x0000000018c53d08&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="cut-strings.html#cb29-1"></a>string_trim</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="cut-strings.html#cb37-1"></a>string_trim</span></code></pre></div>
 <pre><code>## function (s, which = c(&quot;both&quot;, &quot;left&quot;, &quot;right&quot;), whitespace = &quot;[ \t\r\n]&quot;) 
 ## {
 ##     which &lt;- match.arg(which)
@@ -279,7 +292,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##     output &lt;- as.vector(output)
 ##     output
 ## }
-## &lt;bytecode: 0x000000001847b928&gt;
+## &lt;bytecode: 0x00000000189a4228&gt;
 ## &lt;environment: namespace:stringops&gt;</code></pre>
 </div>
 </div>

@@ -135,14 +135,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="case-manipulation.html"><a href="case-manipulation.html#string_lower"><i class="fa fa-check"></i><b>1.1</b> <code>string_lower()</code></a></li>
 <li class="chapter" data-level="1.2" data-path="case-manipulation.html"><a href="case-manipulation.html#string_upper"><i class="fa fa-check"></i><b>1.2</b> <code>string_upper()</code></a></li>
 <li class="chapter" data-level="1.3" data-path="case-manipulation.html"><a href="case-manipulation.html#string_swapcase"><i class="fa fa-check"></i><b>1.3</b> <code>string_swapcase()</code></a></li>
+<li class="chapter" data-level="1.4" data-path="case-manipulation.html"><a href="case-manipulation.html#string_titlecase"><i class="fa fa-check"></i><b>1.4</b> <code>string_titlecase()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="cut-strings.html"><a href="cut-strings.html"><i class="fa fa-check"></i><b>2</b> Cut Strings</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="cut-strings.html"><a href="cut-strings.html#string_chomp"><i class="fa fa-check"></i><b>2.1</b> <code>string_chomp()</code></a></li>
 <li class="chapter" data-level="2.2" data-path="cut-strings.html"><a href="cut-strings.html#string_chop"><i class="fa fa-check"></i><b>2.2</b> <code>string_chop()</code></a></li>
-<li class="chapter" data-level="2.3" data-path="cut-strings.html"><a href="cut-strings.html#string_trim"><i class="fa fa-check"></i><b>2.3</b> <code>string_trim()</code></a>
+<li class="chapter" data-level="2.3" data-path="cut-strings.html"><a href="cut-strings.html#string_cut"><i class="fa fa-check"></i><b>2.3</b> <code>string_cut()</code></a></li>
+<li class="chapter" data-level="2.4" data-path="cut-strings.html"><a href="cut-strings.html#string_trim"><i class="fa fa-check"></i><b>2.4</b> <code>string_trim()</code></a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="cut-strings.html"><a href="cut-strings.html#source-code-of-trimws-vs.-string_trim"><i class="fa fa-check"></i><b>2.3.1</b> Source code of <code>trimws()</code> vs. <code>string_trim()</code></a></li>
+<li class="chapter" data-level="2.4.1" data-path="cut-strings.html"><a href="cut-strings.html#source-code-of-trimws-vs.-string_trim"><i class="fa fa-check"></i><b>2.4.1</b> Source code of <code>trimws()</code> vs. <code>string_trim()</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="compare-strings.html"><a href="compare-strings.html"><i class="fa fa-check"></i><b>3</b> Compare Strings</a>
@@ -209,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">7.1</span> <code>string_join()</code></h2>
 <p><strong>synonyms: <code>s_join()</code>, <code>join()</code></strong></p>
 <p>Join (collapse) a vector of elements into a single string.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="join-strings.html#cb67-1"></a><span class="kw">string_join</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;, &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="join-strings.html#cb75-1"></a><span class="kw">string_join</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;, &quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Mazda RX4, Mazda RX4 Wag, Datsun 710, Hornet 4 Drive, Hornet Sportabout, Valiant, Duster 360, Merc 240D, Merc 230, Merc 280, Merc 280C, Merc 450SE, Merc 450SL, Merc 450SLC, Cadillac Fleetwood, Lincoln Continental, Chrysler Imperial, Fiat 128, Honda Civic, Toyota Corolla, Toyota Corona, Dodge Challenger, AMC Javelin, Camaro Z28, Pontiac Firebird, Fiat X1-9, Porsche 914-2, Lotus Europa, Ford Pantera L, Ferrari Dino, Maserati Bora, Volvo 142E, &quot;</code></pre>
 </div>
 </div>

@@ -135,14 +135,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="case-manipulation.html"><a href="case-manipulation.html#string_lower"><i class="fa fa-check"></i><b>1.1</b> <code>string_lower()</code></a></li>
 <li class="chapter" data-level="1.2" data-path="case-manipulation.html"><a href="case-manipulation.html#string_upper"><i class="fa fa-check"></i><b>1.2</b> <code>string_upper()</code></a></li>
 <li class="chapter" data-level="1.3" data-path="case-manipulation.html"><a href="case-manipulation.html#string_swapcase"><i class="fa fa-check"></i><b>1.3</b> <code>string_swapcase()</code></a></li>
+<li class="chapter" data-level="1.4" data-path="case-manipulation.html"><a href="case-manipulation.html#string_titlecase"><i class="fa fa-check"></i><b>1.4</b> <code>string_titlecase()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="cut-strings.html"><a href="cut-strings.html"><i class="fa fa-check"></i><b>2</b> Cut Strings</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="cut-strings.html"><a href="cut-strings.html#string_chomp"><i class="fa fa-check"></i><b>2.1</b> <code>string_chomp()</code></a></li>
 <li class="chapter" data-level="2.2" data-path="cut-strings.html"><a href="cut-strings.html#string_chop"><i class="fa fa-check"></i><b>2.2</b> <code>string_chop()</code></a></li>
-<li class="chapter" data-level="2.3" data-path="cut-strings.html"><a href="cut-strings.html#string_trim"><i class="fa fa-check"></i><b>2.3</b> <code>string_trim()</code></a>
+<li class="chapter" data-level="2.3" data-path="cut-strings.html"><a href="cut-strings.html#string_cut"><i class="fa fa-check"></i><b>2.3</b> <code>string_cut()</code></a></li>
+<li class="chapter" data-level="2.4" data-path="cut-strings.html"><a href="cut-strings.html#string_trim"><i class="fa fa-check"></i><b>2.4</b> <code>string_trim()</code></a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="cut-strings.html"><a href="cut-strings.html#source-code-of-trimws-vs.-string_trim"><i class="fa fa-check"></i><b>2.3.1</b> Source code of <code>trimws()</code> vs. <code>string_trim()</code></a></li>
+<li class="chapter" data-level="2.4.1" data-path="cut-strings.html"><a href="cut-strings.html#source-code-of-trimws-vs.-string_trim"><i class="fa fa-check"></i><b>2.4.1</b> Source code of <code>trimws()</code> vs. <code>string_trim()</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="compare-strings.html"><a href="compare-strings.html"><i class="fa fa-check"></i><b>3</b> Compare Strings</a>
@@ -208,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> <code>string_find()</code></h2>
 <p><strong>synonyms: <code>s_find()</code>, <code>find()</code></strong></p>
 <p>The function <code>string_find()</code> acts similar to <code>grep(string, x, value = TRUE)</code>: it subsets a vector to found pattern matches, returning the full element.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="find-strings.html#cb55-1"></a><span class="kw">string_find</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="find-strings.html#cb63-1"></a><span class="kw">string_find</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Mazda RX4&quot;     &quot;Mazda RX4 Wag&quot; &quot;Merc 240D&quot;     &quot;Merc 230&quot;     
 ##  [5] &quot;Merc 280&quot;      &quot;Merc 280C&quot;     &quot;Merc 450SE&quot;    &quot;Merc 450SL&quot;   
 ##  [9] &quot;Merc 450SLC&quot;   &quot;Maserati Bora&quot;</code></pre>
@@ -217,14 +219,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.2</span> <code>string_findi()</code></h2>
 <p><strong>synonyms: <code>s_findi()</code>, <code>findi()</code></strong></p>
 <p>The function <code>string_findi()</code> acts similar to <code>grep(string, x)</code>: it subsets a vector to found pattern matches, returning the indices.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="find-strings.html#cb57-1"></a><span class="kw">string_findi</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="find-strings.html#cb65-1"></a><span class="kw">string_findi</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1]  1  2  8  9 10 11 12 13 14 31</code></pre>
 </div>
 <div id="string_findl" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> <code>string_findl()</code></h2>
 <p><strong>synonyms: <code>s_findl()</code>, <code>findl()</code></strong></p>
 <p>The function <code>string_findl()</code> acts similar to <code>grepl(string, x)</code>: it returns <code>TRUE</code> if a pattern match has been found, <code>FALSE</code> otherwise.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="find-strings.html#cb59-1"></a><span class="kw">string_findl</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="find-strings.html#cb67-1"></a><span class="kw">string_findl</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
 ## [13]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 ## [25] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
@@ -233,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.4</span> <code>string_findm()</code></h2>
 <p><strong>synonyms: <code>s_findm()</code>, <code>findm()</code></strong></p>
 <p><code>string_findm()</code> functions finds pattern matches and returns <code>NA</code> if none are found.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="find-strings.html#cb61-1"></a><span class="kw">string_findm</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="find-strings.html#cb69-1"></a><span class="kw">string_findm</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Mazda RX4&quot;     &quot;Mazda RX4 Wag&quot; NA              NA             
 ##  [5] NA              NA              NA              &quot;Merc 240D&quot;    
 ##  [9] &quot;Merc 230&quot;      &quot;Merc 280&quot;      &quot;Merc 280C&quot;     &quot;Merc 450SE&quot;   
@@ -247,7 +249,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.5</span> <code>string_remove()</code></h2>
 <p>**synonyms: <code>s_remove()</code>, <code>remove()</code></p>
 <p><code>string_remove()</code> replaces a given string with a blank character.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="find-strings.html#cb63-1"></a><span class="kw">string_remove</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="find-strings.html#cb71-1"></a><span class="kw">string_remove</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;azda RX4&quot;            &quot;azda RX4 Wag&quot;        &quot;Datsun 710&quot;         
 ##  [4] &quot;Hornet 4 Drive&quot;      &quot;Hornet Sportabout&quot;   &quot;Valiant&quot;            
 ##  [7] &quot;Duster 360&quot;          &quot;erc 240D&quot;            &quot;erc 230&quot;            
@@ -264,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.6</span> <code>string_replace()</code></h2>
 <p><strong>synonyms: <code>s_replace()</code>, <code>find_replace()</code>, <code>fr()</code>, <code>search_replace()</code>, <code>sr()</code></strong></p>
 <p><code>string_replace()</code> is a simplified <code>gsub()</code>: it finds a pattern and replaces it with a given string.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="find-strings.html#cb65-1"></a><span class="kw">string_replace</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="find-strings.html#cb73-1"></a><span class="kw">string_replace</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Zazda RX4&quot;           &quot;Zazda RX4 Wag&quot;       &quot;Datsun 710&quot;         
 ##  [4] &quot;Hornet 4 Drive&quot;      &quot;Hornet Sportabout&quot;   &quot;Valiant&quot;            
 ##  [7] &quot;Duster 360&quot;          &quot;Zerc 240D&quot;           &quot;Zerc 230&quot;           

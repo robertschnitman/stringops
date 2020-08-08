@@ -135,14 +135,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="case-manipulation.html"><a href="case-manipulation.html#string_lower"><i class="fa fa-check"></i><b>1.1</b> <code>string_lower()</code></a></li>
 <li class="chapter" data-level="1.2" data-path="case-manipulation.html"><a href="case-manipulation.html#string_upper"><i class="fa fa-check"></i><b>1.2</b> <code>string_upper()</code></a></li>
 <li class="chapter" data-level="1.3" data-path="case-manipulation.html"><a href="case-manipulation.html#string_swapcase"><i class="fa fa-check"></i><b>1.3</b> <code>string_swapcase()</code></a></li>
+<li class="chapter" data-level="1.4" data-path="case-manipulation.html"><a href="case-manipulation.html#string_titlecase"><i class="fa fa-check"></i><b>1.4</b> <code>string_titlecase()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="cut-strings.html"><a href="cut-strings.html"><i class="fa fa-check"></i><b>2</b> Cut Strings</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="cut-strings.html"><a href="cut-strings.html#string_chomp"><i class="fa fa-check"></i><b>2.1</b> <code>string_chomp()</code></a></li>
 <li class="chapter" data-level="2.2" data-path="cut-strings.html"><a href="cut-strings.html#string_chop"><i class="fa fa-check"></i><b>2.2</b> <code>string_chop()</code></a></li>
-<li class="chapter" data-level="2.3" data-path="cut-strings.html"><a href="cut-strings.html#string_trim"><i class="fa fa-check"></i><b>2.3</b> <code>string_trim()</code></a>
+<li class="chapter" data-level="2.3" data-path="cut-strings.html"><a href="cut-strings.html#string_cut"><i class="fa fa-check"></i><b>2.3</b> <code>string_cut()</code></a></li>
+<li class="chapter" data-level="2.4" data-path="cut-strings.html"><a href="cut-strings.html#string_trim"><i class="fa fa-check"></i><b>2.4</b> <code>string_trim()</code></a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="cut-strings.html"><a href="cut-strings.html#source-code-of-trimws-vs.-string_trim"><i class="fa fa-check"></i><b>2.3.1</b> Source code of <code>trimws()</code> vs. <code>string_trim()</code></a></li>
+<li class="chapter" data-level="2.4.1" data-path="cut-strings.html"><a href="cut-strings.html#source-code-of-trimws-vs.-string_trim"><i class="fa fa-check"></i><b>2.4.1</b> Source code of <code>trimws()</code> vs. <code>string_trim()</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="compare-strings.html"><a href="compare-strings.html"><i class="fa fa-check"></i><b>3</b> Compare Strings</a>
@@ -208,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="string_lower" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> <code>string_lower()</code></h2>
 <p><strong>synonyms: <code>s_lower()</code>, <code>lower()</code></strong></p>
-<p>The  functions makes the same vector in their lower case.</p>
+<p>The <code>string_lower()</code> function makes all characters in a string vector in their lower case.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="case-manipulation.html#cb5-1"></a><span class="kw">string_lower</span>(<span class="st">&#39;UPPER&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;upper&quot;</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="case-manipulation.html#cb7-1"></a><span class="kw">string_lower</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
@@ -227,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="string_upper" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> <code>string_upper()</code></h2>
 <p><strong>synonyms: <code>s_upper()</code>, <code>upper()</code></strong></p>
-<p>The  functions make all characters in a string vector in their capitalized case.</p>
+<p>The <code>string_upper()</code> function make all characters in a string vector in their capitalized case.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="case-manipulation.html#cb9-1"></a><span class="kw">string_upper</span>(<span class="st">&#39;lower&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;LOWER&quot;</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="case-manipulation.html#cb11-1"></a><span class="kw">string_upper</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
@@ -246,7 +248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="string_swapcase" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> <code>string_swapcase()</code></h2>
 <p><strong>synonyms: <code>s_swapcase()</code>, <code>swapcase()</code></strong></p>
-<p>The  functions switches the case for each character in a string vector.</p>
+<p>The <code>string_swapcase()</code> function switches the case for each character in a string vector.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="case-manipulation.html#cb13-1"></a><span class="kw">string_swapcase</span>(<span class="st">&#39;strangeCASING&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;STRANGEcasing&quot;</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="case-manipulation.html#cb15-1"></a><span class="kw">string_swapcase</span>(<span class="kw">rownames</span>(mtcars))</span></code></pre></div>
@@ -261,6 +263,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [25] &quot;pONTIAC fIREBIRD&quot;    &quot;fIAT x1-9&quot;           &quot;pORSCHE 914-2&quot;      
 ## [28] &quot;lOTUS eUROPA&quot;        &quot;fORD pANTERA l&quot;      &quot;fERRARI dINO&quot;       
 ## [31] &quot;mASERATI bORA&quot;       &quot;vOLVO 142e&quot;</code></pre>
+</div>
+<div id="string_titlecase" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> <code>string_titlecase()</code></h2>
+<p><strong>synonyms: <code>s_titlecase</code>, <code>titlecase()</code></strong></p>
+<p>The <code>string_titlecase()</code> function converts the first character of each word to uppercase.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="case-manipulation.html#cb17-1"></a>strings &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;and then there were none&#39;</span>, <span class="st">&#39;silent hill: revelations&#39;</span>, <span class="st">&#39;the lightning thief&#39;</span>)</span>
+<span id="cb17-2"><a href="case-manipulation.html#cb17-2"></a></span>
+<span id="cb17-3"><a href="case-manipulation.html#cb17-3"></a><span class="kw">string_titlecase</span>(strings)</span></code></pre></div>
+<pre><code>## [1] &quot;And Then There Were None&quot; &quot;Silent Hill: Revelations&quot;
+## [3] &quot;The Lightning Thief&quot;</code></pre>
 </div>
 </div>
             </section>

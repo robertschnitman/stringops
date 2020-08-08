@@ -13,11 +13,14 @@ chop(s)
 string_trim(s, which, whitespace)
 s_trim(s, which, whitespace)
 trim(s, which, whitespace)
+string_cut(s, which)
+s_cut(s, which)
+cut(s, which)
 }
 \arguments{
 \item{s}{A string (character) vector.}
 
-\item{which}{Denotes how to trim a vector (both, left only, or right only).}
+\item{which}{Denotes how to trim/cut a vector (both, left only, or right only).}
 
 \item{whitespace}{Denotes which whitespace characters to remove.}
 }
@@ -34,6 +37,7 @@ As inspired by Ruby, \code{string_chomp} removes all whitespace characters in a 
 string_chomp(rownames(mtcars))
 string_chop(rownames(mtcars))
 string_trim("   s   ")
+string_cut("cut this please", which = 'both')
 
 }
 \seealso{
