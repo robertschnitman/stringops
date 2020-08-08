@@ -25,6 +25,8 @@ sr(s, search, replace)
 string_remove(s, remove)
 s_remove(s, remove)
 remove(s, remove)
+string_count(s, pattern, ...)
+s_count(s, pattern, ...)
 }
 \arguments{
 \item{s}{A string (character) vector.}
@@ -36,6 +38,8 @@ remove(s, remove)
 \item{replace}{The string to replace the searched pattern.}
 
 \item{remove}{The string to remove.}
+
+\item{...}{Parameters to pass to \code{gregexpr}}
 }
 \value{
 Character vector for all functions except the \code{findl} functions, which produce a Boolean vector.
@@ -55,6 +59,8 @@ The \code{findm} functions finds pattern matches and returns NA if none are foun
 The \code{*_replace} functions act the same as \code{gsub}.
 
 The \code{remove} functions blanks out a matching pattern.
+
+The \code{string_count}/\code{s_count} counts the number of matches in a string.
 }
 \examples{
 rn <- rownames(mtcars)
@@ -66,6 +72,7 @@ string_findm(rn, "^M")
 
 string_replace(rn, "^M", "Z")
 string_remove(rn, "^M")
+string_count(rn, 'a')
 
 }
 \seealso{

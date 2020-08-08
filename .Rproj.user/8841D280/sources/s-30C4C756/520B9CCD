@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1596929943197.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "520B9CCD",
+    "lastKnownWriteTime" : 1596930732,
+    "last_content_update" : 1596930732783,
+    "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_find.R",
+    "project_path" : "R/string_find.R",
+    "properties" : {
+        "cursorPosition" : "61,3",
+        "scrollLine" : "44"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
