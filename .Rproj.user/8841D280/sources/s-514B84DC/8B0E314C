@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3078398270",
+    "hash" : "0",
     "id" : "8B0E314C",
-    "lastKnownWriteTime" : 1596910500,
-    "last_content_update" : 1596910500962,
+    "lastKnownWriteTime" : 1596910589,
+    "last_content_update" : 1596910589139,
     "path" : "~/MEGA/Personal/Scripts/R/stringops/README.rmd",
     "project_path" : "README.rmd",
     "properties" : {
-        "cursorPosition" : "9,48",
-        "scrollLine" : "0"
+        "cursorPosition" : "69,3",
+        "scrollLine" : "52"
     },
     "relative_order" : 2,
     "source_on_save" : false,

@@ -146,11 +146,3 @@ string_find(rownames(mtcars), '^M')
     ##  [1] "Mazda RX4"     "Mazda RX4 Wag" "Merc 240D"     "Merc 230"     
     ##  [5] "Merc 280"      "Merc 280C"     "Merc 450SE"    "Merc 450SL"   
     ##  [9] "Merc 450SLC"   "Maserati Bora"
-
-Conclusion
-==========
-
-Hopefully, this package’s API, syononyms, and concatenation operator
-make processing strings in R more fun for you! You can find these
-functions and more at the [Github repository,
-`stringops`](https://github.com/robertschnitman/stringops).
