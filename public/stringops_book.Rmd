@@ -22,6 +22,8 @@ description: "The purpose of the stringops package is to provide tools and synon
 
 # Introduction {-#index}
 
+***WORK IN PROGRESS***
+
 # string_cases
 
 ## `string_lower()`
