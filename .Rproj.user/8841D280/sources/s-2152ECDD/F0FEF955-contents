@@ -16,14 +16,14 @@
 
 
 #' @rdname string_join
-string_join <- function(..., collapse = "") {
+string_join <- function(s, collapse = "") {
   
-  output <- paste0(..., collapse = collapse)
+  output <- paste0(s, collapse = collapse)
   
   if (collapse != "") {
     
     # Remove last separator.
-    output <- string_replace(output, collapse %&% "$", "")
+    output <- string_remove(output, collapse %&% "$")
     
   }
   
