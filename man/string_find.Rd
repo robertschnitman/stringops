@@ -60,7 +60,7 @@ The \code{*_replace} functions act the same as \code{gsub}.
 
 The \code{*_remove} functions blank out a matching pattern.
 
-The \code{string_count}/\code{s_count} counts the number of matches in a string.
+The \code{string_countm} counts the number of matches in a string.
 }
 \examples{
 rn <- rownames(mtcars)
@@ -72,7 +72,7 @@ string_findm(rn, "^M")
 
 string_replace(rn, "^M", "Z")
 string_remove(rn, "^M")
-string_count(rn, 'a')
+string_countm(rn, 'a')
 
 }
 \seealso{
