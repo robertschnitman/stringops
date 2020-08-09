@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1596936561786.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F0FEF955",
+    "lastKnownWriteTime" : 1596936825,
+    "last_content_update" : 1596936825421,
+    "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_join.R",
+    "project_path" : "R/string_join.R",
+    "properties" : {
+        "cursorPosition" : "32,0",
+        "scrollLine" : "5"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
