@@ -24,9 +24,9 @@ search_replace(s, search, replace)
 sr(s, search, replace)
 string_remove(s, remove)
 s_remove(s, remove)
-remove(s, remove)
-string_count(s, pattern, ...)
-s_count(s, pattern, ...)
+string_countm(s, pattern, ...)
+s_countm(s, pattern, ...)
+countm(s, pattern, ...)
 }
 \arguments{
 \item{s}{A string (character) vector.}
@@ -58,7 +58,7 @@ The \code{findm} functions finds pattern matches and returns NA if none are foun
 
 The \code{*_replace} functions act the same as \code{gsub}.
 
-The \code{remove} functions blanks out a matching pattern.
+The \code{*_remove} functions blank out a matching pattern.
 
 The \code{string_count}/\code{s_count} counts the number of matches in a string.
 }

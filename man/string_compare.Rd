@@ -6,12 +6,14 @@
 \usage{
 string_isblank(s)
 %like%
+string_isupper(s)
+string_islower(s)
 }
 \arguments{
 \item{s}{A string (character) vector.}
 }
 \value{
-
+Boolean vector.
 }
 \description{
 Compare string vectors.
@@ -24,6 +26,9 @@ string_isblank("         ")
 string_isblank("    string     ")
 
 rownames(mtcars) \%like\% "^M"
+
+string_isupper(c('TEST', 'test', 'tEsT'))
+string_islower(c('TEST', 'test', 'tEsT'))
 
 }
 \seealso{

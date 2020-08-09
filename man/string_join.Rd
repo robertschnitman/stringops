@@ -7,9 +7,9 @@
 string_join(s, collapse)
 }
 \arguments{
-\item{collapse}{A string by which to separate the elements of a vector.}
-
 \item{s}{A string (character) vector.}
+
+\item{collapse}{A string by which to separate the elements of a vector.}
 }
 \value{
 Character vector.

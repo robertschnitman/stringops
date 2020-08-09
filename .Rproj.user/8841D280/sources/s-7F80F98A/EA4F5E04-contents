@@ -22,9 +22,9 @@
 #' sr(s, search, replace)
 #' string_remove(s, remove)
 #' s_remove(s, remove)
-#' remove(s, remove)
-#' string_count(s, pattern, ...)
-#' s_count(s, pattern, ...)
+#' string_countm(s, pattern, ...)
+#' s_countm(s, pattern, ...)
+#' countm(s, pattern, ...)
 #'
 #' @param s A string (character) vector.
 #' @param pattern A regular expression pattern.
@@ -91,7 +91,6 @@ sr             <- string_replace
 #' @rdname string_remove
 string_remove <- function(s, remove) gsub(remove, "", s)
 s_remove      <- string_remove
-remove        <- remove
 
 #' @rdname string_count
 string_countm <- function(s, pattern, ...) {

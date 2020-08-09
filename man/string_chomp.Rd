@@ -31,7 +31,7 @@ Character vector.
 Remove (empty) characters from a string as inspired by Ruby.
 }
 \details{
-As inspired by Ruby, \code{string_chomp} removes all whitespace characters in a string. The function \code{string_chop} removes the last character from a string. The function \code{string_trim} acts the same as \code{trimws} but has a more readable source code.
+As inspired by Ruby, \code{string_chomp} removes all whitespace characters in a string. The function \code{string_chop} removes the last character from a string. The function \code{string_trim} acts the same as \code{trimws} but has a more readable source code. \code{string_cut} removes characters from either the left, right, or both ends of a string.
 }
 \examples{
 string_chomp(rownames(mtcars))

@@ -2,7 +2,7 @@
 % Please edit documentation in R/string_misc.R
 \name{string_dup}
 \alias{string_dup}
-\title{Miscellaneous stirng functions}
+\title{Miscellaneous string functions}
 \usage{
 string_dup(s, times)
 string_insert(s, insert, position)
@@ -11,7 +11,14 @@ string_len(s)
 string_reverse(s)
 }
 \description{
-Miscellaneous string functions due for a full explanation. Explore at your own risk!
+Miscellaneous string functions that don't quite fit into the other categories.
+}
+\details{
+\code{string_dup()} acts the same as strrep(): it repeats a string n number of times. 
+\code{string_insert()} inserts a string at a specified position. 
+\code{string_len()} acts the same as nchar(): it counts the number of characters per vector element.
+\code{string_reverse()} reverses the characters in a string.
+\code{string_split() acts the same as strsplit(): it splits a string by a specified character.}
 }
 \examples{
 string_dup(rownames(mtcars), 3)

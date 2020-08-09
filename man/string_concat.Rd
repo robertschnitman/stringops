@@ -4,6 +4,7 @@
 \alias{string_concat}
 \title{Concatenate strings together}
 \usage{
+%&%
 string_concat(a, b)
 string_prefix(s, prefix)
 s_prefix(s, prefix)
@@ -22,12 +23,15 @@ suffix(s, suffix)
 \item{collapse}{A string by which to separate the elements of a vector.}
 }
 \value{
-The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two elements together.
-
-\code{string_prefix} and its synonyms prefix a string to a vector, while \code{string_suffix} and its synonyms suffix a string to a vector.
+Character vector.
 }
 \description{
 Concatenate strings together.
+}
+\details{
+The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two elements together.
+
+\code{string_prefix} and its synonyms prefix a string to a vector, while \code{string_suffix} and its synonyms suffix a string to a vector.
 }
 \examples{
 "a" \%&\% "b"

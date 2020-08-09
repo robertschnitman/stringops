@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1596951800960.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DBC98EB6",
+    "lastKnownWriteTime" : 1596951542,
+    "last_content_update" : 1596951542,
+    "path" : "~/MEGA/Personal/Scripts/R/stringops/README.rmd",
+    "project_path" : "README.rmd",
+    "properties" : {
+        "cursorPosition" : "14,0",
+        "scrollLine" : "12"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

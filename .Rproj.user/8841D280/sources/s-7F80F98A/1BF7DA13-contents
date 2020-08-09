@@ -11,7 +11,7 @@
 #' 
 #' @return Boolean vector.
 #' 
-#' @details The function \code{string_isblank} tests whether a vector consists of only blank characters. The \code{%like%} operator tests whether a pattern match is found in a string. The functions \code{string_isupper()} and \code{string_islower()} test whether each element in a string vector is all uppercase or lowercase, respectively. .
+#' @details The function \code{string_isblank} tests whether a vector consists of only blank characters. The \code{%like%} operator tests whether a pattern match is found in a string.
 #' 
 #' @examples
 #' string_isblank("         ")
