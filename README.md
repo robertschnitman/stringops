@@ -45,10 +45,3 @@ devtools::install_github('robertschnitman/stringops')
 ``` r
 library(stringops)
 ```
-
-    ## 
-    ## Attaching package: 'stringops'
-
-    ## The following object is masked from 'package:utils':
-    ## 
-    ##     find
