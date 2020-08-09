@@ -124,7 +124,10 @@ s_prefix(s, prefix)
 prefix(s, prefix)
 string_suffix(s, suffix)
 s_suffix(s, suffix)
-suffix(s, suffix)</pre>
+suffix(s, suffix)
+string_flag(s, flag, width)
+s_flag(s, flag, width)
+flag(s, flag, width)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,6 +148,14 @@ suffix(s, suffix)</pre>
       <th>collapse</th>
       <td><p>A string by which to separate the elements of a vector.</p></td>
     </tr>
+    <tr>
+      <th>flag</th>
+      <td><p>Character or number to append to a string.</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>Number of characters a string should be.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -153,7 +164,8 @@ suffix(s, suffix)</pre>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The <code>%&amp;%</code> operator acts similar to BASIC's <code>&amp;</code>, concatenating two elements together.</p>
-<p><code>string_prefix</code> and its synonyms prefix a string to a vector, while <code>string_suffix</code> and its synonyms suffix a string to a vector.</p>
+<p><code>string_prefix()</code> and its synonyms prefix a string to a vector, while <code>string_suffix()</code> and its synonyms suffix a string to a vector.</p>
+<p><code>string_flag()</code> appends a character or number to a string if it does not meet a specified width.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
@@ -179,7 +191,7 @@ suffix(s, suffix)</pre>
 #&gt; [22] "Dodge ChallengerZ"    "AMC JavelinZ"         "Camaro Z28Z"         
 #&gt; [25] "Pontiac FirebirdZ"    "Fiat X1-9Z"           "Porsche 914-2Z"      
 #&gt; [28] "Lotus EuropaZ"        "Ford Pantera LZ"      "Ferrari DinoZ"       
-#&gt; [31] "Maserati BoraZ"       "Volvo 142EZ"         </div><div class='input'>
+#&gt; [31] "Maserati BoraZ"       "Volvo 142EZ"         </div><div class='input'><span class='fu'>string_flag</span>(<span class='st'>'123456789'</span>, <span class='st'>'0'</span>, <span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] "0123456789"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -12,6 +12,9 @@ prefix(s, prefix)
 string_suffix(s, suffix)
 s_suffix(s, suffix)
 suffix(s, suffix)
+string_flag(s, flag, width)
+s_flag(s, flag, width)
+flag(s, flag, width)
 }
 \arguments{
 \item{a}{A string (character) vector.}
@@ -21,6 +24,10 @@ suffix(s, suffix)
 \item{s}{A string (character) vector.}
 
 \item{collapse}{A string by which to separate the elements of a vector.}
+
+\item{flag}{Character or number to append to a string.}
+
+\item{width}{Number of characters a string should be.}
 }
 \value{
 Character vector.
@@ -31,12 +38,15 @@ Concatenate strings together.
 \details{
 The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two elements together.
 
-\code{string_prefix} and its synonyms prefix a string to a vector, while \code{string_suffix} and its synonyms suffix a string to a vector.
+\code{string_prefix()} and its synonyms prefix a string to a vector, while \code{string_suffix()} and its synonyms suffix a string to a vector.
+
+\code{string_flag()} appends a character or number to a string if it does not meet a specified width.
 }
 \examples{
 "a" \%&\% "b"
 string_prefix(rownames(mtcars), "A")
 string_suffix(rownames(mtcars), "Z")
+string_flag('123456789', '0', 10)
 
 }
 \seealso{
