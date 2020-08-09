@@ -42,7 +42,7 @@ countm(s, pattern, ...)
 \item{...}{Parameters to pass to \code{gregexpr}}
 }
 \value{
-Character vector for all functions except the \code{spotl} functions, which produce a Boolean vector.
+Character vector for all functions except the \code{spotl()} and \code{countm()} functions, which produce Boolean and numeric vectors respectively.
 }
 \description{
 Spot patterns in strings.

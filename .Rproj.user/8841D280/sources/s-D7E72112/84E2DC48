@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "84E2DC48",
-    "lastKnownWriteTime" : 1596995489,
-    "last_content_update" : 1596995489,
+    "lastKnownWriteTime" : 1596995746,
+    "last_content_update" : 1596995746414,
     "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_spot.R",
     "project_path" : "R/string_spot.R",
     "properties" : {
-        "cursorPosition" : "107,1",
-        "scrollLine" : "86"
+        "cursorPosition" : "35,157",
+        "scrollLine" : "24"
     },
     "relative_order" : 5,
     "source_on_save" : false,

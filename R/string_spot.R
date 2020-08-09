@@ -33,7 +33,7 @@
 #' @param remove The string to remove.
 #' @param ... Parameters to pass to \code{gregexpr}
 #' 
-#' @return Character vector for all functions except the \code{spotl} functions, which produce a Boolean vector.
+#' @return Character vector for all functions except the \code{spotl()} and \code{countm()} functions, which produce Boolean and numeric vectors respectively.
 #' 
 #' @details The function \code{string_spot} subsets a vector to the values matching a given pattern. Its synonyms are \code{s_spot} and \code{spot}.
 #' 
