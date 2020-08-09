@@ -1,5 +1,5 @@
-`stringops`: String-processing Tools for in R
-=============================================
+`stringops`: String-processing Tools for R
+==========================================
 
 When creating syntax, one has to ask themselves about the naming scheme:
 should I make the functions short for typing efficiency, or long for
