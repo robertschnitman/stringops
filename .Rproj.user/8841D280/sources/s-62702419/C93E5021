@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1596934332431.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C93E5021",
+    "lastKnownWriteTime" : 1596934346,
+    "last_content_update" : 1596934346461,
+    "path" : "~/MEGA/Personal/Scripts/R/stringops/public/stringops.Rmd",
+    "project_path" : "public/stringops.Rmd",
+    "properties" : {
+        "cursorPosition" : "265,16",
+        "scrollLine" : "254"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
