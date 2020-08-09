@@ -251,7 +251,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.2</span> <code>string_insert()</code></h2>
 <p><strong>synonyms: <code>s_insert()</code>, <code>insert()</code></strong></p>
 <p><code>string_insert()</code> inserts a string at a specified position.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="miscellaneous-string-functions.html#cb85-1"></a><span class="kw">string_insert</span>(<span class="st">&quot;abcd&quot;</span>, <span class="st">&quot;Z&quot;</span>, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="miscellaneous-string-functions.html#cb85-1"></a><span class="co"># Insert &quot;Z&quot; at position 3.</span></span>
+<span id="cb85-2"><a href="miscellaneous-string-functions.html#cb85-2"></a><span class="kw">string_insert</span>(<span class="st">&quot;abcd&quot;</span>, <span class="st">&quot;Z&quot;</span>, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;abZcd&quot;</code></pre>
 </div>
 <div id="string_len" class="section level2" number="8.3">
@@ -283,7 +284,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.5</span> <code>string_split()</code></h2>
 <p><strong>synonym: <code>s_split()</code></strong></p>
 <p><code>string_split()</code> acts the same as <code>strsplit()</code>: it splits a string by a specified character.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="miscellaneous-string-functions.html#cb91-1"></a><span class="kw">string_split</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot; &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="miscellaneous-string-functions.html#cb91-1"></a><span class="co"># Split the strings by a space.</span></span>
+<span id="cb91-2"><a href="miscellaneous-string-functions.html#cb91-2"></a><span class="kw">string_split</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot; &quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Mazda&quot; &quot;RX4&quot;  
 ## 

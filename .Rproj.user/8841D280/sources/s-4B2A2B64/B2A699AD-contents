@@ -270,6 +270,7 @@ string_mid(rownames(mtcars), 2, 4)
 The function `string_countm()` counts the number of matches in a given string. Optional inputs are passed to `gregexpr()`.
 
 ```{r}
+# Count the number of times "a" appears rowname of mtcars.
 string_countm(rownames(mtcars), 'a')
 ```
 
@@ -281,6 +282,7 @@ string_countm(rownames(mtcars), 'a')
 The function `string_find()` acts similar to `grep(string, x, value = TRUE)`: it subsets a vector to found pattern matches, returning the full element.
 
 ```{r}
+# subset for rownames starting with "M".
 string_find(rownames(mtcars), '^M')
 ```
 
@@ -291,6 +293,7 @@ string_find(rownames(mtcars), '^M')
 The function `string_findi()` acts similar to `grep(string, x)`: it subsets a vector to found pattern matches, returning the indices.
 
 ```{r}
+# Produce the indices of the rownames starting with "M".
 string_findi(rownames(mtcars), '^M')
 ```
 
@@ -301,6 +304,7 @@ string_findi(rownames(mtcars), '^M')
 The function `string_findl()` acts similar to `grepl(string, x)`: it returns `TRUE` if a pattern match has been found, `FALSE` otherwise.
 
 ```{r}
+# Detect whether a rowname starts with "M".
 string_findl(rownames(mtcars), '^M')
 ```
 
@@ -311,6 +315,7 @@ string_findl(rownames(mtcars), '^M')
 The `string_findm()` function finds pattern matches and returns `NA` if none are found.
 
 ```{r}
+# Return matches with their full value; NA otherwise.
 string_findm(rownames(mtcars), '^M')
 ```
 
@@ -321,6 +326,7 @@ string_findm(rownames(mtcars), '^M')
 `string_remove()` replaces a given string with a blank character.
 
 ```{r}
+# Remove beginning "M".
 string_remove(rownames(mtcars), "^M")
 ```
 
@@ -332,6 +338,7 @@ string_remove(rownames(mtcars), "^M")
 `string_replace()` is a simplified `gsub()`: it finds a pattern and replaces it with a given string.
 
 ```{r}
+# search and replace beginning "M" with "Z".
 string_replace(rownames(mtcars), "^M", "Z")
 ```
 
@@ -346,6 +353,7 @@ The functions in this chapter joins (collapses) a vector of elements into a sing
 Join (collapse) a vector of elements into a single string.
 
 ```{r}
+# Join vector, separating elements by a comma and space.
 string_join(rownames(mtcars), ", ")
 ```
 
@@ -371,6 +379,7 @@ string_dup(rownames(mtcars), 3)
 `string_insert()` inserts a string at a specified position.
 
 ```{r}
+# Insert "Z" at position 3.
 string_insert("abcd", "Z", 3)
 ```
 
@@ -401,6 +410,7 @@ string_reverse(rownames(mtcars))
 `string_split()` acts the same as `strsplit()`: it splits a string by a specified character.
 
 ```{r}
+# Split the strings by a space.
 string_split(rownames(mtcars), " ")
 ```
 

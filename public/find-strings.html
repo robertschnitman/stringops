@@ -212,14 +212,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> <code>string_countm()</code></h2>
 <p><strong>synonym: <code>s_countm()</code>, <code>countm()</code></strong></p>
 <p>The function <code>string_countm()</code> counts the number of matches in a given string. Optional inputs are passed to <code>gregexpr()</code>.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="find-strings.html#cb67-1"></a><span class="kw">string_countm</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;a&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="find-strings.html#cb67-1"></a><span class="co"># Count the number of times &quot;a&quot; appears rowname of mtcars.</span></span>
+<span id="cb67-2"><a href="find-strings.html#cb67-2"></a><span class="kw">string_countm</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;a&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1] 2 3 1 0 1 2 0 0 0 0 0 0 0 0 2 1 1 1 1 2 2 1 1 2 1 1 0 1 2 1 3 0</code></pre>
 </div>
 <div id="string_find" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> <code>string_find()</code></h2>
 <p><strong>synonyms: <code>s_find()</code>, <code>find()</code></strong></p>
 <p>The function <code>string_find()</code> acts similar to <code>grep(string, x, value = TRUE)</code>: it subsets a vector to found pattern matches, returning the full element.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="find-strings.html#cb69-1"></a><span class="kw">string_find</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="find-strings.html#cb69-1"></a><span class="co"># subset for rownames starting with &quot;M&quot;.</span></span>
+<span id="cb69-2"><a href="find-strings.html#cb69-2"></a><span class="kw">string_find</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Mazda RX4&quot;     &quot;Mazda RX4 Wag&quot; &quot;Merc 240D&quot;     &quot;Merc 230&quot;     
 ##  [5] &quot;Merc 280&quot;      &quot;Merc 280C&quot;     &quot;Merc 450SE&quot;    &quot;Merc 450SL&quot;   
 ##  [9] &quot;Merc 450SLC&quot;   &quot;Maserati Bora&quot;</code></pre>
@@ -228,14 +230,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.3</span> <code>string_findi()</code></h2>
 <p><strong>synonyms: <code>s_findi()</code>, <code>findi()</code></strong></p>
 <p>The function <code>string_findi()</code> acts similar to <code>grep(string, x)</code>: it subsets a vector to found pattern matches, returning the indices.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="find-strings.html#cb71-1"></a><span class="kw">string_findi</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="find-strings.html#cb71-1"></a><span class="co"># Produce the indices of the rownames starting with &quot;M&quot;.</span></span>
+<span id="cb71-2"><a href="find-strings.html#cb71-2"></a><span class="kw">string_findi</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1]  1  2  8  9 10 11 12 13 14 31</code></pre>
 </div>
 <div id="string_findl" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> <code>string_findl()</code></h2>
 <p><strong>synonyms: <code>s_findl()</code>, <code>findl()</code></strong></p>
 <p>The function <code>string_findl()</code> acts similar to <code>grepl(string, x)</code>: it returns <code>TRUE</code> if a pattern match has been found, <code>FALSE</code> otherwise.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="find-strings.html#cb73-1"></a><span class="kw">string_findl</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="find-strings.html#cb73-1"></a><span class="co"># Detect whether a rowname starts with &quot;M&quot;.</span></span>
+<span id="cb73-2"><a href="find-strings.html#cb73-2"></a><span class="kw">string_findl</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
 ## [13]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 ## [25] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
@@ -244,7 +248,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.5</span> <code>string_findm()</code></h2>
 <p><strong>synonyms: <code>s_findm()</code>, <code>findm()</code></strong></p>
 <p>The <code>string_findm()</code> function finds pattern matches and returns <code>NA</code> if none are found.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="find-strings.html#cb75-1"></a><span class="kw">string_findm</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="find-strings.html#cb75-1"></a><span class="co"># Return matches with their full value; NA otherwise.</span></span>
+<span id="cb75-2"><a href="find-strings.html#cb75-2"></a><span class="kw">string_findm</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Mazda RX4&quot;     &quot;Mazda RX4 Wag&quot; NA              NA             
 ##  [5] NA              NA              NA              &quot;Merc 240D&quot;    
 ##  [9] &quot;Merc 230&quot;      &quot;Merc 280&quot;      &quot;Merc 280C&quot;     &quot;Merc 450SE&quot;   
@@ -258,7 +263,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.6</span> <code>string_remove()</code></h2>
 <p><strong>synonyms: <code>s_remove()</code>, <code>remove()</code></strong></p>
 <p><code>string_remove()</code> replaces a given string with a blank character.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="find-strings.html#cb77-1"></a><span class="kw">string_remove</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="find-strings.html#cb77-1"></a><span class="co"># Remove beginning &quot;M&quot;.</span></span>
+<span id="cb77-2"><a href="find-strings.html#cb77-2"></a><span class="kw">string_remove</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;azda RX4&quot;            &quot;azda RX4 Wag&quot;        &quot;Datsun 710&quot;         
 ##  [4] &quot;Hornet 4 Drive&quot;      &quot;Hornet Sportabout&quot;   &quot;Valiant&quot;            
 ##  [7] &quot;Duster 360&quot;          &quot;erc 240D&quot;            &quot;erc 230&quot;            
@@ -275,7 +281,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.7</span> <code>string_replace()</code></h2>
 <p><strong>synonyms: <code>s_replace()</code>, <code>find_replace()</code>, <code>fr()</code>, <code>search_replace()</code>, <code>sr()</code></strong></p>
 <p><code>string_replace()</code> is a simplified <code>gsub()</code>: it finds a pattern and replaces it with a given string.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="find-strings.html#cb79-1"></a><span class="kw">string_replace</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="find-strings.html#cb79-1"></a><span class="co"># search and replace beginning &quot;M&quot; with &quot;Z&quot;.</span></span>
+<span id="cb79-2"><a href="find-strings.html#cb79-2"></a><span class="kw">string_replace</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Zazda RX4&quot;           &quot;Zazda RX4 Wag&quot;       &quot;Datsun 710&quot;         
 ##  [4] &quot;Hornet 4 Drive&quot;      &quot;Hornet Sportabout&quot;   &quot;Valiant&quot;            
 ##  [7] &quot;Duster 360&quot;          &quot;Zerc 240D&quot;           &quot;Zerc 230&quot;           
