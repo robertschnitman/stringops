@@ -1,8 +1,0 @@
-"0","strings <- c('and then there were none', 'silent hill: revelations', 'the lightning thief')"
-"0","string_titlecase(strings)"
-"1","[1]"
-"1"," ""And Then There Were None"""
-"1"," ""Silent Hill: Revelations"""
-"1"," ""The Lightning Thief""     "
-"1","
-"
