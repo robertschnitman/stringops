@@ -29,8 +29,8 @@ item’s benefit is more readable code by avoiding the function syntax of
 `paste/paste0()`. Ultimately, these items will hopefully make processing
 strings in R more fun for the user!
 
-The following sections detail the installation procedure and a sample of
-functions from this package.
+Please see the [Gitbook](https://rs-stringops.netlify.app/) for more
+information. Thank you!
 
 Installation
 ============
@@ -55,85 +55,3 @@ library(stringops)
     ## The following object is masked from 'package:utils':
     ## 
     ##     find
-
-`%&%`
-=====
-
-As inspired by
-[AutoIt](https://www.autoitscript.com/autoit3/docs/intro/lang_operators.htm),
-the `%&%` (concatenation) operator joins two strings together. This
-operator facilitates readable code by avoiding the function syntax of
-the `paste/paste0()`.
-
-``` r
-'a' %&% 'b'
-```
-
-    ## [1] "ab"
-
-``` r
-"Car: " %&% rownames(mtcars)
-```
-
-    ##  [1] "Car: Mazda RX4"           "Car: Mazda RX4 Wag"      
-    ##  [3] "Car: Datsun 710"          "Car: Hornet 4 Drive"     
-    ##  [5] "Car: Hornet Sportabout"   "Car: Valiant"            
-    ##  [7] "Car: Duster 360"          "Car: Merc 240D"          
-    ##  [9] "Car: Merc 230"            "Car: Merc 280"           
-    ## [11] "Car: Merc 280C"           "Car: Merc 450SE"         
-    ## [13] "Car: Merc 450SL"          "Car: Merc 450SLC"        
-    ## [15] "Car: Cadillac Fleetwood"  "Car: Lincoln Continental"
-    ## [17] "Car: Chrysler Imperial"   "Car: Fiat 128"           
-    ## [19] "Car: Honda Civic"         "Car: Toyota Corolla"     
-    ## [21] "Car: Toyota Corona"       "Car: Dodge Challenger"   
-    ## [23] "Car: AMC Javelin"         "Car: Camaro Z28"         
-    ## [25] "Car: Pontiac Firebird"    "Car: Fiat X1-9"          
-    ## [27] "Car: Porsche 914-2"       "Car: Lotus Europa"       
-    ## [29] "Car: Ford Pantera L"      "Car: Ferrari Dino"       
-    ## [31] "Car: Maserati Bora"       "Car: Volvo 142E"
-
-`string_cull`()
-===============
-
-As inspired by Ruby, the function `string_cull()` culls (or extracts)
-pattern matches from strings–if a pattern is not found, then `NA` is
-returned. The synonyms for this function are `s_cull()`, `cull()`,
-`string_extract()`, `s_extract()`, and `extract()`.
-
-``` r
-# extract beginning "M" from each element.
-string_cull(rownames(mtcars), '^M')
-```
-
-    ##  [1] "M" "M" NA  NA  NA  NA  NA  "M" "M" "M" "M" "M" "M" "M" NA  NA  NA  NA  NA 
-    ## [20] NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  "M" NA
-
-``` r
-# extract elements in full that begin with "M".
-string_cull(rownames(mtcars), "^M.*")
-```
-
-    ##  [1] "Mazda RX4"     "Mazda RX4 Wag" NA              NA             
-    ##  [5] NA              NA              NA              "Merc 240D"    
-    ##  [9] "Merc 230"      "Merc 280"      "Merc 280C"     "Merc 450SE"   
-    ## [13] "Merc 450SL"    "Merc 450SLC"   NA              NA             
-    ## [17] NA              NA              NA              NA             
-    ## [21] NA              NA              NA              NA             
-    ## [25] NA              NA              NA              NA             
-    ## [29] NA              NA              "Maserati Bora" NA
-
-`string_find()`
-===============
-
-The function `string_find()` acts similar to
-`grep(string, x, value = TRUE)`: it subsets a vector to found pattern
-matches, returning the full element. The synonyms for this function are
-`s_find()`, and `find()`.
-
-``` r
-string_find(rownames(mtcars), '^M')
-```
-
-    ##  [1] "Mazda RX4"     "Mazda RX4 Wag" "Merc 240D"     "Merc 230"     
-    ##  [5] "Merc 280"      "Merc 280C"     "Merc 450SE"    "Merc 450SL"   
-    ##  [9] "Merc 450SLC"   "Maserati Bora"

@@ -13,7 +13,7 @@ When creating syntax, one has to ask themselves about the naming scheme: should 
 
 What this package brings are (1) a consistent naming-scheme for functions, (2) synonyms for said functions, and (3) a concatenation operator. The first item benefits users of all skill levels, as it makes certain functions easier to remember while making use of RStudio's predictive text. The second item is useful when one tires of typing `string_cull()`, for example, and wishes to use a shorthand to simplify the code (in this case, the shorthand would be `cull()`). The third item's benefit is more readable code by avoiding the function syntax of `paste/paste0()`. Ultimately, these items will hopefully make processing strings in R more fun for the user!
 
-The following sections detail the installation procedure and a sample of functions from this package.
+Please see the [Gitbook](https://rs-stringops.netlify.app/) for more information. Thank you!
 
 # Installation
 This package currently is only available on GitHub--there are no plans to submit this package to CRAN at this time. As such, please use the `devtools` library to install `stringops`.
@@ -26,37 +26,4 @@ devtools::install_github('robertschnitman/stringops')
 
 ```{r}
 library(stringops)
-```
-
-
-# `%&%`
-
-As inspired by [AutoIt](https://www.autoitscript.com/autoit3/docs/intro/lang_operators.htm), the `%&%` (concatenation) operator joins two strings together. This operator facilitates readable code by avoiding the function syntax of the `paste/paste0()`.
-
-```{r}
-'a' %&% 'b'
-
-"Car: " %&% rownames(mtcars)
-```
-
-# `string_cull`()
-
-As inspired by Ruby, the function `string_cull()` culls (or extracts) pattern matches from strings--if a pattern is not found, then `NA` is returned. The synonyms for this function are `s_cull()`, `cull()`, `string_extract()`, `s_extract()`, and `extract()`.
-
-```{r}
-# extract beginning "M" from each element.
-string_cull(rownames(mtcars), '^M')
-```
-
-```{r}
-# extract elements in full that begin with "M".
-string_cull(rownames(mtcars), "^M.*")
-```
-
-# `string_find()`
-
-The function `string_find()` acts similar to `grep(string, x, value = TRUE)`: it subsets a vector to found pattern matches, returning the full element. The synonyms for this function are `s_find()`, and `find()`.
-
-```{r}
-string_find(rownames(mtcars), '^M')
 ```
