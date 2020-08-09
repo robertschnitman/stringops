@@ -125,7 +125,7 @@ string_cull(rownames(mtcars), "^M.*")
 `string_find()`
 ===============
 
-The function “string\_find” acts similar to
+The function `string_find()` acts similar to
 `grep(string, x, value = TRUE)`: it subsets a vector to found pattern
 matches, returning the full element. The synonyms for this function are
 `s_find()`, and `find()`.
