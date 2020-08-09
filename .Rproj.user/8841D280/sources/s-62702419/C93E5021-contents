@@ -263,14 +263,14 @@ string_mid(rownames(mtcars), 2, 4)
 
 # Find Strings
 
-## `string_count()`
+## `string_count,()`
 
-**synonym: `s_count()`**
+**synonym: `s_countm()`, `countm()`**
 
-The function `string_count()` counts the number of matches in a given string. Optional inputs are passed to `gregexpr()`.
+The function `string_countm()` counts the number of matches in a given string. Optional inputs are passed to `gregexpr()`.
 
 ```{r}
-string_count(rownames(mtcars), 'a')
+string_countm(rownames(mtcars), 'a')
 ```
 
 
