@@ -68,7 +68,6 @@ split_apply <- function(f, x, apply_type) {
   
   output
   
-  
 }
 
 is.upper <- function(x) split_apply(function(x) all(x %in% LETTERS), x, apply_type = 'mapply')

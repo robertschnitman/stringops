@@ -149,8 +149,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="compare-strings.html"><a href="compare-strings.html"><i class="fa fa-check"></i><b>3</b> Compare Strings</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="compare-strings.html"><a href="compare-strings.html#string_isblank"><i class="fa fa-check"></i><b>3.1</b> <code>string_isblank()</code></a></li>
-<li class="chapter" data-level="3.2" data-path="compare-strings.html"><a href="compare-strings.html#like"><i class="fa fa-check"></i><b>3.2</b> <code>%like%</code></a></li>
+<li class="chapter" data-level="3.1" data-path="compare-strings.html"><a href="compare-strings.html#like"><i class="fa fa-check"></i><b>3.1</b> <code>%like%</code></a></li>
+<li class="chapter" data-level="3.2" data-path="compare-strings.html"><a href="compare-strings.html#string_isblank"><i class="fa fa-check"></i><b>3.2</b> <code>string_isblank()</code></a></li>
+<li class="chapter" data-level="3.3" data-path="compare-strings.html"><a href="compare-strings.html#string_isupperstring_islower"><i class="fa fa-check"></i><b>3.3</b> <code>string_isupper()</code>/<code>string_islower()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="concatenate-strings.html"><a href="concatenate-strings.html"><i class="fa fa-check"></i><b>4</b> Concatenate Strings</a>
 <ul>
@@ -208,22 +209,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="compare-strings" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Compare Strings</h1>
 <p>The functions in this chapter compares strings, outputting a Boolean vector.</p>
-<div id="string_isblank" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> <code>string_isblank()</code></h2>
-<p>**synonyms: <code>s_isblank()</code>, <code>isblank()</code>, <code>is.blank()</code></p>
-<p>The function <code>string_isblank()</code> tests whether a vector consists of only blank characters.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="compare-strings.html#cb39-1"></a><span class="kw">string_isblank</span>(<span class="st">&quot;         &quot;</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="compare-strings.html#cb41-1"></a><span class="kw">string_isblank</span>(<span class="st">&quot;    string     &quot;</span>)</span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
-</div>
-<div id="like" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> <code>%like%</code></h2>
+<div id="like" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> <code>%like%</code></h2>
 <p>The <code>%like%</code> operator tests whether a pattern match is found in a string.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="compare-strings.html#cb43-1"></a><span class="kw">rownames</span>(mtcars) <span class="op">%like%</span><span class="st"> &quot;^M&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="compare-strings.html#cb39-1"></a><span class="kw">rownames</span>(mtcars) <span class="op">%like%</span><span class="st"> &quot;^M&quot;</span></span></code></pre></div>
 <pre><code>##  [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
 ## [13]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 ## [25] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+</div>
+<div id="string_isblank" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> <code>string_isblank()</code></h2>
+<p><strong>synonyms: <code>s_isblank()</code>, <code>isblank()</code>, <code>is.blank()</code></strong></p>
+<p>The function <code>string_isblank()</code> tests whether a vector consists of only blank characters.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="compare-strings.html#cb41-1"></a><span class="kw">string_isblank</span>(<span class="st">&quot;         &quot;</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="compare-strings.html#cb43-1"></a><span class="kw">string_isblank</span>(<span class="st">&quot;    string     &quot;</span>)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div id="string_isupperstring_islower" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> <code>string_isupper()</code>/<code>string_islower()</code></h2>
+<p><strong>synonyms: <code>s_isupper()</code>, <code>isupper()</code>, <code>is.upper()</code>, <code>s_islower()</code>, <code>islower()</code>, <code>is.lower()</code></strong></p>
+<p>The functions <code>string_isupper()</code> and <code>string_islower()</code> test whether each element in a string vector is all uppercase or lowercase, respectively. The required input for both functions is a character vector. The output is a Boolean vector. These functions are useful for pattern matching acronyms, uppercase, and lowercase elements.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="compare-strings.html#cb45-1"></a>chr &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;TEST&#39;</span>, <span class="st">&#39;test&#39;</span>, <span class="st">&#39;tEsT&#39;</span>)</span>
+<span id="cb45-2"><a href="compare-strings.html#cb45-2"></a><span class="kw">is.upper</span>(chr)</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="compare-strings.html#cb47-1"></a><span class="kw">is.lower</span>(chr)</span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE FALSE</code></pre>
 </div>
 </div>
             </section>

@@ -149,8 +149,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="compare-strings.html"><a href="compare-strings.html"><i class="fa fa-check"></i><b>3</b> Compare Strings</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="compare-strings.html"><a href="compare-strings.html#string_isblank"><i class="fa fa-check"></i><b>3.1</b> <code>string_isblank()</code></a></li>
-<li class="chapter" data-level="3.2" data-path="compare-strings.html"><a href="compare-strings.html#like"><i class="fa fa-check"></i><b>3.2</b> <code>%like%</code></a></li>
+<li class="chapter" data-level="3.1" data-path="compare-strings.html"><a href="compare-strings.html#like"><i class="fa fa-check"></i><b>3.1</b> <code>%like%</code></a></li>
+<li class="chapter" data-level="3.2" data-path="compare-strings.html"><a href="compare-strings.html#string_isblank"><i class="fa fa-check"></i><b>3.2</b> <code>string_isblank()</code></a></li>
+<li class="chapter" data-level="3.3" data-path="compare-strings.html"><a href="compare-strings.html#string_isupperstring_islower"><i class="fa fa-check"></i><b>3.3</b> <code>string_isupper()</code>/<code>string_islower()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="concatenate-strings.html"><a href="concatenate-strings.html"><i class="fa fa-check"></i><b>4</b> Concatenate Strings</a>
 <ul>
@@ -212,12 +213,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.1</span> <code>string_cull()</code></h2>
 <p><strong>synonyms: <code>s_cull()</code>, <code>cull()</code>, <code>string_extract()</code>, <code>s_extract()</code>, <code>extract()</code></strong></p>
 <p>The function <code>string_cull()</code> culls (or extracts) a pattern from a string vector–if no pattern is found,  is returned.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="cull-strings.html#cb53-1"></a><span class="co"># extract beginning &quot;M&quot; from each element.</span></span>
-<span id="cb53-2"><a href="cull-strings.html#cb53-2"></a><span class="kw">string_cull</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="cull-strings.html#cb57-1"></a><span class="co"># extract beginning &quot;M&quot; from each element.</span></span>
+<span id="cb57-2"><a href="cull-strings.html#cb57-2"></a><span class="kw">string_cull</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&#39;^M&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;M&quot; &quot;M&quot; NA  NA  NA  NA  NA  &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; NA  NA  NA  NA  NA 
 ## [20] NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  &quot;M&quot; NA</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="cull-strings.html#cb55-1"></a><span class="co"># extract elements in full that begin with &quot;M&quot;.</span></span>
-<span id="cb55-2"><a href="cull-strings.html#cb55-2"></a><span class="kw">string_cull</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M.*&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="cull-strings.html#cb59-1"></a><span class="co"># extract elements in full that begin with &quot;M&quot;.</span></span>
+<span id="cb59-2"><a href="cull-strings.html#cb59-2"></a><span class="kw">string_cull</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;^M.*&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Mazda RX4&quot;     &quot;Mazda RX4 Wag&quot; NA              NA             
 ##  [5] NA              NA              NA              &quot;Merc 240D&quot;    
 ##  [9] &quot;Merc 230&quot;      &quot;Merc 280&quot;      &quot;Merc 280C&quot;     &quot;Merc 450SE&quot;   
@@ -231,15 +232,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.2</span> <code>string_left/right/mid()</code></h2>
 <p><strong>synonyms: <code>s_left/right/mid()</code>, <code>left/right/mid()</code></strong></p>
 <p>The <code>string_left()</code>, <code>string_right()</code>, and <code>string_mid()</code> functions act the same as Excel’s <code>LEFT()</code>, <code>RIGHT()</code>, and <code>MID()</code> functions, respectively.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="cull-strings.html#cb57-1"></a><span class="kw">string_left</span>(<span class="kw">rownames</span>(mtcars), <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="cull-strings.html#cb61-1"></a><span class="kw">string_left</span>(<span class="kw">rownames</span>(mtcars), <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Maz&quot; &quot;Maz&quot; &quot;Dat&quot; &quot;Hor&quot; &quot;Hor&quot; &quot;Val&quot; &quot;Dus&quot; &quot;Mer&quot; &quot;Mer&quot; &quot;Mer&quot; &quot;Mer&quot; &quot;Mer&quot;
 ## [13] &quot;Mer&quot; &quot;Mer&quot; &quot;Cad&quot; &quot;Lin&quot; &quot;Chr&quot; &quot;Fia&quot; &quot;Hon&quot; &quot;Toy&quot; &quot;Toy&quot; &quot;Dod&quot; &quot;AMC&quot; &quot;Cam&quot;
 ## [25] &quot;Pon&quot; &quot;Fia&quot; &quot;Por&quot; &quot;Lot&quot; &quot;For&quot; &quot;Fer&quot; &quot;Mas&quot; &quot;Vol&quot;</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="cull-strings.html#cb59-1"></a><span class="kw">string_right</span>(<span class="kw">rownames</span>(mtcars), <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="cull-strings.html#cb63-1"></a><span class="kw">string_right</span>(<span class="kw">rownames</span>(mtcars), <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;RX4&quot; &quot;Wag&quot; &quot;710&quot; &quot;ive&quot; &quot;out&quot; &quot;ant&quot; &quot;360&quot; &quot;40D&quot; &quot;230&quot; &quot;280&quot; &quot;80C&quot; &quot;0SE&quot;
 ## [13] &quot;0SL&quot; &quot;SLC&quot; &quot;ood&quot; &quot;tal&quot; &quot;ial&quot; &quot;128&quot; &quot;vic&quot; &quot;lla&quot; &quot;ona&quot; &quot;ger&quot; &quot;lin&quot; &quot;Z28&quot;
 ## [25] &quot;ird&quot; &quot;1-9&quot; &quot;4-2&quot; &quot;opa&quot; &quot;a L&quot; &quot;ino&quot; &quot;ora&quot; &quot;42E&quot;</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="cull-strings.html#cb61-1"></a><span class="kw">string_mid</span>(<span class="kw">rownames</span>(mtcars), <span class="dv">2</span>, <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="cull-strings.html#cb65-1"></a><span class="kw">string_mid</span>(<span class="kw">rownames</span>(mtcars), <span class="dv">2</span>, <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;azd&quot; &quot;azd&quot; &quot;ats&quot; &quot;orn&quot; &quot;orn&quot; &quot;ali&quot; &quot;ust&quot; &quot;erc&quot; &quot;erc&quot; &quot;erc&quot; &quot;erc&quot; &quot;erc&quot;
 ## [13] &quot;erc&quot; &quot;erc&quot; &quot;adi&quot; &quot;inc&quot; &quot;hry&quot; &quot;iat&quot; &quot;ond&quot; &quot;oyo&quot; &quot;oyo&quot; &quot;odg&quot; &quot;MC &quot; &quot;ama&quot;
 ## [25] &quot;ont&quot; &quot;iat&quot; &quot;ors&quot; &quot;otu&quot; &quot;ord&quot; &quot;err&quot; &quot;ase&quot; &quot;olv&quot;</code></pre>

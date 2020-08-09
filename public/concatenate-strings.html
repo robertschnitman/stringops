@@ -149,8 +149,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="compare-strings.html"><a href="compare-strings.html"><i class="fa fa-check"></i><b>3</b> Compare Strings</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="compare-strings.html"><a href="compare-strings.html#string_isblank"><i class="fa fa-check"></i><b>3.1</b> <code>string_isblank()</code></a></li>
-<li class="chapter" data-level="3.2" data-path="compare-strings.html"><a href="compare-strings.html#like"><i class="fa fa-check"></i><b>3.2</b> <code>%like%</code></a></li>
+<li class="chapter" data-level="3.1" data-path="compare-strings.html"><a href="compare-strings.html#like"><i class="fa fa-check"></i><b>3.1</b> <code>%like%</code></a></li>
+<li class="chapter" data-level="3.2" data-path="compare-strings.html"><a href="compare-strings.html#string_isblank"><i class="fa fa-check"></i><b>3.2</b> <code>string_isblank()</code></a></li>
+<li class="chapter" data-level="3.3" data-path="compare-strings.html"><a href="compare-strings.html#string_isupperstring_islower"><i class="fa fa-check"></i><b>3.3</b> <code>string_isupper()</code>/<code>string_islower()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="concatenate-strings.html"><a href="concatenate-strings.html"><i class="fa fa-check"></i><b>4</b> Concatenate Strings</a>
 <ul>
@@ -211,9 +212,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="concatenation-operator" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> <code>%&amp;%</code> (concatenation operator)</h2>
 <p>The <code>%&amp;%</code> operator acts similar to BASIC’s <code>&amp;</code>, concatenating two elements together.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="concatenate-strings.html#cb45-1"></a><span class="st">&#39;a&#39;</span> <span class="op">%&amp;%</span><span class="st"> &#39;b&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="concatenate-strings.html#cb49-1"></a><span class="st">&#39;a&#39;</span> <span class="op">%&amp;%</span><span class="st"> &#39;b&#39;</span></span></code></pre></div>
 <pre><code>## [1] &quot;ab&quot;</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="concatenate-strings.html#cb47-1"></a><span class="st">&quot;Car: &quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="kw">rownames</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="concatenate-strings.html#cb51-1"></a><span class="st">&quot;Car: &quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="kw">rownames</span>(mtcars)</span></code></pre></div>
 <pre><code>##  [1] &quot;Car: Mazda RX4&quot;           &quot;Car: Mazda RX4 Wag&quot;      
 ##  [3] &quot;Car: Datsun 710&quot;          &quot;Car: Hornet 4 Drive&quot;     
 ##  [5] &quot;Car: Hornet Sportabout&quot;   &quot;Car: Valiant&quot;            
@@ -235,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.2</span> <code>string_prefix()</code></h2>
 <p><strong>synonyms: <code>s_prefix()</code>, <code>prefix()</code></strong></p>
 <p><code>string_prefix()</code> appends a string to the beginning of another string.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="concatenate-strings.html#cb49-1"></a><span class="kw">string_prefix</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;A &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="concatenate-strings.html#cb53-1"></a><span class="kw">string_prefix</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot;A &quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;A Mazda RX4&quot;           &quot;A Mazda RX4 Wag&quot;       &quot;A Datsun 710&quot;         
 ##  [4] &quot;A Hornet 4 Drive&quot;      &quot;A Hornet Sportabout&quot;   &quot;A Valiant&quot;            
 ##  [7] &quot;A Duster 360&quot;          &quot;A Merc 240D&quot;           &quot;A Merc 230&quot;           
@@ -252,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.3</span> <code>string_suffix()</code></h2>
 <p><strong>synonyms: <code>s_suffix()</code>, <code>suffix()</code></strong></p>
 <p><code>string_suffix()</code> appends a string to the end of another string.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="concatenate-strings.html#cb51-1"></a><span class="kw">string_suffix</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot; model&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="concatenate-strings.html#cb55-1"></a><span class="kw">string_suffix</span>(<span class="kw">rownames</span>(mtcars), <span class="st">&quot; model&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Mazda RX4 model&quot;           &quot;Mazda RX4 Wag model&quot;      
 ##  [3] &quot;Datsun 710 model&quot;          &quot;Hornet 4 Drive model&quot;     
 ##  [5] &quot;Hornet Sportabout model&quot;   &quot;Valiant model&quot;            
