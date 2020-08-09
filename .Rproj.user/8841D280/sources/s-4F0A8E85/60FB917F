@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1596928651455.000,
+    "created" : 1596931578220.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
-    "id" : "D12A453B",
-    "lastKnownWriteTime" : 1596931028,
-    "last_content_update" : 1596931028792,
+    "id" : "60FB917F",
+    "lastKnownWriteTime" : 1596931922,
+    "last_content_update" : 1596931922081,
     "path" : "~/MEGA/Personal/Scripts/R/stringops/public/stringops_book.Rmd",
     "project_path" : "public/stringops_book.Rmd",
     "properties" : {
-        "cursorPosition" : "167,54",
-        "scrollLine" : "153"
+        "cursorPosition" : "188,47",
+        "scrollLine" : "172"
     },
-    "relative_order" : 4,
+    "relative_order" : 1,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"

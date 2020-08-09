@@ -182,6 +182,19 @@ The `%like%` operator tests whether a pattern match is found in a string.
 rownames(mtcars) %like% "^M"
 ```
 
+## `string_isupper()`/`string_islower()`
+
+**synonyms: `s_isupper()`, `isupper()`, `is.upper()`, `s_islower()`, `islower()`, `is.lower()`**
+
+The functions `string_isupper()` and `string_islower()` test whether each element in a string vector is all uppercase or lowercase, respectively. The required input for both functions is a character vector. The output is a Boolean vector. These functions are useful for pattern matching acronyms, uppercase, and lowercase elements.
+
+### Testing whether an element is all uppercase or lowercase.
+```{r islu1}
+chr <- c('TEST', 'test', 'tEsT')
+is.upper(chr)
+is.lower(chr)
+```
+
 # Concatenate Strings
 
 The functions in this chapter allow you to concatenate strings together.
