@@ -2,24 +2,32 @@
 % Please edit documentation in R/string_join.R
 \name{string_join}
 \alias{string_join}
-\title{Join vector elements into a single string.}
+\title{Join vector elements into a single string or vector.}
 \usage{
 string_join(s, collapse)
+string_flatten(l)
 }
 \arguments{
 \item{s}{A string (character) vector.}
 
 \item{collapse}{A string by which to separate the elements of a vector.}
+
+\item{l}{A list.}
 }
 \value{
 Character vector.
 }
 \description{
-Join (collapse) a vector of elements into a single string.
+Join (collapse) a vector of elements into a single string or vector.
+}
+\details{
+\code{string_join()} joins vector elements into a single string.
+
+\code{string_flatten()} joins list elements into a vector.
 }
 \examples{
 string_join(rownames(mtcars), ", ")
-
+string_flatten(list('a', 'b', 'c'))
 }
 \seealso{
 \url{https://github.com/robertschnitman/stringops}

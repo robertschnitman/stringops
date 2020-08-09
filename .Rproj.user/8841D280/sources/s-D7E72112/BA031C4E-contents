@@ -105,4 +105,3 @@ string_unique <- function(s) {
   output
   
 }
-s_unique <- string_unique

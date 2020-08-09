@@ -9,16 +9,36 @@ string_insert(s, insert, position)
 string_split(s, split, ...)
 string_len(s)
 string_reverse(s)
+string_unique(s)
+}
+\arguments{
+\item{s}{A string (character) vector.}
+
+\item{times}{The number of times to duplicate a string.}
+
+\item{insert}{The string to insert.}
+
+\item{position}{The position index to which to insert the string.}
+
+\item{split}{The character by which to split a string vector.}
+
+\item{...}{Parameters passed to \code{strsplit()}.}
 }
 \description{
 Miscellaneous string functions that don't quite fit into the other categories.
 }
 \details{
 \code{string_dup()} acts the same as strrep(): it repeats a string n number of times. 
-\code{string_insert()} inserts a string at a specified position. 
+
+\code{string_insert()} inserts a string at a specified position.
+ 
 \code{string_len()} acts the same as nchar(): it counts the number of characters per vector element.
+
 \code{string_reverse()} reverses the characters in a string.
-\code{string_split() acts the same as strsplit(): it splits a string by a specified character.}
+
+\code{string_split()} acts the same as \code{strsplit()}: it splits a string by a specified character.
+
+\code{string_unique()} obtains the distinct characters for each element in a vector.
 }
 \examples{
 string_dup(rownames(mtcars), 3)
@@ -26,6 +46,7 @@ string_insert("abcd", "Z", 3)
 string_len(rownames(mtcars))
 string_reverse(rownames(mtcars))
 string_split(rownames(mtcars), " ")
+string_unique(rownames(mtcars))
 
 }
 \seealso{

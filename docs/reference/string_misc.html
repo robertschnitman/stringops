@@ -121,16 +121,46 @@
 <span class='fu'>string_insert</span>(<span class='no'>s</span>, <span class='no'>insert</span>, <span class='no'>position</span>)
 <span class='fu'>string_split</span>(<span class='no'>s</span>, <span class='no'>split</span>, <span class='no'>...</span>)
 <span class='fu'>string_len</span>(<span class='no'>s</span>)
-<span class='fu'>string_reverse</span>(<span class='no'>s</span>)</pre>
+<span class='fu'>string_reverse</span>(<span class='no'>s</span>)
+<span class='fu'>string_unique</span>(<span class='no'>s</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>s</th>
+      <td><p>A string (character) vector.</p></td>
+    </tr>
+    <tr>
+      <th>times</th>
+      <td><p>The number of times to duplicate a string.</p></td>
+    </tr>
+    <tr>
+      <th>insert</th>
+      <td><p>The string to insert.</p></td>
+    </tr>
+    <tr>
+      <th>position</th>
+      <td><p>The position index to which to insert the string.</p></td>
+    </tr>
+    <tr>
+      <th>split</th>
+      <td><p>The character by which to split a string vector.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Parameters passed to <code><a href='https://rdrr.io/r/base/strsplit.html'>strsplit()</a></code>.</p></td>
+    </tr>
+    </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>string_dup()</code> acts the same as strrep(): it repeats a string n number of times. 
-<code>string_insert()</code> inserts a string at a specified position. 
-<code>string_len()</code> acts the same as nchar(): it counts the number of characters per vector element.
-<code>string_reverse()</code> reverses the characters in a string.
-<code>string_split() acts the same as strsplit(): it splits a string by a specified character.</code></p>
+    <p><code>string_dup()</code> acts the same as strrep(): it repeats a string n number of times.</p>
+<p><code>string_insert()</code> inserts a string at a specified position.</p> 
+<p><code>string_len()</code> acts the same as nchar(): it counts the number of characters per vector element.</p>
+<p><code>string_reverse()</code> reverses the characters in a string.</p>
+<p><code>string_split()</code> acts the same as <code><a href='https://rdrr.io/r/base/strsplit.html'>strsplit()</a></code>: it splits a string by a specified character.</p>
+<p><code>string_unique()</code> obtains the distinct characters for each element in a vector.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
@@ -273,7 +303,14 @@
 #&gt; 
 #&gt; [[32]]
 #&gt; [1] "Volvo" "142E" 
-#&gt; </div><div class='input'>
+#&gt; </div><div class='input'><span class='fu'>string_unique</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "Mazd RX4"      "Mazd RX4Wg"    "Datsun 710"    "Hornet 4Div"  
+#&gt;  [5] "Hornet Spabu"  "Valint"        "Duster 360"    "Merc 240D"    
+#&gt;  [9] "Merc 230"      "Merc 280"      "Merc 280C"     "Merc 450SE"   
+#&gt; [13] "Merc 450SL"    "Merc 450SLC"   "Cadilc Fetwo"  "Lincol Ctea"  
+#&gt; [17] "Chrysle Impia" "Fiat 128"      "Honda Civc"    "Toyta Crl"    
+#&gt; [21] "Toyta Crn"     "Dodge Chalnr"  "AMC Javelin"   "Camro Z28"    
+#&gt; [25] "Pontiac Frebd" "Fiat X1-9"     "Porsche 914-2" "Lotus Erpa"   
+#&gt; [29] "Ford PanteL"   "Ferai Dno"     "Maserti Bo"    "Volv 142E"    </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
