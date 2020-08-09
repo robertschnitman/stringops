@@ -406,7 +406,7 @@ string_split(rownames(mtcars), " ")
 
 # Conclusion {-}
 
-Hopefully, this package's API, syononyms, and concatenation operator make processing strings in R more fun for you! You can find these functions and their source code at the [Github repository, `stringops`](https://github.com/robertschnitman/stringops).
+Hopefully, this package's API, synonyms, and concatenation operator make processing strings in R more fun for you! You can find these functions and their source code at the [Github repository, `stringops`](https://github.com/robertschnitman/stringops).
 
 # References {-}
 
