@@ -1,22 +1,22 @@
-#' Find patterns in strings
+#' Spot patterns in strings
 #' 
-#' @description Find strings.
+#' @description Spot patterns in strings.
 #' 
-#' @usage string_find(s, pattern)
-#' s_find(s, pattern)
-#' find(s, pattern)
-#' string_findi(s, pattern)
-#' s_findi(s, pattern)
-#' findi(s, pattern)
-#' string_findl(s, pattern)
-#' s_findl(s, pattern)
-#' findl(s, pattern)
-#' string_findm(s, pattern)
-#' s_findm(s, pattern)
-#' findm(s, pattern)
+#' @usage string_spot(s, pattern)
+#' s_spot(s, pattern)
+#' spot(s, pattern)
+#' string_spoti(s, pattern)
+#' s_spoti(s, pattern)
+#' spoti(s, pattern)
+#' string_spotl(s, pattern)
+#' s_spotl(s, pattern)
+#' spotl(s, pattern)
+#' string_spotm(s, pattern)
+#' s_spotm(s, pattern)
+#' spotm(s, pattern)
 #' string_replace(s, search, replace)
 #' s_replace(s, search, replace)
-#' find_replace(s, search, replace)
+#' spot_replace(s, search, replace)
 #' fr(s, search, replace)
 #' search_replace(s, search, replace)
 #' sr(s, search, replace)
@@ -33,15 +33,15 @@
 #' @param remove The string to remove.
 #' @param ... Parameters to pass to \code{gregexpr}
 #' 
-#' @return Character vector for all functions except the \code{findl} functions, which produce a Boolean vector.
+#' @return Character vector for all functions except the \code{spotl} functions, which produce a Boolean vector.
 #' 
-#' @details The function \code{string_find} subsets a vector to the values matching a given pattern. Its synonyms are \code{s_find} and \code{find}.
+#' @details The function \code{string_spot} subsets a vector to the values matching a given pattern. Its synonyms are \code{s_spot} and \code{spot}.
 #' 
-#' The function \code{string_findi} provides the indices where a pattern in a vector is found. Its synonyms are \code{s_findi} and \code{findi}.
+#' The function \code{string_spoti} provides the indices where a pattern in a vector is found. Its synonyms are \code{s_spoti} and \code{spoti}.
 #' 
-#' The function \code{string_findl} detects whether a pattern exists in a vector. Its synonyms are \code{s_findl} and \code{findl}.
+#' The function \code{string_spotl} detects whether a pattern exists in a vector. Its synonyms are \code{s_spotl} and \code{spotl}.
 #' 
-#' The \code{findm} functions finds pattern matches and returns NA if none are found.
+#' The \code{spotm} functions spots pattern matches and returns NA if none are found.
 #' 
 #' The \code{*_replace} functions act the same as \code{gsub}.
 #' 
@@ -52,10 +52,10 @@
 #' @examples
 #' rn <- rownames(mtcars)
 #' 
-#' string_find(rn, "^M")
-#' string_findi(rn, "^M")
-#' string_findl(rn, "^M")
-#' string_findm(rn, "^M")
+#' string_spot(rn, "^M")
+#' string_spoti(rn, "^M")
+#' string_spotl(rn, "^M")
+#' string_spotm(rn, "^M")
 #' 
 #' string_replace(rn, "^M", "Z")
 #' string_remove(rn, "^M")
@@ -63,27 +63,27 @@
 #' 
 #' @seealso \url{https://github.com/robertschnitman/stringops}
 
-#' @rdname string_find
-string_find  <- function(s, pattern) grep(pattern, s, value = TRUE)
-s_find       <- string_find
-find         <- string_find
+#' @rdname string_spot
+string_spot  <- function(s, pattern) grep(pattern, s, value = TRUE)
+s_spot       <- string_spot
+spot         <- string_spot
 
-string_findi <- function(s, pattern) grep(pattern, s)
-s_findi      <- string_findi
-findi        <- string_findi
+string_spoti <- function(s, pattern) grep(pattern, s)
+s_spoti      <- string_spoti
+spoti        <- string_spoti
 
-string_findl <- function(s, pattern) grepl(pattern, s)
-s_findl      <- string_findl
-findl        <- string_findl
+string_spotl <- function(s, pattern) grepl(pattern, s)
+s_spotl      <- string_spotl
+spotl        <- string_spotl
 
-string_findm <- function(s, pattern) ifelse(grepl(pattern, s), s, NA_character_)
-s_findm      <- string_findm
-findm        <- string_findm
+string_spotm <- function(s, pattern) ifelse(grepl(pattern, s), s, NA_character_)
+s_spotm      <- string_spotm
+spotm        <- string_spotm
 
 #' @rdname string_replace
 string_replace <- function(s, search, replace) gsub(search, replace, s)
 s_replace      <- string_replace
-find_replace   <- string_replace
+spot_replace   <- string_replace
 fr             <- string_replace
 search_replace <- string_replace
 sr             <- string_replace

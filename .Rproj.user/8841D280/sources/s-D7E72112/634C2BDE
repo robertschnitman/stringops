@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1596995404652.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "634C2BDE",
+    "lastKnownWriteTime" : 1596995418,
+    "last_content_update" : 1596995418502,
+    "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_chomp.R",
+    "project_path" : "R/string_chomp.R",
+    "properties" : {
+        "cursorPosition" : "14,18",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

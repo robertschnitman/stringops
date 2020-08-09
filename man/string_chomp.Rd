@@ -15,7 +15,6 @@ s_trim(s, which, whitespace)
 trim(s, which, whitespace)
 string_cut(s, which)
 s_cut(s, which)
-cut(s, which)
 }
 \arguments{
 \item{s}{A string (character) vector.}
