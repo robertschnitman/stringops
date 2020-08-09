@@ -31,6 +31,46 @@ is.blank       <- string_isblank
 `%like%` <- function(s, pattern) grepl(pattern, s)
 
 #' @rdname is.upper
+split_apply <- function(f, x, apply_type) {
+  
+  ### GOAL: Split --> Apply Function --> Combine
+  ## The "Split-Apply-Combine" strategy by Hadley Wickham.
+  # https://www.jstatsoft.org/article/view/v040i01/v40i01.pdf
+  
+  # 0. Type check.
+  stopifnot(class(x) == 'character')
+  
+  # 1. Split.
+  splits <- sapply(x, strsplit, split = NULL)
+  
+  # 2. Apply & Combine.
+  
+  if (apply_type == 'lapply') {
+    
+    apps <- lapply(splits, f)
+    
+    names(apps) <- NULL # Juxtaposition of original attributes and applied vector is confusing.
+    
+    output <- sapply(apps, paste0, sep = '', collapse = '')
+    
+  } else if (apply_type == 'mapply') { # if sub-block above converts boolean vectors to string.
+    
+    output <- mapply(f, splits)
+    
+    names(output) <- NULL # Juxtaposition of original attributes and applied vector is confusing.
+    
+    
+  } else {
+    
+    stop('Invalid apply function: use either lapply or mapply')
+    
+  }
+  
+  output
+  
+  
+}
+
 is.upper <- function(x) split_apply(function(x) all(x %in% LETTERS), x, apply_type = 'mapply')
 is.lower <- function(x) split_apply(function(x) all(x %in% letters), x, apply_type = 'mapply')
 

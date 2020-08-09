@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "2F8FAAF2",
-    "lastKnownWriteTime" : 1596931771,
-    "last_content_update" : 1596931771477,
+    "lastKnownWriteTime" : 1596932196,
+    "last_content_update" : 1596932196952,
     "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_compare.R",
     "project_path" : "R/string_compare.R",
     "properties" : {
-        "cursorPosition" : "34,88",
-        "scrollLine" : "15"
+        "cursorPosition" : "32,19",
+        "scrollLine" : "21"
     },
     "relative_order" : 2,
     "source_on_save" : false,
