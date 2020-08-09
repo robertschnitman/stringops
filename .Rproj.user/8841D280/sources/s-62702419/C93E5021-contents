@@ -263,7 +263,7 @@ string_mid(rownames(mtcars), 2, 4)
 
 # Find Strings
 
-## `string_count,()`
+## `string_countm()`
 
 **synonym: `s_countm()`, `countm()`**
 
