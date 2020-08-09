@@ -73,8 +73,10 @@ string_flag <- function(s, flag, width, which = c('left', 'right', 'both')) {
   diff      <- width - nchar(s)
   diff_adj  <- ifelse(diff <= 0, 1, diff)
   
+  # rep() is a vector: we need a single string of the flags.
   flags <- string_join(rep(flag, diff_adj))
   
+  # Remove flags if the length of the string is greater than the specified width.
   flags <- ifelse(nchar(s) > width,
                   string_remove(flags, flags),
                   flags)

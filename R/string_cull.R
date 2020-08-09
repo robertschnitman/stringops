@@ -41,11 +41,16 @@
 #' @rdname string_cull
 string_cull <- function(s, pattern) {
   
+  # Find patterns
   greg <- gregexpr(pattern, s)
+  
+  # Get matches
   regm <- regmatches(s, greg)
   
+  # Flatten matched patterns
   flat <- sapply(regm, string_join)
   
+  # Output should be missing if no matches are found.
   output <- ifelse(flat == "", NA_character_, flat)
   
   output

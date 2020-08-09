@@ -44,8 +44,10 @@ chop        <- string_chop
 #' @rdname string_cut
 string_cut <- function(s, which = c('both', 'left', 'right')) {
   
+  # Check "which" inputs.
   which <- match.arg(which)
   
+  # Different operation for each "which" input.
   if (which == 'left') {
     
     output <- substr(s, 2, nchar(s))
@@ -58,11 +60,7 @@ string_cut <- function(s, which = c('both', 'left', 'right')) {
     
     output <- substr(s, 2, nchar(s) - 1)
     
-  } else {
-    
-    stop('The "which" input must be specified as "both", "left", or "right".')
-    
-  }
+  } 
   
   output
   

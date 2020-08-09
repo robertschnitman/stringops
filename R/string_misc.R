@@ -48,6 +48,7 @@ dup        <- string_dup
 #' @rdname string_insert
 string_insert <- function(s, insert, position) {
   
+  # Function that inserts a character at a specified position
   concat_insert <- function(x) {
     
     x[position] <- insert %&% x[position]
@@ -56,8 +57,10 @@ string_insert <- function(s, insert, position) {
     
   }
   
+  # For each element, insert a string at the specified position.
   splits <- lapply(strsplit(s, ""), concat_insert)
   
+  # Reform the vector.
   output <- sapply(splits, string_join)
   
   output
@@ -76,8 +79,10 @@ len        <- string_len
 #' @rdname string_reverse
 string_reverse <- function(s) {
   
+  # Split and reverse letters
   splits <- lapply(strsplit(s, ""), rev)
   
+  # Combine
   output <- sapply(splits, string_join)
   
   output

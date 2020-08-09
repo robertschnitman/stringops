@@ -79,10 +79,10 @@ is.upper <- function(x) split_apply(function(x) all(x %in% LETTERS), x, apply_ty
 is.lower <- function(x) split_apply(function(x) all(x %in% letters), x, apply_type = 'mapply')
 
 string_isupper <- is.upper
-s_isupper <- is.upper
-isupper <- is.upper
+s_isupper      <- is.upper
+isupper        <- is.upper
 
 string_islower <- is.lower
-s_islower <- is.lower
-islower <- is.lower
+s_islower      <- is.lower
+islower        <- is.lower
 

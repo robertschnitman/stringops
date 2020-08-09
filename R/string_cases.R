@@ -42,16 +42,22 @@ lower        <- string_lower
 
 string_titlecase <- function(s) {
   
+  # Split by word
   splits1 <- strsplit(tolower(s), " ")
   
+  # Split by letter
   splits2 <- lapply(splits1, function(x) strsplit(x, ""))
   
+  # Replace first letter of each word with the upper-case version.
   splits3 <- lapply(splits2, function(x) lapply(x, function(y) replace(y, 1, toupper(y[1]))))
   
+  # Join the letters to reform the words.
   splits4 <- lapply(splits3, function(x) lapply(x, string_join))
   
+  # Join the words, separated by a space.
   splits5 <- lapply(splits4, function(x) string_join(x, " "))
   
+  # Output should remove the last separator.
   output  <- sapply(splits5, string_chop)
   
   output
@@ -63,10 +69,13 @@ titlecase   <- string_titlecase
 #' @rdname string_swapcase
 string_swapcase <- function(s) {
   
+  # Function to test the case of the letters.
   case_test <- function(x) ifelse(x %in% letters, toupper(x), tolower(x))
   
+  # For each letter, switch their case.
   splits <- lapply(strsplit(s, ""), case_test)
   
+  # Reform the words.
   output <- sapply(splits, string_join)
   
   output
