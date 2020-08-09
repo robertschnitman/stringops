@@ -14,7 +14,10 @@ s_suffix(s, suffix)
 suffix(s, suffix)
 string_flag(s, flag, width)
 s_flag(s, flag, width)
-flag(s, flag, width)
+flag(s, flag, width, which = c('left', 'right', 'both'))
+string_flagv(s, ...)
+s_flagv(s, ...)
+flagv(s, ...)
 }
 \arguments{
 \item{a}{A string (character) vector.}
@@ -28,6 +31,10 @@ flag(s, flag, width)
 \item{flag}{Character or number to append to a string.}
 
 \item{width}{Number of characters a string should be.}
+
+\item{which}{Side to flag a string.}
+
+\item{...}{Parameters passed to \code{string_flag()}.}
 }
 \value{
 Character vector.
@@ -40,7 +47,9 @@ The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two el
 
 \code{string_prefix()} and its synonyms prefix a string to a vector, while \code{string_suffix()} and its synonyms suffix a string to a vector.
 
-\code{string_flag()} appends a character or number to a string if it does not meet a specified width.
+\code{string_flag()} is a scalar function that appends a character or number to a string if it does not meet a specified width.
+
+\code{string_flagv()} is a vectorized version of \code{string_flag()}.
 }
 \examples{
 "a" \%&\% "b"
