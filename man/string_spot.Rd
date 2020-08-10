@@ -27,6 +27,8 @@ s_remove(s, remove)
 string_countm(s, pattern, ...)
 s_countm(s, pattern, ...)
 countm(s, pattern, ...)
+string_spot_invert(s, pattern)
+string_spotm_invert(s, pattern)
 }
 \arguments{
 \item{s}{A string (character) vector.}
@@ -39,7 +41,7 @@ countm(s, pattern, ...)
 
 \item{remove}{The string to remove.}
 
-\item{...}{Parameters to pass to \code{gregexpr}}
+\item{...}{Parameters to pass to \code{gregexpr()}}
 }
 \value{
 Character vector for all functions except the \code{spotl()} and \code{countm()} functions, which produce Boolean and numeric vectors respectively.
@@ -48,19 +50,23 @@ Character vector for all functions except the \code{spotl()} and \code{countm()}
 Spot patterns in strings.
 }
 \details{
-The function \code{string_spot} subsets a vector to the values matching a given pattern. Its synonyms are \code{s_spot} and \code{spot}.
+The function \code{string_spot()} subsets a vector to the values matching a given pattern.
 
-The function \code{string_spoti} provides the indices where a pattern in a vector is found. Its synonyms are \code{s_spoti} and \code{spoti}.
+The function \code{string_spoti()} provides the indices where a pattern in a vector is found.
 
-The function \code{string_spotl} detects whether a pattern exists in a vector. Its synonyms are \code{s_spotl} and \code{spotl}.
+The function \code{string_spotl()} detects whether a pattern exists in a vector.
 
-The \code{spotm} functions spots pattern matches and returns NA if none are found.
+The \code{string_spotm()} function spots pattern matches and returns NA if none are found.
 
-The \code{*_replace} functions act the same as \code{gsub}.
+The \code{*_replace()} functions act the same as \code{gsub()}.
 
-The \code{*_remove} functions blank out a matching pattern.
+The \code{*_remove()} functions blank out a matching pattern.
 
-The \code{string_countm} counts the number of matches in a string.
+The \code{string_countm()} counts the number of matches in a string.
+
+The \code{string_spot_invert()} subsets a string for non-matches.
+
+The \code{string_spotm_invert()} returns NA for matches and the non-matching value otherwise.
 }
 \examples{
 rn <- rownames(mtcars)
@@ -73,6 +79,9 @@ string_spotm(rn, "^M")
 string_replace(rn, "^M", "Z")
 string_remove(rn, "^M")
 string_countm(rn, 'a')
+
+string_spot_invert(rn, "^M")
+string_spotm_invert(rn, "^M")
 
 }
 \seealso{

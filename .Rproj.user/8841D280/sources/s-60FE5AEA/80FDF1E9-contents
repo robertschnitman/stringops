@@ -37,13 +37,13 @@
 #' 
 #' @return Character vector for all functions except the \code{spotl()} and \code{countm()} functions, which produce Boolean and numeric vectors respectively.
 #' 
-#' @details The function \code{string_spot()} subsets a vector to the values matching a given pattern.
+#' @details The function \code{string_spot()} subsets a vector to the values matching a given pattern. Its synonyms are \code{s_spot()} and \code{spot()}.
 #' 
-#' The function \code{string_spoti()} provides the indices where a pattern in a vector is found.
+#' The function \code{string_spoti()} provides the indices where a pattern in a vector is found. Its synonyms are \code{s_spoti()} and \code{spoti()}.
 #' 
-#' The function \code{string_spotl()} detects whether a pattern exists in a vector.
+#' The function \code{string_spotl()} detects whether a pattern exists in a vector. Its synonyms are \code{s_spotl()} and \code{spotl()}.
 #' 
-#' The \code{string_spotm()} function spots pattern matches and returns NA if none are found.
+#' The \code{spotm()} functions spots pattern matches and returns NA if none are found.
 #' 
 #' The \code{*_replace()} functions act the same as \code{gsub()}.
 #' 
@@ -53,7 +53,7 @@
 #' 
 #' The \code{string_spot_invert()} subsets a string for non-matches.
 #' 
-#' The \code{string_spotm_invert()} returns NA for matches and the non-matching value otherwise.
+#' The \code{string_spotm_invert()} returns NA for matches and the matching value otherwise.
 #'
 #' @examples
 #' rn <- rownames(mtcars)
@@ -66,9 +66,6 @@
 #' string_replace(rn, "^M", "Z")
 #' string_remove(rn, "^M")
 #' string_countm(rn, 'a')
-#' 
-#' string_spot_invert(rn, "^M")
-#' string_spotm_invert(rn, "^M")
 #' 
 #' @seealso \url{https://github.com/robertschnitman/stringops}
 

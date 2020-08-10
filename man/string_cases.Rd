@@ -27,7 +27,13 @@ Character vector.
 Modify the case of the string.
 }
 \details{
-The \code{upper} functions make all characters in a string vector in their capitalized case. The \code{lower} functions makes the same vector in their lower case. The \code{swapcase} functions switches the case for each character in a string vector. The \code{titlecase} functions converts the first character of each word to uppercase.
+The \code{upper()} functions make all characters in a string vector in their capitalized case. 
+
+The \code{lower()} functions makes the same vector in their lower case. 
+
+The \code{swapcase()} functions switches the case for each character in a string vector.
+
+The \code{titlecase()} functions converts the first character of each word to uppercase.
 }
 \examples{
 upper(rownames(mtcars))

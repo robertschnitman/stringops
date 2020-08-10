@@ -28,11 +28,11 @@ string_unique(s)
 Miscellaneous string functions that don't quite fit into the other categories.
 }
 \details{
-\code{string_dup()} acts the same as strrep(): it repeats a string n number of times. 
+\code{string_dup()} acts the same as \code{strrep()}: it repeats a string n number of times. 
 
 \code{string_insert()} inserts a string at a specified position.
  
-\code{string_len()} acts the same as nchar(): it counts the number of characters per vector element.
+\code{string_len()} acts the same as \code{nchar()}: it counts the number of characters per vector element.
 
 \code{string_reverse()} reverses the characters in a string.
 

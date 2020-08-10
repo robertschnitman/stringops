@@ -38,9 +38,9 @@ Character vector.
 Cull or extract patterns from strings.
 }
 \details{
-The function \code{string_cull} (and its synonyms \code{s_cull}, \code{cull}, \code{string_extract}, \code{s_extract}, \code{extract}) culls (or extracts) a pattern from a string vector--if no pattern is found, \code{NA} is returned.
+The function \code{string_cull()} culls (or extracts) a pattern from a string vector--if no pattern is found, \code{NA} is returned.
 
-The functions \code{string_left}/\code{s_left}/\code{left} and \code{string_right}/\code{s_right}/\code{right} act the same as Excel's \code{LEFT} and \code{RIGHT} functions. The \code{mid} functions act the same as Excel's \code{MID} function.
+The functions \code{string_left()}, \code{string_right()}, \code{string_mid()} act the same as Excel's \code{LEFT()}, \code{RIGHT}, \code{MID()} functions, respectively.
 }
 \examples{
 string_cull(rownames(mtcars), '^M.*')
