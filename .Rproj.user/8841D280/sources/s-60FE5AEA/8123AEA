@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1597017725691.000,
+    "created" : 1597018245448.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
-    "id" : "FABDB714",
-    "lastKnownWriteTime" : 1597017796,
-    "last_content_update" : 1597017796581,
+    "id" : "8123AEA",
+    "lastKnownWriteTime" : 1597018249,
+    "last_content_update" : 1597018249499,
     "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_spot.R",
     "project_path" : "R/string_spot.R",
     "properties" : {
-        "cursorPosition" : "70,15",
-        "scrollLine" : "50"
+        "cursorPosition" : "35,54",
+        "scrollLine" : "25"
     },
-    "relative_order" : 1,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"

@@ -41,7 +41,7 @@ string_spotm_invert(s, pattern)
 
 \item{remove}{The string to remove.}
 
-\item{...}{Parameters to pass to \code{gregexpr()}}
+\item{...}{Parameters to pass to \code{gregexpr()}.}
 }
 \value{
 Character vector for all functions except the \code{spotl()} and \code{countm()} functions, which produce Boolean and numeric vectors respectively.
