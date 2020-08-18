@@ -22,7 +22,7 @@
 #' @param pattern A regular expression pattern.
 #' @param n The number of characters.
 #' @param start The position in a string at which to start.
-#' @param stop The position in string at which to stop.
+#' @param stop The position in a string at which to stop.
 #' 
 #' @return Character vector.
 #' 

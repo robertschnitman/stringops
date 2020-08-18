@@ -29,7 +29,7 @@ mid(s, start, stop)
 
 \item{start}{The position in a string at which to start.}
 
-\item{stop}{The position in string at which to stop.}
+\item{stop}{The position in a string at which to stop.}
 }
 \value{
 Character vector.
