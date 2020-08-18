@@ -4,18 +4,18 @@
 \alias{string_spot}
 \title{Spot patterns in strings}
 \usage{
-string_spot(s, pattern)
-s_spot(s, pattern)
-spot(s, pattern)
-string_spoti(s, pattern)
-s_spoti(s, pattern)
-spoti(s, pattern)
-string_spotl(s, pattern)
-s_spotl(s, pattern)
-spotl(s, pattern)
-string_spotm(s, pattern)
-s_spotm(s, pattern)
-spotm(s, pattern)
+string_spot(s, pattern, invert = FALSE)
+s_spot(s, pattern, invert = FALSE)
+spot(s, pattern, invert = FALSE)
+string_spoti(s, pattern, invert = FALSE)
+s_spoti(s, pattern, invert = FALSE)
+spoti(s, pattern, invert = FALSE)
+string_spotl(s, pattern, invert = FALSE)
+s_spotl(s, pattern, invert = FALSE)
+spotl(s, pattern, invert = FALSE)
+string_spotm(s, pattern, invert = FALSE)
+s_spotm(s, pattern, invert = FALSE)
+spotm(s, pattern, invert = FALSE)
 string_replace(s, search, replace)
 s_replace(s, search, replace)
 find_replace(s, search, replace)
@@ -27,13 +27,13 @@ s_remove(s, remove)
 string_countm(s, pattern, ...)
 s_countm(s, pattern, ...)
 countm(s, pattern, ...)
-string_spot_invert(s, pattern)
-string_spotm_invert(s, pattern)
 }
 \arguments{
 \item{s}{A string (character) vector.}
 
 \item{pattern}{A regular expression pattern.}
+
+\item{invert}{Boolean value (\code{TRUE/FALSE}) for whether to find actual matches (\code{FALSE}; default) or non-matches (\code{TRUE}).}
 
 \item{search}{A pattern to search.}
 
@@ -44,34 +44,31 @@ string_spotm_invert(s, pattern)
 \item{...}{Parameters to pass to \code{gregexpr()}.}
 }
 \value{
-Character vector for all functions except the \code{spotl()} and \code{countm()} functions, which produce Boolean and numeric vectors respectively.
+Character vector for all functions except the \code{spotl()}, \code{spoti()}, and \code{countm()} functions, which produce Boolean, numeric, and numeric vectors respectively.
 }
 \description{
 Spot patterns in strings.
 }
 \details{
-The function \code{string_spot()} subsets a vector to the values matching a given pattern.
+The function \code{string_spot()} subsets a vector to the values matching a given pattern. By setting \code{invert = TRUE}, the function will subset the vector for non-matches.
 
-The function \code{string_spoti()} provides the indices where a pattern in a vector is found.
+The function \code{string_spoti()} provides the indices where a pattern in a vector is found. By setting \code{invert = TRUE}, the function will find the indices of non-matches.
 
-The function \code{string_spotl()} detects whether a pattern exists in a vector.
+The function \code{string_spotl()} detects whether a pattern exists in a vector, outputting a Boolean value (\code{TRUE/FALSE}). Setting \code{invert = TRUE} is the same as \code{!grepl()}.
 
-The \code{string_spotm()} function spots pattern matches and returns NA if none are found.
+The \code{string_spotm()} function spots pattern matches and returns \code{NA} if none are found. Setting \code{invert = TRUE} will make the function find non-matches and return \code{NA} for matches.
 
-The \code{*_replace()} functions act the same as \code{gsub()}.
+The \code{string_replace()} function acts the same as \code{gsub()}.
 
-The \code{*_remove()} functions blank out a matching pattern.
+The \code{string_remove()} function blanks out a matching pattern.
 
 The \code{string_countm()} counts the number of matches in a string.
-
-The \code{string_spot_invert()} subsets a string for non-matches.
-
-The \code{string_spotm_invert()} returns NA for matches and the non-matching value otherwise.
 }
 \examples{
 rn <- rownames(mtcars)
 
 string_spot(rn, "^M")
+string_spot(rn, '^M', invert = TRUE)
 string_spoti(rn, "^M")
 string_spotl(rn, "^M")
 string_spotm(rn, "^M")
@@ -80,8 +77,6 @@ string_replace(rn, "^M", "Z")
 string_remove(rn, "^M")
 string_countm(rn, 'a')
 
-string_spot_invert(rn, "^M")
-string_spotm_invert(rn, "^M")
 
 }
 \seealso{
