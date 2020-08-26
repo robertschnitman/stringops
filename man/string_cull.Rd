@@ -4,7 +4,7 @@
 \alias{string_cull}
 \title{Cull/extract patterns from strings}
 \usage{
-string_cull(s, pattern, collapse = ',', ...)
+string_cull(s, pattern, get_all = FALSE, collapse = ',', ...)
 string_left(s, n)
 string_right(s, n)
 string_mid(s, start, n)
@@ -13,6 +13,8 @@ string_mid(s, start, n)
 \item{s}{A string (character) vector.}
 
 \item{pattern}{A regular expression pattern.}
+
+\item{get_all}{Whether to get all matches (TRUE) or not (FALSE).}
 
 \item{collapse}{A separator in the case of multiple matches.}
 
@@ -29,7 +31,7 @@ Character vector.
 Cull (extract) patterns from strings.
 }
 \details{
-The function \code{string_cull()} culls (or extracts) a pattern from a string vector--if no pattern is found, \code{NA} is returned. Multiple pattern matches are separated by the \code{collapse()} input.
+The function \code{string_cull()} culls (or extracts) a pattern from a string vector--if no pattern is found, \code{NA} is returned. Multiple pattern matches are separated by the \code{collapse()} input if \code{get_all = TRUE}.
 
 The functions \code{string_left()}, \code{string_right()}, \code{string_mid()} act the same as Excel's \code{LEFT()}, \code{RIGHT}, \code{MID()} functions, respectively.
 
@@ -37,6 +39,7 @@ The synonym pattern of these functions are \code{s_*()} and \code{*()} (replace 
 }
 \examples{
 string_cull(rownames(mtcars), '^M|a')
+string_cull(rownames(mtcars), '^M|a', get_all = TRUE)
 string_left(rownames(mtcars), 3)
 string_right(rownames(mtcars), 3)
 string_mid(rownames(mtcars), 2, 2)

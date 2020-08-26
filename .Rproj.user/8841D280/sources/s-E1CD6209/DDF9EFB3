@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598484452728.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DDF9EFB3",
+    "lastKnownWriteTime" : 1598485155,
+    "last_content_update" : 1598485155372,
+    "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_cull.R",
+    "project_path" : "R/string_cull.R",
+    "properties" : {
+        "cursorPosition" : "35,14",
+        "scrollLine" : "25"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
