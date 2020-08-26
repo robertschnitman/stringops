@@ -27,6 +27,8 @@
 #' @rdname string_join
 string_join <- function(s, collapse = "") {
   
+  stopifnot(is.vector(s))
+  
   output <- paste0(s, collapse = collapse)
   
   if (collapse != "") {

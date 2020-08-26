@@ -35,6 +35,8 @@
 #' @rdname string_cull
 string_cull <- function(s, pattern, get_all = FALSE, collapse = ',', ...) {
   
+  stopifnot(is.vector(s))
+  
   # Find patterns
   greg <- gregexpr(pattern, s, ...)
   
@@ -57,8 +59,8 @@ string_cull <- function(s, pattern, get_all = FALSE, collapse = ',', ...) {
   output
   
 }
-s_cull         <- string_cull
-cull           <- string_cull
+s_cull <- string_cull
+cull   <- string_cull
 
 #' @rdname string_left
 string_left <- function(s, n) substr(s, 1, n)

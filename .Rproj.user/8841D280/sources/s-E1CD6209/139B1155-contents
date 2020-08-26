@@ -3,7 +3,7 @@
 #' @description Spot patterns in strings.
 #' 
 #' @usage string_spot(s, pattern, value = TRUE, ...)
-#' string_spoti(s, pattern, value = FALSE, ...)
+#' string_spoti(s, pattern, ...)
 #' string_spotl(s, pattern, ...)
 #' string_spotm(s, pattern, invert = FALSE, ...)
 #' string_replace(s, search, replace, ...)
@@ -56,9 +56,10 @@
 #' @rdname string_spot
 string_spot  <- function(s, pattern, value = TRUE, ...) {
   
-  # String vector length must be greater than 0.
-  stopifnot(length(s) > 0)
+  # Input must be a vector
+  stopifnot(is.vector(s))
   
+  # Spot should behave similarly as grep.
   output <- grep(pattern, s, value = value, ...)
   
   output
@@ -68,7 +69,7 @@ s_spot       <- string_spot
 spot         <- string_spot
 
 #' @rdname string_spoti
-string_spoti <- function(s, pattern, value = FALSE, ...) string_spot(s, pattern, value = value, ...)
+string_spoti <- function(s, pattern, ...) string_spot(s, pattern, value = FALSE, ...)
 s_spoti      <- string_spoti
 spoti        <- string_spoti
 
@@ -111,11 +112,19 @@ search_replace <- string_replace
 sr             <- string_replace
 
 #' @rdname string_remove
-string_remove <- function(s, remove, ...) gsub(remove, "", s, ...)
+string_remove <- function(s, remove, ...) {
+  
+  stopifnot(is.vector(s))
+  
+  gsub(remove, "", s, ...)
+  
+}
 s_remove      <- string_remove
 
 #' @rdname string_count
 string_countm <- function(s, pattern, ...) {
+  
+  stopifnot(is.vector(s))
   
   # https://stringr.tidyverse.org/articles/from-base.html#overall-differences-1
   locations <- gregexpr(pattern = pattern, text = s, ...)

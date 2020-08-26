@@ -5,7 +5,7 @@
 \title{Spot patterns in strings}
 \usage{
 string_spot(s, pattern, value = TRUE, ...)
-string_spoti(s, pattern, value = FALSE, ...)
+string_spoti(s, pattern, ...)
 string_spotl(s, pattern, ...)
 string_spotm(s, pattern, invert = FALSE, ...)
 string_replace(s, search, replace, ...)
