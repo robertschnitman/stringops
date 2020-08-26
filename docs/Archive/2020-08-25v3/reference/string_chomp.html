@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cull/extract patterns from strings — string_cull • stringops</title>
+<title>Remove (empty) characters from a string as inspired by Ruby — string_chomp • stringops</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Cull/extract patterns from strings — string_cull" />
-<meta property="og:description" content="Cull (extract) patterns from strings." />
+<meta property="og:title" content="Remove (empty) characters from a string as inspired by Ruby — string_chomp" />
+<meta property="og:description" content="Remove (empty) characters from a string as inspired by Ruby." />
 
 
 
@@ -108,19 +108,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Cull/extract patterns from strings</h1>
-    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_cull.R'><code>R/string_cull.R</code></a></small>
-    <div class="hidden name"><code>string_cull.Rd</code></div>
+    <h1>Remove (empty) characters from a string as inspired by Ruby</h1>
+    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_chomp.R'><code>R/string_chomp.R</code></a></small>
+    <div class="hidden name"><code>string_chomp.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Cull (extract) patterns from strings.</p>
+    <p>Remove (empty) characters from a string as inspired by Ruby.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>string_cull</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='kw'>collapse</span> <span class='kw'>=</span> <span class='st'>','</span>, <span class='no'>...</span>)
-<span class='fu'>string_left</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>string_right</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>string_mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>n</span>)</pre>
+    <pre class="usage"><span class='fu'>string_chomp</span>(<span class='no'>s</span>)
+<span class='fu'>string_chop</span>(<span class='no'>s</span>)
+<span class='fu'>string_trim</span>(<span class='no'>s</span>, <span class='no'>which</span>, <span class='no'>whitespace</span>)
+<span class='fu'>string_cut</span>(<span class='no'>s</span>, <span class='no'>which</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -130,24 +130,12 @@
       <td><p>A string (character) vector.</p></td>
     </tr>
     <tr>
-      <th>pattern</th>
-      <td><p>A regular expression pattern.</p></td>
+      <th>which</th>
+      <td><p>Denotes how to trim/cut a vector (both, left only, or right only).</p></td>
     </tr>
     <tr>
-      <th>collapse</th>
-      <td><p>A separator in the case of multiple matches.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>gregexpr()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>start</th>
-      <td><p>The position in a string at which to start.</p></td>
-    </tr>
-    <tr>
-      <th>n</th>
-      <td><p>The number of characters.</p></td>
+      <th>whitespace</th>
+      <td><p>Denotes which whitespace characters to remove.</p></td>
     </tr>
     </table>
 
@@ -156,25 +144,37 @@
     <p>Character vector.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The function <code>string_cull()</code> culls (or extracts) a pattern from a string vector--if no pattern is found, <code>NA</code> is returned. Multiple pattern matches are separated by the <code>collapse()</code> input.</p>
-<p>The functions <code>string_left()</code>, <code>string_right()</code>, <code>string_mid()</code> act the same as Excel's <code>LEFT()</code>, <code>RIGHT</code>, <code>MID()</code> functions, respectively.</p>
-<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with cull, left, right, and mid).</p>
+    <p>As inspired by Ruby, <code>string_chomp()</code> removes all whitespace characters in a string.</p>
+<p>The function <code>string_chop()</code> removes the last character from a string.</p>
+<p>The function <code>string_trim()</code> acts the same as <code>trimws</code> but its source code is more readable (in my opinion!).</p>
+<p><code>string_cut()</code> removes characters from either the left, right, or both ends of a string.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with upper, chomp, chop, and trim. <code>s_cut()</code> is the only synonym for <code>string_cut()</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>string_cull</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='st'>'^M|a'</span>)</div><div class='output co'>#&gt;  [1] "M,a,a"   "M,a,a,a" "a"       NA        "a"       "a,a"     NA       
-#&gt;  [8] "M"       "M"       "M"       "M"       "M"       "M"       "M"      
-#&gt; [15] "a,a"     "a"       "a"       "a"       "a"       "a,a"     "a,a"    
-#&gt; [22] "a"       "a"       "a,a"     "a"       "a"       NA        "a"      
-#&gt; [29] "a,a"     "a"       "M,a,a,a" NA       </div><div class='input'><span class='fu'>string_left</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>3</span>)</div><div class='output co'>#&gt;  [1] "Maz" "Maz" "Dat" "Hor" "Hor" "Val" "Dus" "Mer" "Mer" "Mer" "Mer" "Mer"
-#&gt; [13] "Mer" "Mer" "Cad" "Lin" "Chr" "Fia" "Hon" "Toy" "Toy" "Dod" "AMC" "Cam"
-#&gt; [25] "Pon" "Fia" "Por" "Lot" "For" "Fer" "Mas" "Vol"</div><div class='input'><span class='fu'>string_right</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>3</span>)</div><div class='output co'>#&gt;  [1] "RX4" "Wag" "710" "ive" "out" "ant" "360" "40D" "230" "280" "80C" "0SE"
-#&gt; [13] "0SL" "SLC" "ood" "tal" "ial" "128" "vic" "lla" "ona" "ger" "lin" "Z28"
-#&gt; [25] "ird" "1-9" "4-2" "opa" "a L" "ino" "ora" "42E"</div><div class='input'><span class='fu'>string_mid</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>2</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt;  [1] "azd" "azd" "ats" "orn" "orn" "ali" "ust" "erc" "erc" "erc" "erc" "erc"
-#&gt; [13] "erc" "erc" "adi" "inc" "hry" "iat" "ond" "oyo" "oyo" "odg" "MC " "ama"
-#&gt; [25] "ont" "iat" "ors" "otu" "ord" "err" "ase" "olv"</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>string_chomp</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "MazdaRX4"           "MazdaRX4Wag"        "Datsun710"         
+#&gt;  [4] "Hornet4Drive"       "HornetSportabout"   "Valiant"           
+#&gt;  [7] "Duster360"          "Merc240D"           "Merc230"           
+#&gt; [10] "Merc280"            "Merc280C"           "Merc450SE"         
+#&gt; [13] "Merc450SL"          "Merc450SLC"         "CadillacFleetwood" 
+#&gt; [16] "LincolnContinental" "ChryslerImperial"   "Fiat128"           
+#&gt; [19] "HondaCivic"         "ToyotaCorolla"      "ToyotaCorona"      
+#&gt; [22] "DodgeChallenger"    "AMCJavelin"         "CamaroZ28"         
+#&gt; [25] "PontiacFirebird"    "FiatX1-9"           "Porsche914-2"      
+#&gt; [28] "LotusEuropa"        "FordPanteraL"       "FerrariDino"       
+#&gt; [31] "MaseratiBora"       "Volvo142E"         </div><div class='input'><span class='fu'>string_chop</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "Mazda RX"           "Mazda RX4 Wa"       "Datsun 71"         
+#&gt;  [4] "Hornet 4 Driv"      "Hornet Sportabou"   "Valian"            
+#&gt;  [7] "Duster 36"          "Merc 240"           "Merc 23"           
+#&gt; [10] "Merc 28"            "Merc 280"           "Merc 450S"         
+#&gt; [13] "Merc 450S"          "Merc 450SL"         "Cadillac Fleetwoo" 
+#&gt; [16] "Lincoln Continenta" "Chrysler Imperia"   "Fiat 12"           
+#&gt; [19] "Honda Civi"         "Toyota Coroll"      "Toyota Coron"      
+#&gt; [22] "Dodge Challenge"    "AMC Javeli"         "Camaro Z2"         
+#&gt; [25] "Pontiac Firebir"    "Fiat X1-"           "Porsche 914-"      
+#&gt; [28] "Lotus Europ"        "Ford Pantera "      "Ferrari Din"       
+#&gt; [31] "Maserati Bor"       "Volvo 142"         </div><div class='input'><span class='fu'>string_trim</span>(<span class='st'>"   s   "</span>)</div><div class='output co'>#&gt; [1] "s"</div><div class='input'><span class='fu'>string_cut</span>(<span class='st'>"cut this please"</span>, <span class='kw'>which</span> <span class='kw'>=</span> <span class='st'>'both'</span>)</div><div class='output co'>#&gt; [1] "ut this pleas"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

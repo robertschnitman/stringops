@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cull/extract patterns from strings — string_cull • stringops</title>
+<title>Modify cases for strings. — string_upper • stringops</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Cull/extract patterns from strings — string_cull" />
-<meta property="og:description" content="Cull (extract) patterns from strings." />
+<meta property="og:title" content="Modify cases for strings. — string_upper" />
+<meta property="og:description" content="Modify the case of the string." />
 
 
 
@@ -108,19 +108,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Cull/extract patterns from strings</h1>
-    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_cull.R'><code>R/string_cull.R</code></a></small>
-    <div class="hidden name"><code>string_cull.Rd</code></div>
+    <h1>Modify cases for strings.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_cases.R'><code>R/string_cases.R</code></a></small>
+    <div class="hidden name"><code>string_cases.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Cull (extract) patterns from strings.</p>
+    <p>Modify the case of the string.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>string_cull</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='kw'>collapse</span> <span class='kw'>=</span> <span class='st'>','</span>, <span class='no'>...</span>)
-<span class='fu'>string_left</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>string_right</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>string_mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>n</span>)</pre>
+    <pre class="usage"><span class='fu'>string_upper</span>(<span class='no'>s</span>)
+<span class='fu'>string_lower</span>(<span class='no'>s</span>)
+<span class='fu'>string_swapcase</span>(<span class='no'>s</span>)
+<span class='fu'>string_titlecase</span>(<span class='no'>s</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -129,26 +129,6 @@
       <th>s</th>
       <td><p>A string (character) vector.</p></td>
     </tr>
-    <tr>
-      <th>pattern</th>
-      <td><p>A regular expression pattern.</p></td>
-    </tr>
-    <tr>
-      <th>collapse</th>
-      <td><p>A separator in the case of multiple matches.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>gregexpr()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>start</th>
-      <td><p>The position in a string at which to start.</p></td>
-    </tr>
-    <tr>
-      <th>n</th>
-      <td><p>The number of characters.</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -156,25 +136,47 @@
     <p>Character vector.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The function <code>string_cull()</code> culls (or extracts) a pattern from a string vector--if no pattern is found, <code>NA</code> is returned. Multiple pattern matches are separated by the <code>collapse()</code> input.</p>
-<p>The functions <code>string_left()</code>, <code>string_right()</code>, <code>string_mid()</code> act the same as Excel's <code>LEFT()</code>, <code>RIGHT</code>, <code>MID()</code> functions, respectively.</p>
-<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with cull, left, right, and mid).</p>
+    <p>The <code>upper()</code> functions make all characters in a string vector in their capitalized case.</p>
+<p>The <code>string_lower()</code> function makes the same vector in their lower case.</p>
+<p>The <code>string_swapcase()</code> function switches the case for each character in a string vector.</p>
+<p>The <code>string_titlecase()</code> function converts the first character of each word to uppercase.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with upper, lower, swapcase, or titlecase).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>string_cull</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='st'>'^M|a'</span>)</div><div class='output co'>#&gt;  [1] "M,a,a"   "M,a,a,a" "a"       NA        "a"       "a,a"     NA       
-#&gt;  [8] "M"       "M"       "M"       "M"       "M"       "M"       "M"      
-#&gt; [15] "a,a"     "a"       "a"       "a"       "a"       "a,a"     "a,a"    
-#&gt; [22] "a"       "a"       "a,a"     "a"       "a"       NA        "a"      
-#&gt; [29] "a,a"     "a"       "M,a,a,a" NA       </div><div class='input'><span class='fu'>string_left</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>3</span>)</div><div class='output co'>#&gt;  [1] "Maz" "Maz" "Dat" "Hor" "Hor" "Val" "Dus" "Mer" "Mer" "Mer" "Mer" "Mer"
-#&gt; [13] "Mer" "Mer" "Cad" "Lin" "Chr" "Fia" "Hon" "Toy" "Toy" "Dod" "AMC" "Cam"
-#&gt; [25] "Pon" "Fia" "Por" "Lot" "For" "Fer" "Mas" "Vol"</div><div class='input'><span class='fu'>string_right</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>3</span>)</div><div class='output co'>#&gt;  [1] "RX4" "Wag" "710" "ive" "out" "ant" "360" "40D" "230" "280" "80C" "0SE"
-#&gt; [13] "0SL" "SLC" "ood" "tal" "ial" "128" "vic" "lla" "ona" "ger" "lin" "Z28"
-#&gt; [25] "ird" "1-9" "4-2" "opa" "a L" "ino" "ora" "42E"</div><div class='input'><span class='fu'>string_mid</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>2</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt;  [1] "azd" "azd" "ats" "orn" "orn" "ali" "ust" "erc" "erc" "erc" "erc" "erc"
-#&gt; [13] "erc" "erc" "adi" "inc" "hry" "iat" "ond" "oyo" "oyo" "odg" "MC " "ama"
-#&gt; [25] "ont" "iat" "ors" "otu" "ord" "err" "ase" "olv"</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>string_upper</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "MAZDA RX4"           "MAZDA RX4 WAG"       "DATSUN 710"         
+#&gt;  [4] "HORNET 4 DRIVE"      "HORNET SPORTABOUT"   "VALIANT"            
+#&gt;  [7] "DUSTER 360"          "MERC 240D"           "MERC 230"           
+#&gt; [10] "MERC 280"            "MERC 280C"           "MERC 450SE"         
+#&gt; [13] "MERC 450SL"          "MERC 450SLC"         "CADILLAC FLEETWOOD" 
+#&gt; [16] "LINCOLN CONTINENTAL" "CHRYSLER IMPERIAL"   "FIAT 128"           
+#&gt; [19] "HONDA CIVIC"         "TOYOTA COROLLA"      "TOYOTA CORONA"      
+#&gt; [22] "DODGE CHALLENGER"    "AMC JAVELIN"         "CAMARO Z28"         
+#&gt; [25] "PONTIAC FIREBIRD"    "FIAT X1-9"           "PORSCHE 914-2"      
+#&gt; [28] "LOTUS EUROPA"        "FORD PANTERA L"      "FERRARI DINO"       
+#&gt; [31] "MASERATI BORA"       "VOLVO 142E"         </div><div class='input'><span class='fu'>string_lower</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "mazda rx4"           "mazda rx4 wag"       "datsun 710"         
+#&gt;  [4] "hornet 4 drive"      "hornet sportabout"   "valiant"            
+#&gt;  [7] "duster 360"          "merc 240d"           "merc 230"           
+#&gt; [10] "merc 280"            "merc 280c"           "merc 450se"         
+#&gt; [13] "merc 450sl"          "merc 450slc"         "cadillac fleetwood" 
+#&gt; [16] "lincoln continental" "chrysler imperial"   "fiat 128"           
+#&gt; [19] "honda civic"         "toyota corolla"      "toyota corona"      
+#&gt; [22] "dodge challenger"    "amc javelin"         "camaro z28"         
+#&gt; [25] "pontiac firebird"    "fiat x1-9"           "porsche 914-2"      
+#&gt; [28] "lotus europa"        "ford pantera l"      "ferrari dino"       
+#&gt; [31] "maserati bora"       "volvo 142e"         </div><div class='input'><span class='fu'>string_swapcase</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "mAZDA rx4"           "mAZDA rx4 wAG"       "dATSUN 710"         
+#&gt;  [4] "hORNET 4 dRIVE"      "hORNET sPORTABOUT"   "vALIANT"            
+#&gt;  [7] "dUSTER 360"          "mERC 240d"           "mERC 230"           
+#&gt; [10] "mERC 280"            "mERC 280c"           "mERC 450se"         
+#&gt; [13] "mERC 450sl"          "mERC 450slc"         "cADILLAC fLEETWOOD" 
+#&gt; [16] "lINCOLN cONTINENTAL" "cHRYSLER iMPERIAL"   "fIAT 128"           
+#&gt; [19] "hONDA cIVIC"         "tOYOTA cOROLLA"      "tOYOTA cORONA"      
+#&gt; [22] "dODGE cHALLENGER"    "amc jAVELIN"         "cAMARO z28"         
+#&gt; [25] "pONTIAC fIREBIRD"    "fIAT x1-9"           "pORSCHE 914-2"      
+#&gt; [28] "lOTUS eUROPA"        "fORD pANTERA l"      "fERRARI dINO"       
+#&gt; [31] "mASERATI bORA"       "vOLVO 142e"         </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

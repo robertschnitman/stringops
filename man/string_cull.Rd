@@ -4,7 +4,7 @@
 \alias{string_cull}
 \title{Cull/extract patterns from strings}
 \usage{
-string_cull(s, pattern, ...)
+string_cull(s, pattern, collapse = ',', ...)
 string_left(s, n)
 string_right(s, n)
 string_mid(s, start, n)
@@ -13,6 +13,8 @@ string_mid(s, start, n)
 \item{s}{A string (character) vector.}
 
 \item{pattern}{A regular expression pattern.}
+
+\item{collapse}{A separator in the case of multiple matches.}
 
 \item{...}{Inputs get passed to \code{gregexpr()}.}
 
@@ -27,14 +29,14 @@ Character vector.
 Cull (extract) patterns from strings.
 }
 \details{
-The function \code{string_cull()} culls (or extracts) a pattern from a string vector--if no pattern is found, \code{NA} is returned.
+The function \code{string_cull()} culls (or extracts) a pattern from a string vector--if no pattern is found, \code{NA} is returned. Multiple pattern matches are separated by the \code{collapse()} input.
 
 The functions \code{string_left()}, \code{string_right()}, \code{string_mid()} act the same as Excel's \code{LEFT()}, \code{RIGHT}, \code{MID()} functions, respectively.
 
 The synonym pattern of these functions are \code{s_*()} and \code{*()} (replace asterisks with cull, left, right, and mid).
 }
 \examples{
-string_cull(rownames(mtcars), '^M.*')
+string_cull(rownames(mtcars), '^M|a')
 string_left(rownames(mtcars), 3)
 string_right(rownames(mtcars), 3)
 string_mid(rownames(mtcars), 2, 2)
