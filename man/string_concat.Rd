@@ -7,17 +7,9 @@
 %&%
 string_concat(a, b)
 string_prefix(s, prefix)
-s_prefix(s, prefix)
-prefix(s, prefix)
 string_suffix(s, suffix)
-s_suffix(s, suffix)
-suffix(s, suffix)
-string_flag(s, flag, width)
-s_flag(s, flag, width)
-flag(s, flag, width, which = c('left', 'right', 'both'))
+string_flag(s, flag, width, which = c('left', 'right', 'both'))
 string_flagv(s, ...)
-s_flagv(s, ...)
-flagv(s, ...)
 }
 \arguments{
 \item{a}{A string (character) vector.}
@@ -50,6 +42,8 @@ The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two el
 \code{string_flag()} is a scalar function that appends a character or number to a string if it does not meet a specified width.
 
 \code{string_flagv()} is a vectorized version of \code{string_flag()}.
+
+The synonym pattern of these functions are \code{s_*()} and \code{*()} (replace asterisks with prefix, suffix, and flag(v)).
 }
 \examples{
 "a" \%&\% "b"

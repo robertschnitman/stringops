@@ -118,17 +118,9 @@
     </div>
 
     <pre class="usage"><span class='fu'>string_upper</span>(<span class='no'>s</span>)
-<span class='fu'>s_upper</span>(<span class='no'>s</span>)
-<span class='fu'>upper</span>(<span class='no'>s</span>)
 <span class='fu'>string_lower</span>(<span class='no'>s</span>)
-<span class='fu'>s_lower</span>(<span class='no'>s</span>)
-<span class='fu'>lower</span>(<span class='no'>s</span>)
 <span class='fu'>string_swapcase</span>(<span class='no'>s</span>)
-<span class='fu'>s_swapcase</span>(<span class='no'>s</span>)
-<span class='fu'>swapcase</span>(<span class='no'>s</span>)
-<span class='fu'>string_titlecase</span>(<span class='no'>s</span>)
-<span class='fu'>s_titlecase</span>(<span class='no'>s</span>)
-<span class='fu'>titlecase</span>(<span class='no'>s</span>)</pre>
+<span class='fu'>string_titlecase</span>(<span class='no'>s</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,15 +137,16 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The <code>upper()</code> functions make all characters in a string vector in their capitalized case.</p>
-<p>The <code>lower()</code> functions makes the same vector in their lower case.</p>
-<p>The <code>swapcase()</code> functions switches the case for each character in a string vector.</p>
-<p>The <code>titlecase()</code> functions converts the first character of each word to uppercase.</p>
+<p>The <code>string_lower()</code> function makes the same vector in their lower case.</p>
+<p>The <code>string_swapcase()</code> function switches the case for each character in a string vector.</p>
+<p>The <code>string_titlecase()</code> function converts the first character of each word to uppercase.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with upper, lower, swapcase, or titlecase).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>upper</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "MAZDA RX4"           "MAZDA RX4 WAG"       "DATSUN 710"         
+    <pre class="examples"><div class='input'><span class='fu'>string_upper</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "MAZDA RX4"           "MAZDA RX4 WAG"       "DATSUN 710"         
 #&gt;  [4] "HORNET 4 DRIVE"      "HORNET SPORTABOUT"   "VALIANT"            
 #&gt;  [7] "DUSTER 360"          "MERC 240D"           "MERC 230"           
 #&gt; [10] "MERC 280"            "MERC 280C"           "MERC 450SE"         
@@ -163,7 +156,7 @@
 #&gt; [22] "DODGE CHALLENGER"    "AMC JAVELIN"         "CAMARO Z28"         
 #&gt; [25] "PONTIAC FIREBIRD"    "FIAT X1-9"           "PORSCHE 914-2"      
 #&gt; [28] "LOTUS EUROPA"        "FORD PANTERA L"      "FERRARI DINO"       
-#&gt; [31] "MASERATI BORA"       "VOLVO 142E"         </div><div class='input'><span class='fu'>lower</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "mazda rx4"           "mazda rx4 wag"       "datsun 710"         
+#&gt; [31] "MASERATI BORA"       "VOLVO 142E"         </div><div class='input'><span class='fu'>string_lower</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "mazda rx4"           "mazda rx4 wag"       "datsun 710"         
 #&gt;  [4] "hornet 4 drive"      "hornet sportabout"   "valiant"            
 #&gt;  [7] "duster 360"          "merc 240d"           "merc 230"           
 #&gt; [10] "merc 280"            "merc 280c"           "merc 450se"         
@@ -173,7 +166,7 @@
 #&gt; [22] "dodge challenger"    "amc javelin"         "camaro z28"         
 #&gt; [25] "pontiac firebird"    "fiat x1-9"           "porsche 914-2"      
 #&gt; [28] "lotus europa"        "ford pantera l"      "ferrari dino"       
-#&gt; [31] "maserati bora"       "volvo 142e"         </div><div class='input'><span class='fu'>swapcase</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "mAZDA rx4"           "mAZDA rx4 wAG"       "dATSUN 710"         
+#&gt; [31] "maserati bora"       "volvo 142e"         </div><div class='input'><span class='fu'>string_swapcase</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "mAZDA rx4"           "mAZDA rx4 wAG"       "dATSUN 710"         
 #&gt;  [4] "hORNET 4 dRIVE"      "hORNET sPORTABOUT"   "vALIANT"            
 #&gt;  [7] "dUSTER 360"          "mERC 240d"           "mERC 230"           
 #&gt; [10] "mERC 280"            "mERC 280c"           "mERC 450se"         

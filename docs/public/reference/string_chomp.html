@@ -118,16 +118,9 @@
     </div>
 
     <pre class="usage"><span class='fu'>string_chomp</span>(<span class='no'>s</span>)
-<span class='fu'>s_chomp</span>(<span class='no'>s</span>)
-<span class='fu'>chomp</span>(<span class='no'>s</span>)
 <span class='fu'>string_chop</span>(<span class='no'>s</span>)
-<span class='fu'>s_chop</span>(<span class='no'>s</span>)
-<span class='fu'>chop</span>(<span class='no'>s</span>)
 <span class='fu'>string_trim</span>(<span class='no'>s</span>, <span class='no'>which</span>, <span class='no'>whitespace</span>)
-<span class='fu'>s_trim</span>(<span class='no'>s</span>, <span class='no'>which</span>, <span class='no'>whitespace</span>)
-<span class='fu'>trim</span>(<span class='no'>s</span>, <span class='no'>which</span>, <span class='no'>whitespace</span>)
-<span class='fu'>string_cut</span>(<span class='no'>s</span>, <span class='no'>which</span>)
-<span class='fu'>s_cut</span>(<span class='no'>s</span>, <span class='no'>which</span>)</pre>
+<span class='fu'>string_cut</span>(<span class='no'>s</span>, <span class='no'>which</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -155,6 +148,7 @@
 <p>The function <code>string_chop()</code> removes the last character from a string.</p>
 <p>The function <code>string_trim()</code> acts the same as <code>trimws</code> but its source code is more readable (in my opinion!).</p>
 <p><code>string_cut()</code> removes characters from either the left, right, or both ends of a string.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with upper, chomp, chop, and trim. <code>s_cut()</code> is the only synonym for <code>string_cut()</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>

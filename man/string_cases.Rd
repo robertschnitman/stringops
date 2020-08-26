@@ -5,17 +5,9 @@
 \title{Modify cases for strings.}
 \usage{
 string_upper(s)
-s_upper(s) 
-upper(s) 
 string_lower(s)
-s_lower(s)
-lower(s)
 string_swapcase(s)
-s_swapcase(s)
-swapcase(s)
 string_titlecase(s)
-s_titlecase(s)
-titlecase(s)
 }
 \arguments{
 \item{s}{A string (character) vector.}
@@ -29,16 +21,18 @@ Modify the case of the string.
 \details{
 The \code{upper()} functions make all characters in a string vector in their capitalized case. 
 
-The \code{lower()} functions makes the same vector in their lower case. 
+The \code{string_lower()} function makes the same vector in their lower case. 
 
-The \code{swapcase()} functions switches the case for each character in a string vector.
+The \code{string_swapcase()} function switches the case for each character in a string vector.
 
-The \code{titlecase()} functions converts the first character of each word to uppercase.
+The \code{string_titlecase()} function converts the first character of each word to uppercase.
+
+The synonym pattern of these functions are \code{s_*()} and \code{*()} (replace asterisks with upper, lower, swapcase, or titlecase).
 }
 \examples{
-upper(rownames(mtcars))
-lower(rownames(mtcars))
-swapcase(rownames(mtcars))
+string_upper(rownames(mtcars))
+string_lower(rownames(mtcars))
+string_swapcase(rownames(mtcars))
 
 }
 \seealso{

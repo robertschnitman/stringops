@@ -5,18 +5,9 @@
 \title{Compare string vectors.}
 \usage{
 string_isblank(s)
-s_isblank(s)
-isblank(s)
-is.blank(s)
 %like%
 string_isupper(s)
-s_isupper(s)
-isupper(s)
-is.upper(s)
 string_islower(s)
-s_islower(s)
-islower(s)
-is.lower(s)
 }
 \arguments{
 \item{s}{A string (character) vector.}

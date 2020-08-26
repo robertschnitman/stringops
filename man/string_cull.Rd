@@ -4,49 +4,40 @@
 \alias{string_cull}
 \title{Cull/extract patterns from strings}
 \usage{
-string_cull(s, pattern)
-s_cull(s, pattern)
-cull(s, pattern)
-string_extract(s, pattern)
-s_extract(s, pattern)
-extract(s, pattern)
+string_cull(s, pattern, ...)
 string_left(s, n)
-s_left(s, n)
-left(s, n)
 string_right(s, n)
-s_right(s, n)
-right(s, n)
-string_mid(s, start, stop)
-s_mid(s, start, stop)
-mid(s, start, stop)
+string_mid(s, start, n)
 }
 \arguments{
 \item{s}{A string (character) vector.}
 
 \item{pattern}{A regular expression pattern.}
 
-\item{n}{The number of characters.}
+\item{...}{Inputs get passed to \code{gregexpr()}.}
 
 \item{start}{The position in a string at which to start.}
 
-\item{stop}{The position in a string at which to stop.}
+\item{n}{The number of characters.}
 }
 \value{
 Character vector.
 }
 \description{
-Cull or extract patterns from strings.
+Cull (extract) patterns from strings.
 }
 \details{
 The function \code{string_cull()} culls (or extracts) a pattern from a string vector--if no pattern is found, \code{NA} is returned.
 
 The functions \code{string_left()}, \code{string_right()}, \code{string_mid()} act the same as Excel's \code{LEFT()}, \code{RIGHT}, \code{MID()} functions, respectively.
+
+The synonym pattern of these functions are \code{s_*()} and \code{*()} (replace asterisks with cull, left, right, and mid).
 }
 \examples{
 string_cull(rownames(mtcars), '^M.*')
 string_left(rownames(mtcars), 3)
 string_right(rownames(mtcars), 3)
-string_mid(rownames(mtcars), 2, 4)
+string_mid(rownames(mtcars), 2, 2)
 
 }
 \seealso{

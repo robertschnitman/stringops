@@ -39,6 +39,8 @@ Miscellaneous string functions that don't quite fit into the other categories.
 \code{string_split()} acts the same as \code{strsplit()}: it splits a string by a specified character.
 
 \code{string_unique()} obtains the distinct characters for each element in a vector.
+
+The synonym pattern of these functions are \code{s_*()} and \code{*()} (insert, len, and reverse). For the former pattern, you can replace with split and unique, as well.
 }
 \examples{
 string_dup(rownames(mtcars), 3)

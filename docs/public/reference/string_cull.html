@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Cull/extract patterns from strings — string_cull" />
-<meta property="og:description" content="Cull or extract patterns from strings." />
+<meta property="og:description" content="Cull (extract) patterns from strings." />
 
 
 
@@ -114,24 +114,13 @@
     </div>
 
     <div class="ref-description">
-    <p>Cull or extract patterns from strings.</p>
+    <p>Cull (extract) patterns from strings.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>string_cull</span>(<span class='no'>s</span>, <span class='no'>pattern</span>)
-<span class='fu'>s_cull</span>(<span class='no'>s</span>, <span class='no'>pattern</span>)
-<span class='fu'>cull</span>(<span class='no'>s</span>, <span class='no'>pattern</span>)
-<span class='fu'>string_extract</span>(<span class='no'>s</span>, <span class='no'>pattern</span>)
-<span class='fu'>s_extract</span>(<span class='no'>s</span>, <span class='no'>pattern</span>)
-<span class='fu'>extract</span>(<span class='no'>s</span>, <span class='no'>pattern</span>)
+    <pre class="usage"><span class='fu'>string_cull</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='no'>...</span>)
 <span class='fu'>string_left</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>s_left</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>left</span>(<span class='no'>s</span>, <span class='no'>n</span>)
 <span class='fu'>string_right</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>s_right</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>right</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>string_mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>stop</span>)
-<span class='fu'>s_mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>stop</span>)
-<span class='fu'>mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>stop</span>)</pre>
+<span class='fu'>string_mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>n</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,16 +134,16 @@
       <td><p>A regular expression pattern.</p></td>
     </tr>
     <tr>
-      <th>n</th>
-      <td><p>The number of characters.</p></td>
+      <th>...</th>
+      <td><p>Inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>gregexpr()</a></code>.</p></td>
     </tr>
     <tr>
       <th>start</th>
       <td><p>The position in a string at which to start.</p></td>
     </tr>
     <tr>
-      <th>stop</th>
-      <td><p>The position in a string at which to stop.</p></td>
+      <th>n</th>
+      <td><p>The number of characters.</p></td>
     </tr>
     </table>
 
@@ -165,6 +154,7 @@
 
     <p>The function <code>string_cull()</code> culls (or extracts) a pattern from a string vector--if no pattern is found, <code>NA</code> is returned.</p>
 <p>The functions <code>string_left()</code>, <code>string_right()</code>, <code>string_mid()</code> act the same as Excel's <code>LEFT()</code>, <code>RIGHT</code>, <code>MID()</code> functions, respectively.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with cull, left, right, and mid).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
@@ -181,7 +171,7 @@
 #&gt; [13] "Mer" "Mer" "Cad" "Lin" "Chr" "Fia" "Hon" "Toy" "Toy" "Dod" "AMC" "Cam"
 #&gt; [25] "Pon" "Fia" "Por" "Lot" "For" "Fer" "Mas" "Vol"</div><div class='input'><span class='fu'>string_right</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>3</span>)</div><div class='output co'>#&gt;  [1] "RX4" "Wag" "710" "ive" "out" "ant" "360" "40D" "230" "280" "80C" "0SE"
 #&gt; [13] "0SL" "SLC" "ood" "tal" "ial" "128" "vic" "lla" "ona" "ger" "lin" "Z28"
-#&gt; [25] "ird" "1-9" "4-2" "opa" "a L" "ino" "ora" "42E"</div><div class='input'><span class='fu'>string_mid</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>2</span>, <span class='fl'>4</span>)</div><div class='output co'>#&gt;  [1] "azd" "azd" "ats" "orn" "orn" "ali" "ust" "erc" "erc" "erc" "erc" "erc"
+#&gt; [25] "ird" "1-9" "4-2" "opa" "a L" "ino" "ora" "42E"</div><div class='input'><span class='fu'>string_mid</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>2</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt;  [1] "azd" "azd" "ats" "orn" "orn" "ali" "ust" "erc" "erc" "erc" "erc" "erc"
 #&gt; [13] "erc" "erc" "adi" "inc" "hry" "iat" "ond" "oyo" "oyo" "odg" "MC " "ama"
 #&gt; [25] "ont" "iat" "ors" "otu" "ord" "err" "ase" "olv"</div><div class='input'>
 </div></pre>

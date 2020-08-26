@@ -5,16 +5,9 @@
 \title{Remove (empty) characters from a string as inspired by Ruby}
 \usage{
 string_chomp(s)
-s_chomp(s)
-chomp(s)
 string_chop(s)
-s_chop(s)
-chop(s)
 string_trim(s, which, whitespace)
-s_trim(s, which, whitespace)
-trim(s, which, whitespace)
 string_cut(s, which)
-s_cut(s, which)
 }
 \arguments{
 \item{s}{A string (character) vector.}
@@ -37,6 +30,8 @@ The function \code{string_chop()} removes the last character from a string.
 The function \code{string_trim()} acts the same as \code{trimws} but its source code is more readable (in my opinion!).
 
 \code{string_cut()} removes characters from either the left, right, or both ends of a string.
+
+The synonym pattern of these functions are \code{s_*()} and \code{*()} (replace asterisks with upper, chomp, chop, and trim. \code{s_cut()} is the only synonym for \code{string_cut()}).
 }
 \examples{
 string_chomp(rownames(mtcars))

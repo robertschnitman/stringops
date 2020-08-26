@@ -1,6 +1,6 @@
-#' Join vector elements into a single string or vector.
+#' Join elements into a single string or vector.
 #' 
-#' @description Join (collapse) a vector of elements into a single string or vector.
+#' @description Join (collapse) elements into a single string or vector.
 #' 
 #' @usage string_join(s, collapse)
 #' string_flatten(l)
@@ -15,6 +15,8 @@
 #' \code{string_join()} joins vector elements into a single string.
 #' 
 #' \code{string_flatten()} joins list elements into a vector.
+#' 
+#' The synonym pattern of these functions are \code{s_*()} and \code{*()} (replace asterisks with join and flatten).
 #'
 #' @examples
 #' string_join(rownames(mtcars), ", ")
