@@ -49,10 +49,6 @@ string_cull <- function(s, pattern, get_all = FALSE, collapse = ',', ...) {
     
     flat <- string_remove(flat, ",.*")
     
-  } else {
-    
-    flat <- flat
-    
   }
   
   # Output should be missing if no matches are found.
