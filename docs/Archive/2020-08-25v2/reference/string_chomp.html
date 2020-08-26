@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compare string vectors. — string_isblank • stringops</title>
+<title>Remove (empty) characters from a string as inspired by Ruby — string_chomp • stringops</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Compare string vectors. — string_isblank" />
-<meta property="og:description" content="Compare string vectors." />
+<meta property="og:title" content="Remove (empty) characters from a string as inspired by Ruby — string_chomp" />
+<meta property="og:description" content="Remove (empty) characters from a string as inspired by Ruby." />
 
 
 
@@ -108,19 +108,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Compare string vectors.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_compare.R'><code>R/string_compare.R</code></a></small>
-    <div class="hidden name"><code>string_compare.Rd</code></div>
+    <h1>Remove (empty) characters from a string as inspired by Ruby</h1>
+    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_chomp.R'><code>R/string_chomp.R</code></a></small>
+    <div class="hidden name"><code>string_chomp.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Compare string vectors.</p>
+    <p>Remove (empty) characters from a string as inspired by Ruby.</p>
     </div>
 
-    <pre class="usage">&lt;!-- %like% --&gt;
-string_isblank(s)
-string_isupper(s)
-string_islower(s)</pre>
+    <pre class="usage"><span class='fu'>string_chomp</span>(<span class='no'>s</span>)
+<span class='fu'>string_chop</span>(<span class='no'>s</span>)
+<span class='fu'>string_trim</span>(<span class='no'>s</span>, <span class='no'>which</span>, <span class='no'>whitespace</span>)
+<span class='fu'>string_cut</span>(<span class='no'>s</span>, <span class='no'>which</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -129,28 +129,52 @@ string_islower(s)</pre>
       <th>s</th>
       <td><p>A string (character) vector.</p></td>
     </tr>
+    <tr>
+      <th>which</th>
+      <td><p>Denotes how to trim/cut a vector (both, left only, or right only).</p></td>
+    </tr>
+    <tr>
+      <th>whitespace</th>
+      <td><p>Denotes which whitespace characters to remove.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Boolean vector.</p>
+    <p>Character vector.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    
-
-<p>The function <code>string_isblank()</code> tests whether a vector consists of only blank characters. Synonyms are <code>s_isblank()</code>, <code>isblank()</code>, and <code>is.blank()</code></p>
-<p>The <code>%like%</code> operator tests whether a pattern match is found in a string.</p>
-<p>The functions <code>string_isupper()</code> and <code>string_islower()</code> test whether each element in a string vector is all uppercase or lowercase, respectively. Synonyms are <code>s_fun()</code>, <code>isfun()</code>, and <code>is.fun()</code> (replace "fun" with "upper" or "lower").</p>
+    <p>As inspired by Ruby, <code>string_chomp()</code> removes all whitespace characters in a string.</p>
+<p>The function <code>string_chop()</code> removes the last character from a string.</p>
+<p>The function <code>string_trim()</code> acts the same as <code>trimws</code> but its source code is more readable (in my opinion!).</p>
+<p><code>string_cut()</code> removes characters from either the left, right, or both ends of a string.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with upper, chomp, chop, and trim. <code>s_cut()</code> is the only synonym for <code>string_cut()</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>string_isblank</span>(<span class='st'>"         "</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>string_isblank</span>(<span class='st'>"    string     "</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>) <span class='kw'>%like%</span> <span class='st'>"^M"</span></div><div class='output co'>#&gt;  [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
-#&gt; [13]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-#&gt; [25] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</div><div class='input'>
-<span class='fu'>string_isupper</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'TEST'</span>, <span class='st'>'test'</span>, <span class='st'>'tEsT'</span>))</div><div class='output co'>#&gt; [1]  TRUE FALSE FALSE</div><div class='input'><span class='fu'>string_islower</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'TEST'</span>, <span class='st'>'test'</span>, <span class='st'>'tEsT'</span>))</div><div class='output co'>#&gt; [1] FALSE  TRUE FALSE</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>string_chomp</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "MazdaRX4"           "MazdaRX4Wag"        "Datsun710"         
+#&gt;  [4] "Hornet4Drive"       "HornetSportabout"   "Valiant"           
+#&gt;  [7] "Duster360"          "Merc240D"           "Merc230"           
+#&gt; [10] "Merc280"            "Merc280C"           "Merc450SE"         
+#&gt; [13] "Merc450SL"          "Merc450SLC"         "CadillacFleetwood" 
+#&gt; [16] "LincolnContinental" "ChryslerImperial"   "Fiat128"           
+#&gt; [19] "HondaCivic"         "ToyotaCorolla"      "ToyotaCorona"      
+#&gt; [22] "DodgeChallenger"    "AMCJavelin"         "CamaroZ28"         
+#&gt; [25] "PontiacFirebird"    "FiatX1-9"           "Porsche914-2"      
+#&gt; [28] "LotusEuropa"        "FordPanteraL"       "FerrariDino"       
+#&gt; [31] "MaseratiBora"       "Volvo142E"         </div><div class='input'><span class='fu'>string_chop</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "Mazda RX"           "Mazda RX4 Wa"       "Datsun 71"         
+#&gt;  [4] "Hornet 4 Driv"      "Hornet Sportabou"   "Valian"            
+#&gt;  [7] "Duster 36"          "Merc 240"           "Merc 23"           
+#&gt; [10] "Merc 28"            "Merc 280"           "Merc 450S"         
+#&gt; [13] "Merc 450S"          "Merc 450SL"         "Cadillac Fleetwoo" 
+#&gt; [16] "Lincoln Continenta" "Chrysler Imperia"   "Fiat 12"           
+#&gt; [19] "Honda Civi"         "Toyota Coroll"      "Toyota Coron"      
+#&gt; [22] "Dodge Challenge"    "AMC Javeli"         "Camaro Z2"         
+#&gt; [25] "Pontiac Firebir"    "Fiat X1-"           "Porsche 914-"      
+#&gt; [28] "Lotus Europ"        "Ford Pantera "      "Ferrari Din"       
+#&gt; [31] "Maserati Bor"       "Volvo 142"         </div><div class='input'><span class='fu'>string_trim</span>(<span class='st'>"   s   "</span>)</div><div class='output co'>#&gt; [1] "s"</div><div class='input'><span class='fu'>string_cut</span>(<span class='st'>"cut this please"</span>, <span class='kw'>which</span> <span class='kw'>=</span> <span class='st'>'both'</span>)</div><div class='output co'>#&gt; [1] "ut this pleas"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

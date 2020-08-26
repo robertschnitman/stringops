@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598401738884.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1BABF7CC",
+    "lastKnownWriteTime" : 1598400298,
+    "last_content_update" : 1598400298,
+    "path" : "~/MEGA/Personal/Scripts/R/stringops/R/string_misc.R",
+    "project_path" : "R/string_misc.R",
+    "properties" : {
+        "cursorPosition" : "30,173",
+        "scrollLine" : "10"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
