@@ -11,6 +11,7 @@ string_spotm(s, pattern, invert = FALSE, ...)
 string_replace(s, search, replace, ...)
 string_remove(s, remove, ...)
 string_countm(s, pattern, ...)
+string_locate(s, pattern, invert = FALSE, ...)
 }
 \arguments{
 \item{s}{A string (character) vector.}
@@ -48,7 +49,9 @@ The \code{string_replace()} function acts the same as \code{gsub()} with the inp
 
 The \code{string_remove()} function blanks out a matching pattern. Optional inputs get passed to \code{gsub()}. Synonym is \code{s_remove()}.
 
-The \code{string_countm()} counts the number of matches in a string. Optional inputs get passed to \code{gregexpr()}. Synonyms are \code{s_countm()} and \code{countm()}.
+The \code{string_countm()} function counts the number of matches in a string. Optional inputs get passed to \code{gregexpr()}. Synonyms are \code{s_countm()} and \code{countm()}.
+
+The \code{string_locate()} functions produces the character positions at where the pattern match are found--non-matches are produced if \code{invert = TRUE}. Optional inputs are passed to \code{gregexpr()}. Synonyms are \code{s_locate()} and \code{locate()}.
 }
 \examples{
 rn <- rownames(mtcars)
@@ -62,6 +65,9 @@ string_spotm(rn, "^M")
 string_replace(rn, "^M", "Z")
 string_remove(rn, "^M")
 string_countm(rn, 'a')
+
+string_locate(rn, 'a')
+string_locate(rn, 'a', invert = TRUE)
 
 
 }

@@ -10,6 +10,7 @@ string_split(s, split, ...)
 string_len(s)
 string_reverse(s)
 string_unique(s)
+string_sort(s, descend = FALSE)
 }
 \arguments{
 \item{s}{A string (character) vector.}
@@ -23,6 +24,8 @@ string_unique(s)
 \item{split}{The character by which to split a string vector.}
 
 \item{...}{Parameters passed to \code{strsplit()}.}
+
+\item{descend}{Whether to sort in descending order (\code{TRUE}) or not (\code{FALSE}; the default).}
 }
 \description{
 Miscellaneous string functions that don't quite fit into the other categories.
@@ -40,7 +43,9 @@ Miscellaneous string functions that don't quite fit into the other categories.
 
 \code{string_unique()} obtains the distinct characters for each element in a vector.
 
-The synonym pattern of these functions are \code{s_*()} and \code{*()} (insert, len, and reverse). For the former pattern, you can replace with split and unique, as well.
+\code{string_sort()} arranges the letters in the character vector in order if \code{descend = FALSE} (the default) and reverse order if \code{descend = TRUE}.
+
+The synonym pattern of these functions are \code{s_*()} and \code{*()} (insert, len, and reverse). For the former pattern, you can replace with split, unique, and sort, as well.
 }
 \examples{
 string_dup(rownames(mtcars), 3)
@@ -49,6 +54,8 @@ string_len(rownames(mtcars))
 string_reverse(rownames(mtcars))
 string_split(rownames(mtcars), " ")
 string_unique(rownames(mtcars))
+string_sort(rownames(mtcars))
+string_sort(rownames(mtcars), descend = TRUE)
 
 }
 \seealso{

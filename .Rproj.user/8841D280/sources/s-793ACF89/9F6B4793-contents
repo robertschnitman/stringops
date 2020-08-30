@@ -1,0 +1,22 @@
+library(stringops)
+
+rn <- rownames(mtcars)
+
+splits <- string_split(rn, '')
+
+sorted <- sapply(splits, function(x) string_join(sort(x)))
+
+string_sort <- function(s, pattern) {
+  
+  stopifnot(is.vector(s))
+  
+  # Split
+  splits <- string_split(s, '')
+  
+  # Sort
+  output <- sapply(splits, function(x) string_join(sort(x)))
+  
+  output 
+  
+  
+}

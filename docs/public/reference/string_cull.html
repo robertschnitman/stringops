@@ -120,7 +120,8 @@
     <pre class="usage"><span class='fu'>string_cull</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='kw'>get_all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>collapse</span> <span class='kw'>=</span> <span class='st'>','</span>, <span class='no'>...</span>)
 <span class='fu'>string_left</span>(<span class='no'>s</span>, <span class='no'>n</span>)
 <span class='fu'>string_right</span>(<span class='no'>s</span>, <span class='no'>n</span>)
-<span class='fu'>string_mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>n</span>)</pre>
+<span class='fu'>string_mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>n</span>)
+<span class='fu'>string_positions</span>(<span class='no'>s</span>, <span class='no'>positions</span>, <span class='kw'>join</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,6 +154,14 @@
       <th>n</th>
       <td><p>The number of characters.</p></td>
     </tr>
+    <tr>
+      <th>positions</th>
+      <td><p>An integer vector of character positions to extract from a string.</p></td>
+    </tr>
+    <tr>
+      <th>join</th>
+      <td><p>Determines whether to have columns for each position (<code>FALSE</code>) or join the extracted characters together (<code>TRUE</code>).</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -161,8 +170,9 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The function <code>string_cull()</code> culls (or extracts) a pattern from a string vector--if no pattern is found, <code>NA</code> is returned. Multiple pattern matches are separated by the <code>collapse()</code> input if <code>get_all = TRUE</code>.</p>
-<p>The functions <code>string_left()</code>, <code>string_right()</code>, <code>string_mid()</code> act the same as Excel's <code>LEFT()</code>, <code>RIGHT</code>, <code>MID()</code> functions, respectively.</p>
-<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with cull, left, right, and mid).</p>
+<p>The functions <code>string_left()</code>, <code>string_right()</code>, <code>string_mid()</code> act the same as Excel's <code>LEFT()</code>, <code>RIGHT</code>, <code>MID()</code> functions, respectively: they extract a number of characters at a specified starting point (from the beginning for <code>string_left()</code>, from the right for <code>string_right()</code>, and from a specific position for <code>string_mid()</code>).</p>
+<p>The function <code>string_positions()</code> pulls the character(s) at specified positions. If <code>join = FALSE</code>, then the extracted characters are split into columns; otherwise, they are concatenated together into a single vector.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with cull, left, right, mid, and positions).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
@@ -179,7 +189,41 @@
 #&gt; [13] "0SL" "SLC" "ood" "tal" "ial" "128" "vic" "lla" "ona" "ger" "lin" "Z28"
 #&gt; [25] "ird" "1-9" "4-2" "opa" "a L" "ino" "ora" "42E"</div><div class='input'><span class='fu'>string_mid</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>2</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt;  [1] "azd" "azd" "ats" "orn" "orn" "ali" "ust" "erc" "erc" "erc" "erc" "erc"
 #&gt; [13] "erc" "erc" "adi" "inc" "hry" "iat" "ond" "oyo" "oyo" "odg" "MC " "ama"
-#&gt; [25] "ont" "iat" "ors" "otu" "ord" "err" "ase" "olv"</div><div class='input'>
+#&gt; [25] "ont" "iat" "ors" "otu" "ord" "err" "ase" "olv"</div><div class='input'><span class='fu'>string_positions</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>3</span>, <span class='fl'>5</span>))</div><div class='output co'>#&gt;       1   3   5  
+#&gt;  [1,] "M" "z" "a"
+#&gt;  [2,] "M" "z" "a"
+#&gt;  [3,] "D" "t" "u"
+#&gt;  [4,] "H" "r" "e"
+#&gt;  [5,] "H" "r" "e"
+#&gt;  [6,] "V" "l" "a"
+#&gt;  [7,] "D" "s" "e"
+#&gt;  [8,] "M" "r" " "
+#&gt;  [9,] "M" "r" " "
+#&gt; [10,] "M" "r" " "
+#&gt; [11,] "M" "r" " "
+#&gt; [12,] "M" "r" " "
+#&gt; [13,] "M" "r" " "
+#&gt; [14,] "M" "r" " "
+#&gt; [15,] "C" "d" "l"
+#&gt; [16,] "L" "n" "o"
+#&gt; [17,] "C" "r" "s"
+#&gt; [18,] "F" "a" " "
+#&gt; [19,] "H" "n" "a"
+#&gt; [20,] "T" "y" "t"
+#&gt; [21,] "T" "y" "t"
+#&gt; [22,] "D" "d" "e"
+#&gt; [23,] "A" "C" "J"
+#&gt; [24,] "C" "m" "r"
+#&gt; [25,] "P" "n" "i"
+#&gt; [26,] "F" "a" " "
+#&gt; [27,] "P" "r" "c"
+#&gt; [28,] "L" "t" "s"
+#&gt; [29,] "F" "r" " "
+#&gt; [30,] "F" "r" "a"
+#&gt; [31,] "M" "s" "r"
+#&gt; [32,] "V" "l" "o"</div><div class='input'><span class='fu'>string_positions</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>3</span>, <span class='fl'>5</span>), <span class='kw'>join</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;  [1] "Mza" "Mza" "Dtu" "Hre" "Hre" "Vla" "Dse" "Mr " "Mr " "Mr " "Mr " "Mr "
+#&gt; [13] "Mr " "Mr " "Cdl" "Lno" "Crs" "Fa " "Hna" "Tyt" "Tyt" "Dde" "ACJ" "Cmr"
+#&gt; [25] "Pni" "Fa " "Prc" "Lts" "Fr " "Fra" "Msr" "Vlo"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

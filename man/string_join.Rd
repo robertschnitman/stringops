@@ -2,17 +2,14 @@
 % Please edit documentation in R/string_join.R
 \name{string_join}
 \alias{string_join}
-\title{Join elements into a single string or vector.}
+\title{Join elements into a single string}
 \usage{
 string_join(s, collapse)
-string_flatten(l)
 }
 \arguments{
 \item{s}{A string (character) vector.}
 
 \item{collapse}{A string by which to separate the elements of a vector.}
-
-\item{l}{A list.}
 }
 \value{
 Character vector.
@@ -21,15 +18,10 @@ Character vector.
 Join (collapse) elements into a single string or vector.
 }
 \details{
-\code{string_join()} joins vector elements into a single string.
-
-\code{string_flatten()} joins list elements into a vector.
-
-The synonym pattern of these functions are \code{s_*()} and \code{*()} (replace asterisks with join and flatten).
+\code{string_join()} joins vector elements into a single string. Synonyms are \code{s_join()} and \code{join()}.
 }
 \examples{
 string_join(rownames(mtcars), ", ")
-string_flatten(list('a', 'b', 'c'))
 }
 \seealso{
 \url{https://github.com/robertschnitman/stringops}

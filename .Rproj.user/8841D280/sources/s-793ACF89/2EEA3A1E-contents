@@ -3,7 +3,7 @@
 #' @description Concatenate strings together.
 #' 
 #' @usage %&%
-#' string_concat(a, b)
+#' string_concat(a, b, ...)
 #' string_prefix(s, prefix)
 #' string_suffix(s, suffix)
 #' string_flag(s, flag, width, which = c('left', 'right', 'both'))
@@ -16,11 +16,11 @@
 #' @param flag Character or number to append to a string.
 #' @param width Number of characters a string should be.
 #' @param which Side to flag a string.
-#' @param ... Parameters passed to \code{string_flag()}.
+#' @param ... Parameters passed to \code{paste0()} or \code{string_flag()}.
 #' 
 #' @return Character vector.
 #' 
-#' @details The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two elements together.
+#' @details The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two elements together. For more general usage, use \code{string_concat()}, whose optional inputs get passed to \code{paste0()}.
 #' 
 #' \code{string_prefix()} and its synonyms prefix a string to a vector, while \code{string_suffix()} and its synonyms suffix a string to a vector.
 #' 
@@ -39,7 +39,9 @@
 #' @seealso \url{https://github.com/robertschnitman/stringops}
 
 #' @rdname string_concat
-string_concat <- function(a, b) paste0(a, b)
+string_concat <- function(a, b, ...) paste0(a, b, ...)
+s_concat      <- string_concat
+concat        <- string_concat
 
 #' @rdname string_concat2
 `%&%` <- string_concat

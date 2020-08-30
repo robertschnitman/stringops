@@ -122,8 +122,7 @@
 <span class='fu'>string_split</span>(<span class='no'>s</span>, <span class='no'>split</span>, <span class='no'>...</span>)
 <span class='fu'>string_len</span>(<span class='no'>s</span>)
 <span class='fu'>string_reverse</span>(<span class='no'>s</span>)
-<span class='fu'>string_unique</span>(<span class='no'>s</span>)
-<span class='fu'>string_sort</span>(<span class='no'>s</span>, <span class='kw'>descend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'>string_unique</span>(<span class='no'>s</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,10 +151,6 @@
       <th>...</th>
       <td><p>Parameters passed to <code><a href='https://rdrr.io/r/base/strsplit.html'>strsplit()</a></code>.</p></td>
     </tr>
-    <tr>
-      <th>descend</th>
-      <td><p>Whether to sort in descending order (<code>TRUE</code>) or not (<code>FALSE</code>; the default).</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -166,8 +161,7 @@
 <p><code>string_reverse()</code> reverses the characters in a string.</p>
 <p><code>string_split()</code> acts the same as <code><a href='https://rdrr.io/r/base/strsplit.html'>strsplit()</a></code>: it splits a string by a specified character.</p>
 <p><code>string_unique()</code> obtains the distinct characters for each element in a vector.</p>
-<p><code>string_sort()</code> arranges the letters in the character vector in order if <code>descend = FALSE</code> (the default) and reverse order if <code>descend = TRUE</code>.</p>
-<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (insert, len, and reverse). For the former pattern, you can replace with split, unique, and sort, as well.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (insert, len, and reverse). For the former pattern, you can replace with split and unique, as well.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
@@ -317,27 +311,7 @@
 #&gt; [17] "Chrysle Impia" "Fiat 128"      "Honda Civc"    "Toyta Crl"    
 #&gt; [21] "Toyta Crn"     "Dodge Chalnr"  "AMC Javelin"   "Camro Z28"    
 #&gt; [25] "Pontiac Frebd" "Fiat X1-9"     "Porsche 914-2" "Lotus Erpa"   
-#&gt; [29] "Ford PanteL"   "Ferai Dno"     "Maserti Bo"    "Volv 142E"    </div><div class='input'><span class='fu'>string_sort</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] " 4aadMRXz"           "  4aaadgMRWXz"       " 017aDnstu"         
-#&gt;  [4] "  4DeeHinorrtv"      " abeHnoooprrStttu"   "aailntV"            
-#&gt;  [7] " 036Derstu"          " 024cDeMr"           " 023ceMr"           
-#&gt; [10] " 028ceMr"            " 028cCeMr"           " 045ceEMrS"         
-#&gt; [13] " 045ceLMrS"          " 045cCeLMrS"         " aacCddeeFilllootw" 
-#&gt; [16] " acCeiillLnnnnnoott" " aCeehiIllmprrrsy"   " 128aFit"           
-#&gt; [19] " acCdHiinov"         " aaClloooortTy"      " aaCnoooortTy"      
-#&gt; [22] " aCdDeeegghllnor"    " aACeiJlMnv"         " 28aaCmorZ"         
-#&gt; [25] " abcdeFiiinoPrrt"    "- 19aFitX"           "- 1249cehoPrs"      
-#&gt; [28] " aELooprstuu"        "  aadeFLnoPrrt"      " aDeFiinorrr"       
-#&gt; [31] " aaaBeiMorrst"       " 124EloovV"         </div><div class='input'><span class='fu'>string_sort</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='kw'>descend</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;  [1] "zXRMdaa4 "           "zXWRMgdaaa4  "       "utsnDa710 "         
-#&gt;  [4] "vtrroniHeeD4  "      "utttSrrpooonHeba "   "Vtnliaa"            
-#&gt;  [7] "utsreD630 "          "rMeDc420 "           "rMec320 "           
-#&gt; [10] "rMec820 "            "rMeCc820 "           "SrMEec540 "         
-#&gt; [13] "SrMLec540 "          "SrMLeCc540 "         "wtoollliFeeddCcaa " 
-#&gt; [16] "ttoonnnnnLlliieCca " "ysrrrpmllIiheeCa "   "tiFa821 "           
-#&gt; [19] "voniiHdCca "         "yTtroooollCaa "      "yTtroooonCaa "      
-#&gt; [22] "ronllhggeeeDdCa "    "vnMlJieCAa "         "ZromCaa82 "         
-#&gt; [25] "trrPoniiiFedcba "    "XtiFa91 -"           "srPohec9421 -"      
-#&gt; [28] "uutsrpooLEa "        "trrPonLFedaa  "      "rrroniiFeDa "       
-#&gt; [31] "tsrroMieBaaa "       "VvoolE421 "         </div><div class='input'>
+#&gt; [29] "Ford PanteL"   "Ferai Dno"     "Maserti Bo"    "Volv 142E"    </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

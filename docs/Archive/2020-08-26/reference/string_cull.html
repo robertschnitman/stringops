@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Concatenate strings together — string_concat • stringops</title>
+<title>Cull/extract patterns from strings — string_cull • stringops</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Concatenate strings together — string_concat" />
-<meta property="og:description" content="Concatenate strings together." />
+<meta property="og:title" content="Cull/extract patterns from strings — string_cull" />
+<meta property="og:description" content="Cull (extract) patterns from strings." />
 
 
 
@@ -108,56 +108,50 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Concatenate strings together</h1>
-    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_concat.R'><code>R/string_concat.R</code></a></small>
-    <div class="hidden name"><code>string_concat.Rd</code></div>
+    <h1>Cull/extract patterns from strings</h1>
+    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_cull.R'><code>R/string_cull.R</code></a></small>
+    <div class="hidden name"><code>string_cull.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Concatenate strings together.</p>
+    <p>Cull (extract) patterns from strings.</p>
     </div>
 
-    <pre class="usage">&lt;!-- %&amp;amp;% --&gt;
-string_concat(a, b, ...)
-string_prefix(s, prefix)
-string_suffix(s, suffix)
-string_flag(s, flag, width, which = c('left', 'right', 'both'))
-string_flagv(s, ...)</pre>
+    <pre class="usage"><span class='fu'>string_cull</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='kw'>get_all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>collapse</span> <span class='kw'>=</span> <span class='st'>','</span>, <span class='no'>...</span>)
+<span class='fu'>string_left</span>(<span class='no'>s</span>, <span class='no'>n</span>)
+<span class='fu'>string_right</span>(<span class='no'>s</span>, <span class='no'>n</span>)
+<span class='fu'>string_mid</span>(<span class='no'>s</span>, <span class='no'>start</span>, <span class='no'>n</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>a</th>
-      <td><p>A string (character) vector.</p></td>
-    </tr>
-    <tr>
-      <th>b</th>
-      <td><p>A string (character) vector.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Parameters passed to <code><a href='https://rdrr.io/r/base/paste.html'>paste0()</a></code> or <code>string_flag()</code>.</p></td>
-    </tr>
-    <tr>
       <th>s</th>
       <td><p>A string (character) vector.</p></td>
     </tr>
     <tr>
+      <th>pattern</th>
+      <td><p>A regular expression pattern.</p></td>
+    </tr>
+    <tr>
+      <th>get_all</th>
+      <td><p>Whether to get all matches (TRUE) or not (FALSE).</p></td>
+    </tr>
+    <tr>
       <th>collapse</th>
-      <td><p>A string by which to separate the elements of a vector.</p></td>
+      <td><p>A separator in the case of multiple matches.</p></td>
     </tr>
     <tr>
-      <th>flag</th>
-      <td><p>Character or number to append to a string.</p></td>
+      <th>...</th>
+      <td><p>Inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>gregexpr()</a></code>.</p></td>
     </tr>
     <tr>
-      <th>width</th>
-      <td><p>Number of characters a string should be.</p></td>
+      <th>start</th>
+      <td><p>The position in a string at which to start.</p></td>
     </tr>
     <tr>
-      <th>which</th>
-      <td><p>Side to flag a string.</p></td>
+      <th>n</th>
+      <td><p>The number of characters.</p></td>
     </tr>
     </table>
 
@@ -166,37 +160,26 @@ string_flagv(s, ...)</pre>
     <p>Character vector.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The <code>%&amp;%</code> operator acts similar to BASIC's <code>&amp;</code>, concatenating two elements together. For more general usage, use <code>string_concat()</code>, whose optional inputs get passed to <code><a href='https://rdrr.io/r/base/paste.html'>paste0()</a></code>.</p>
-<p><code>string_prefix()</code> and its synonyms prefix a string to a vector, while <code>string_suffix()</code> and its synonyms suffix a string to a vector.</p>
-<p><code>string_flag()</code> is a scalar function that appends a character or number to a string if it does not meet a specified width.</p>
-<p><code>string_flagv()</code> is a vectorized version of <code>string_flag()</code>.</p>
-<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with prefix, suffix, and flag(v)).</p>
+    <p>The function <code>string_cull()</code> culls (or extracts) a pattern from a string vector--if no pattern is found, <code>NA</code> is returned. Multiple pattern matches are separated by the <code>collapse()</code> input if <code>get_all = TRUE</code>.</p>
+<p>The functions <code>string_left()</code>, <code>string_right()</code>, <code>string_mid()</code> act the same as Excel's <code>LEFT()</code>, <code>RIGHT</code>, <code>MID()</code> functions, respectively.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with cull, left, right, and mid).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='st'>"a"</span> <span class='kw'>%&amp;%</span> <span class='st'>"b"</span></div><div class='output co'>#&gt; [1] "ab"</div><div class='input'><span class='fu'>string_prefix</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='st'>"A"</span>)</div><div class='output co'>#&gt;  [1] "AMazda RX4"           "AMazda RX4 Wag"       "ADatsun 710"         
-#&gt;  [4] "AHornet 4 Drive"      "AHornet Sportabout"   "AValiant"            
-#&gt;  [7] "ADuster 360"          "AMerc 240D"           "AMerc 230"           
-#&gt; [10] "AMerc 280"            "AMerc 280C"           "AMerc 450SE"         
-#&gt; [13] "AMerc 450SL"          "AMerc 450SLC"         "ACadillac Fleetwood" 
-#&gt; [16] "ALincoln Continental" "AChrysler Imperial"   "AFiat 128"           
-#&gt; [19] "AHonda Civic"         "AToyota Corolla"      "AToyota Corona"      
-#&gt; [22] "ADodge Challenger"    "AAMC Javelin"         "ACamaro Z28"         
-#&gt; [25] "APontiac Firebird"    "AFiat X1-9"           "APorsche 914-2"      
-#&gt; [28] "ALotus Europa"        "AFord Pantera L"      "AFerrari Dino"       
-#&gt; [31] "AMaserati Bora"       "AVolvo 142E"         </div><div class='input'><span class='fu'>string_suffix</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='st'>"Z"</span>)</div><div class='output co'>#&gt;  [1] "Mazda RX4Z"           "Mazda RX4 WagZ"       "Datsun 710Z"         
-#&gt;  [4] "Hornet 4 DriveZ"      "Hornet SportaboutZ"   "ValiantZ"            
-#&gt;  [7] "Duster 360Z"          "Merc 240DZ"           "Merc 230Z"           
-#&gt; [10] "Merc 280Z"            "Merc 280CZ"           "Merc 450SEZ"         
-#&gt; [13] "Merc 450SLZ"          "Merc 450SLCZ"         "Cadillac FleetwoodZ" 
-#&gt; [16] "Lincoln ContinentalZ" "Chrysler ImperialZ"   "Fiat 128Z"           
-#&gt; [19] "Honda CivicZ"         "Toyota CorollaZ"      "Toyota CoronaZ"      
-#&gt; [22] "Dodge ChallengerZ"    "AMC JavelinZ"         "Camaro Z28Z"         
-#&gt; [25] "Pontiac FirebirdZ"    "Fiat X1-9Z"           "Porsche 914-2Z"      
-#&gt; [28] "Lotus EuropaZ"        "Ford Pantera LZ"      "Ferrari DinoZ"       
-#&gt; [31] "Maserati BoraZ"       "Volvo 142EZ"         </div><div class='input'><span class='fu'>string_flag</span>(<span class='st'>'123456789'</span>, <span class='st'>'0'</span>, <span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] "0123456789"</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>string_cull</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='st'>'^M|a'</span>)</div><div class='output co'>#&gt;  [1] "M" "M" "a" NA  "a" "a" NA  "M" "M" "M" "M" "M" "M" "M" "a" "a" "a" "a" "a"
+#&gt; [20] "a" "a" "a" "a" "a" "a" "a" NA  "a" "a" "a" "M" NA </div><div class='input'><span class='fu'>string_cull</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='st'>'^M|a'</span>, <span class='kw'>get_all</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;  [1] "M,a,a"   "M,a,a,a" "a"       NA        "a"       "a,a"     NA       
+#&gt;  [8] "M"       "M"       "M"       "M"       "M"       "M"       "M"      
+#&gt; [15] "a,a"     "a"       "a"       "a"       "a"       "a,a"     "a,a"    
+#&gt; [22] "a"       "a"       "a,a"     "a"       "a"       NA        "a"      
+#&gt; [29] "a,a"     "a"       "M,a,a,a" NA       </div><div class='input'><span class='fu'>string_left</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>3</span>)</div><div class='output co'>#&gt;  [1] "Maz" "Maz" "Dat" "Hor" "Hor" "Val" "Dus" "Mer" "Mer" "Mer" "Mer" "Mer"
+#&gt; [13] "Mer" "Mer" "Cad" "Lin" "Chr" "Fia" "Hon" "Toy" "Toy" "Dod" "AMC" "Cam"
+#&gt; [25] "Pon" "Fia" "Por" "Lot" "For" "Fer" "Mas" "Vol"</div><div class='input'><span class='fu'>string_right</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>3</span>)</div><div class='output co'>#&gt;  [1] "RX4" "Wag" "710" "ive" "out" "ant" "360" "40D" "230" "280" "80C" "0SE"
+#&gt; [13] "0SL" "SLC" "ood" "tal" "ial" "128" "vic" "lla" "ona" "ger" "lin" "Z28"
+#&gt; [25] "ird" "1-9" "4-2" "opa" "a L" "ino" "ora" "42E"</div><div class='input'><span class='fu'>string_mid</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='fl'>2</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt;  [1] "azd" "azd" "ats" "orn" "orn" "ali" "ust" "erc" "erc" "erc" "erc" "erc"
+#&gt; [13] "erc" "erc" "adi" "inc" "hry" "iat" "ond" "oyo" "oyo" "odg" "MC " "ama"
+#&gt; [25] "ont" "iat" "ors" "otu" "ord" "err" "ase" "olv"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

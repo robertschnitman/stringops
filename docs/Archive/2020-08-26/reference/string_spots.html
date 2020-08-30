@@ -123,8 +123,7 @@
 <span class='fu'>string_spotm</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='kw'>invert</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 <span class='fu'>string_replace</span>(<span class='no'>s</span>, <span class='no'>search</span>, <span class='no'>replace</span>, <span class='no'>...</span>)
 <span class='fu'>string_remove</span>(<span class='no'>s</span>, <span class='no'>remove</span>, <span class='no'>...</span>)
-<span class='fu'>string_countm</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='no'>...</span>)
-<span class='fu'>string_locate</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='kw'>invert</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>string_countm</span>(<span class='no'>s</span>, <span class='no'>pattern</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -174,8 +173,7 @@
 <p>The <code>string_spotm()</code> function spots pattern matches and returns <code>NA</code> if none are found. Optional inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>grepl()</a></code>. Synonyms are <code>s_spotm()</code> and <code>spotm()</code>.</p>
 <p>The <code>string_replace()</code> function acts the same as <code><a href='https://rdrr.io/r/base/grep.html'>gsub()</a></code> with the inputs ordered differently. Optional inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>gsub()</a></code>. Synonyms are <code>s_replace()</code>, <code>search_replace()</code>, <code>sr()</code>, <code>find_replace()</code>, and <code>fr()</code>.</p>
 <p>The <code>string_remove()</code> function blanks out a matching pattern. Optional inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>gsub()</a></code>. Synonym is <code>s_remove()</code>.</p>
-<p>The <code>string_countm()</code> function counts the number of matches in a string. Optional inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>gregexpr()</a></code>. Synonyms are <code>s_countm()</code> and <code>countm()</code>.</p>
-<p>The <code>string_locate()</code> functions produces the character positions at where the pattern match are found--non-matches are produced if <code>invert = TRUE</code>. Optional inputs are passed to <code><a href='https://rdrr.io/r/base/grep.html'>gregexpr()</a></code>. Synonyms are <code>s_locate()</code> and <code>locate()</code>.</p>
+<p>The <code>string_countm()</code> counts the number of matches in a string. Optional inputs get passed to <code><a href='https://rdrr.io/r/base/grep.html'>gregexpr()</a></code>. Synonyms are <code>s_countm()</code> and <code>countm()</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
@@ -223,197 +221,6 @@
 #&gt; [25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"      
 #&gt; [28] "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"       
 #&gt; [31] "aserati Bora"        "Volvo 142E"         </div><div class='input'><span class='fu'>string_countm</span>(<span class='no'>rn</span>, <span class='st'>'a'</span>)</div><div class='output co'>#&gt;  [1] 2 3 1 0 1 2 0 0 0 0 0 0 0 0 2 1 1 1 1 2 2 1 1 2 1 1 0 1 2 1 3 0</div><div class='input'>
-<span class='fu'>string_locate</span>(<span class='no'>rn</span>, <span class='st'>'a'</span>)</div><div class='output co'>#&gt; [[1]]
-#&gt; [1] 2 5
-#&gt; 
-#&gt; [[2]]
-#&gt; [1]  2  5 12
-#&gt; 
-#&gt; [[3]]
-#&gt; [1] 2
-#&gt; 
-#&gt; [[4]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[5]]
-#&gt; [1] 13
-#&gt; 
-#&gt; [[6]]
-#&gt; [1] 2 5
-#&gt; 
-#&gt; [[7]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[8]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[9]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[10]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[11]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[12]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[13]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[14]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[15]]
-#&gt; [1] 2 7
-#&gt; 
-#&gt; [[16]]
-#&gt; [1] 18
-#&gt; 
-#&gt; [[17]]
-#&gt; [1] 16
-#&gt; 
-#&gt; [[18]]
-#&gt; [1] 3
-#&gt; 
-#&gt; [[19]]
-#&gt; [1] 5
-#&gt; 
-#&gt; [[20]]
-#&gt; [1]  6 14
-#&gt; 
-#&gt; [[21]]
-#&gt; [1]  6 13
-#&gt; 
-#&gt; [[22]]
-#&gt; [1] 9
-#&gt; 
-#&gt; [[23]]
-#&gt; [1] 6
-#&gt; 
-#&gt; [[24]]
-#&gt; [1] 2 4
-#&gt; 
-#&gt; [[25]]
-#&gt; [1] 6
-#&gt; 
-#&gt; [[26]]
-#&gt; [1] 3
-#&gt; 
-#&gt; [[27]]
-#&gt; [1] NA
-#&gt; 
-#&gt; [[28]]
-#&gt; [1] 12
-#&gt; 
-#&gt; [[29]]
-#&gt; [1]  7 12
-#&gt; 
-#&gt; [[30]]
-#&gt; [1] 5
-#&gt; 
-#&gt; [[31]]
-#&gt; [1]  2  6 13
-#&gt; 
-#&gt; [[32]]
-#&gt; [1] NA
-#&gt; </div><div class='input'><span class='fu'>string_locate</span>(<span class='no'>rn</span>, <span class='st'>'a'</span>, <span class='kw'>invert</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [[1]]
-#&gt; [1] 1 3 4 6 7 8 9
-#&gt; 
-#&gt; [[2]]
-#&gt;  [1]  1  3  4  6  7  8  9 10 11 13
-#&gt; 
-#&gt; [[3]]
-#&gt; [1]  1  3  4  5  6  7  8  9 10
-#&gt; 
-#&gt; [[4]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14
-#&gt; 
-#&gt; [[5]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11 12 14 15 16 17
-#&gt; 
-#&gt; [[6]]
-#&gt; [1] 1 3 4 6 7
-#&gt; 
-#&gt; [[7]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-#&gt; 
-#&gt; [[8]]
-#&gt; [1] 1 2 3 4 5 6 7 8 9
-#&gt; 
-#&gt; [[9]]
-#&gt; [1] 1 2 3 4 5 6 7 8
-#&gt; 
-#&gt; [[10]]
-#&gt; [1] 1 2 3 4 5 6 7 8
-#&gt; 
-#&gt; [[11]]
-#&gt; [1] 1 2 3 4 5 6 7 8 9
-#&gt; 
-#&gt; [[12]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-#&gt; 
-#&gt; [[13]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-#&gt; 
-#&gt; [[14]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11
-#&gt; 
-#&gt; [[15]]
-#&gt;  [1]  1  3  4  5  6  8  9 10 11 12 13 14 15 16 17 18
-#&gt; 
-#&gt; [[16]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 19
-#&gt; 
-#&gt; [[17]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 17
-#&gt; 
-#&gt; [[18]]
-#&gt; [1] 1 2 4 5 6 7 8
-#&gt; 
-#&gt; [[19]]
-#&gt;  [1]  1  2  3  4  6  7  8  9 10 11
-#&gt; 
-#&gt; [[20]]
-#&gt;  [1]  1  2  3  4  5  7  8  9 10 11 12 13
-#&gt; 
-#&gt; [[21]]
-#&gt;  [1]  1  2  3  4  5  7  8  9 10 11 12
-#&gt; 
-#&gt; [[22]]
-#&gt;  [1]  1  2  3  4  5  6  7  8 10 11 12 13 14 15 16
-#&gt; 
-#&gt; [[23]]
-#&gt;  [1]  1  2  3  4  5  7  8  9 10 11
-#&gt; 
-#&gt; [[24]]
-#&gt; [1]  1  3  5  6  7  8  9 10
-#&gt; 
-#&gt; [[25]]
-#&gt;  [1]  1  2  3  4  5  7  8  9 10 11 12 13 14 15 16
-#&gt; 
-#&gt; [[26]]
-#&gt; [1] 1 2 4 5 6 7 8 9
-#&gt; 
-#&gt; [[27]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13
-#&gt; 
-#&gt; [[28]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11
-#&gt; 
-#&gt; [[29]]
-#&gt;  [1]  1  2  3  4  5  6  8  9 10 11 13 14
-#&gt; 
-#&gt; [[30]]
-#&gt;  [1]  1  2  3  4  6  7  8  9 10 11 12
-#&gt; 
-#&gt; [[31]]
-#&gt;  [1]  1  3  4  5  7  8  9 10 11 12
-#&gt; 
-#&gt; [[32]]
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-#&gt; </div><div class='input'>
 
 </div></pre>
   </div>

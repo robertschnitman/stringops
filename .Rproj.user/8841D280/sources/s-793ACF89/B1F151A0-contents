@@ -118,7 +118,7 @@ string_unique <- function(s) {
   splits_join <- lapply(splits_unique, string_join)
   
   # Flatten list to a vector
-  output <- paste0(splits_join, sep = "")
+  output <- string_flatten(splits_join)
   
   # Output should be a vector.
   output
@@ -135,14 +135,14 @@ string_sort <- function(s, descend = FALSE) {
   # Split
   splits <- string_split(s, '')
   
-  
-  
   # Sort
-  output <- sapply(splits, function(x) string_join(sort(x))) 
-  
-  if (descend == TRUE) {
+  if (descend == FALSE) {
+   
+    output <- sapply(splits, function(x) string_join(sort(x))) 
     
-    output <- string_reverse(output)
+  } else {
+    
+    output <- sapply(splits, function(x) string_join(rev(x)))
     
   }
   

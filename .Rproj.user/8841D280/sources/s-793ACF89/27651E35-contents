@@ -9,6 +9,7 @@
 #' string_replace(s, search, replace, ...)
 #' string_remove(s, remove, ...)
 #' string_countm(s, pattern, ...)
+#' string_locate(s, pattern, invert = FALSE, ...)
 #'
 #' @param s A string (character) vector.
 #' @param pattern A regular expression pattern.
@@ -33,7 +34,9 @@
 #' 
 #' The \code{string_remove()} function blanks out a matching pattern. Optional inputs get passed to \code{gsub()}. Synonym is \code{s_remove()}.
 #' 
-#' The \code{string_countm()} counts the number of matches in a string. Optional inputs get passed to \code{gregexpr()}. Synonyms are \code{s_countm()} and \code{countm()}.
+#' The \code{string_countm()} function counts the number of matches in a string. Optional inputs get passed to \code{gregexpr()}. Synonyms are \code{s_countm()} and \code{countm()}.
+#' 
+#' The \code{string_locate()} functions produces the character positions at where the pattern match are found--non-matches are produced if \code{invert = TRUE}. Optional inputs are passed to \code{gregexpr()}. Synonyms are \code{s_locate()} and \code{locate()}.
 #'
 #' @examples
 #' rn <- rownames(mtcars)
@@ -47,6 +50,9 @@
 #' string_replace(rn, "^M", "Z")
 #' string_remove(rn, "^M")
 #' string_countm(rn, 'a')
+#' 
+#' string_locate(rn, 'a')
+#' string_locate(rn, 'a', invert = TRUE)
 #' 
 #' 
 #' @seealso \url{https://github.com/robertschnitman/stringops}
@@ -139,3 +145,37 @@ string_countm <- function(s, pattern, ...) {
 }
 s_countm <- string_countm
 countm   <- string_countm
+
+#' @rdname string_locate
+string_locate <- function(s, pattern, invert = FALSE, ...) {
+  
+  # type-check
+  stopifnot(is.character(s))
+  
+  # Get locations
+  locations <- gregexpr(pattern, s, ...)
+  
+  locations2 <- lapply(locations, function(x) x[seq_along(x)])
+  
+  # Output contingent on invert input.
+  
+  if (invert == FALSE) {
+    
+    output <- lapply(locations2, function(x) ifelse(x == -1, NA_character_, x))
+    
+  } else {
+    
+    num_char <- string_len(s)
+    
+    positions <- sapply(num_char, function(x) 1:x)
+    
+    output <- Map(function(x, y) x[!x %in% y], positions, locations2)
+    
+  }
+  
+  output
+  
+}
+
+s_locate <- string_locate
+locate   <- string_locate

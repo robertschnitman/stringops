@@ -2,7 +2,7 @@
 % Please edit documentation in R/string_cases.R
 \name{string_upper}
 \alias{string_upper}
-\title{Modify cases for strings.}
+\title{Modify cases for strings}
 \usage{
 string_upper(s)
 string_lower(s)

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Concatenate strings together — string_concat • stringops</title>
+<title>Remove (empty) characters from a string as inspired by Ruby — string_chomp • stringops</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Concatenate strings together — string_concat" />
-<meta property="og:description" content="Concatenate strings together." />
+<meta property="og:title" content="Remove (empty) characters from a string as inspired by Ruby — string_chomp" />
+<meta property="og:description" content="Remove (empty) characters from a string as inspired by Ruby." />
 
 
 
@@ -108,56 +108,34 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Concatenate strings together</h1>
-    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_concat.R'><code>R/string_concat.R</code></a></small>
-    <div class="hidden name"><code>string_concat.Rd</code></div>
+    <h1>Remove (empty) characters from a string as inspired by Ruby</h1>
+    <small class="dont-index">Source: <a href='https://github.com/robertschnitman/stringops/blob/master/R/string_chomp.R'><code>R/string_chomp.R</code></a></small>
+    <div class="hidden name"><code>string_chomp.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Concatenate strings together.</p>
+    <p>Remove (empty) characters from a string as inspired by Ruby.</p>
     </div>
 
-    <pre class="usage">&lt;!-- %&amp;amp;% --&gt;
-string_concat(a, b, ...)
-string_prefix(s, prefix)
-string_suffix(s, suffix)
-string_flag(s, flag, width, which = c('left', 'right', 'both'))
-string_flagv(s, ...)</pre>
+    <pre class="usage"><span class='fu'>string_chomp</span>(<span class='no'>s</span>)
+<span class='fu'>string_chop</span>(<span class='no'>s</span>)
+<span class='fu'>string_trim</span>(<span class='no'>s</span>, <span class='no'>which</span>, <span class='no'>whitespace</span>)
+<span class='fu'>string_cut</span>(<span class='no'>s</span>, <span class='no'>which</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>a</th>
-      <td><p>A string (character) vector.</p></td>
-    </tr>
-    <tr>
-      <th>b</th>
-      <td><p>A string (character) vector.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Parameters passed to <code><a href='https://rdrr.io/r/base/paste.html'>paste0()</a></code> or <code>string_flag()</code>.</p></td>
-    </tr>
-    <tr>
       <th>s</th>
       <td><p>A string (character) vector.</p></td>
     </tr>
     <tr>
-      <th>collapse</th>
-      <td><p>A string by which to separate the elements of a vector.</p></td>
-    </tr>
-    <tr>
-      <th>flag</th>
-      <td><p>Character or number to append to a string.</p></td>
-    </tr>
-    <tr>
-      <th>width</th>
-      <td><p>Number of characters a string should be.</p></td>
-    </tr>
-    <tr>
       <th>which</th>
-      <td><p>Side to flag a string.</p></td>
+      <td><p>Denotes how to trim/cut a vector (both, left only, or right only).</p></td>
+    </tr>
+    <tr>
+      <th>whitespace</th>
+      <td><p>Denotes which whitespace characters to remove.</p></td>
     </tr>
     </table>
 
@@ -166,37 +144,37 @@ string_flagv(s, ...)</pre>
     <p>Character vector.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The <code>%&amp;%</code> operator acts similar to BASIC's <code>&amp;</code>, concatenating two elements together. For more general usage, use <code>string_concat()</code>, whose optional inputs get passed to <code><a href='https://rdrr.io/r/base/paste.html'>paste0()</a></code>.</p>
-<p><code>string_prefix()</code> and its synonyms prefix a string to a vector, while <code>string_suffix()</code> and its synonyms suffix a string to a vector.</p>
-<p><code>string_flag()</code> is a scalar function that appends a character or number to a string if it does not meet a specified width.</p>
-<p><code>string_flagv()</code> is a vectorized version of <code>string_flag()</code>.</p>
-<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with prefix, suffix, and flag(v)).</p>
+    <p>As inspired by Ruby, <code>string_chomp()</code> removes all whitespace characters in a string.</p>
+<p>The function <code>string_chop()</code> removes the last character from a string.</p>
+<p>The function <code>string_trim()</code> acts the same as <code>trimws</code> but its source code is more readable (in my opinion!).</p>
+<p><code>string_cut()</code> removes characters from either the left, right, or both ends of a string.</p>
+<p>The synonym pattern of these functions are <code>s_*()</code> and <code>*()</code> (replace asterisks with upper, chomp, chop, and trim. <code>s_cut()</code> is the only synonym for <code>string_cut()</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://github.com/robertschnitman/stringops'>https://github.com/robertschnitman/stringops</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='st'>"a"</span> <span class='kw'>%&amp;%</span> <span class='st'>"b"</span></div><div class='output co'>#&gt; [1] "ab"</div><div class='input'><span class='fu'>string_prefix</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='st'>"A"</span>)</div><div class='output co'>#&gt;  [1] "AMazda RX4"           "AMazda RX4 Wag"       "ADatsun 710"         
-#&gt;  [4] "AHornet 4 Drive"      "AHornet Sportabout"   "AValiant"            
-#&gt;  [7] "ADuster 360"          "AMerc 240D"           "AMerc 230"           
-#&gt; [10] "AMerc 280"            "AMerc 280C"           "AMerc 450SE"         
-#&gt; [13] "AMerc 450SL"          "AMerc 450SLC"         "ACadillac Fleetwood" 
-#&gt; [16] "ALincoln Continental" "AChrysler Imperial"   "AFiat 128"           
-#&gt; [19] "AHonda Civic"         "AToyota Corolla"      "AToyota Corona"      
-#&gt; [22] "ADodge Challenger"    "AAMC Javelin"         "ACamaro Z28"         
-#&gt; [25] "APontiac Firebird"    "AFiat X1-9"           "APorsche 914-2"      
-#&gt; [28] "ALotus Europa"        "AFord Pantera L"      "AFerrari Dino"       
-#&gt; [31] "AMaserati Bora"       "AVolvo 142E"         </div><div class='input'><span class='fu'>string_suffix</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>), <span class='st'>"Z"</span>)</div><div class='output co'>#&gt;  [1] "Mazda RX4Z"           "Mazda RX4 WagZ"       "Datsun 710Z"         
-#&gt;  [4] "Hornet 4 DriveZ"      "Hornet SportaboutZ"   "ValiantZ"            
-#&gt;  [7] "Duster 360Z"          "Merc 240DZ"           "Merc 230Z"           
-#&gt; [10] "Merc 280Z"            "Merc 280CZ"           "Merc 450SEZ"         
-#&gt; [13] "Merc 450SLZ"          "Merc 450SLCZ"         "Cadillac FleetwoodZ" 
-#&gt; [16] "Lincoln ContinentalZ" "Chrysler ImperialZ"   "Fiat 128Z"           
-#&gt; [19] "Honda CivicZ"         "Toyota CorollaZ"      "Toyota CoronaZ"      
-#&gt; [22] "Dodge ChallengerZ"    "AMC JavelinZ"         "Camaro Z28Z"         
-#&gt; [25] "Pontiac FirebirdZ"    "Fiat X1-9Z"           "Porsche 914-2Z"      
-#&gt; [28] "Lotus EuropaZ"        "Ford Pantera LZ"      "Ferrari DinoZ"       
-#&gt; [31] "Maserati BoraZ"       "Volvo 142EZ"         </div><div class='input'><span class='fu'>string_flag</span>(<span class='st'>'123456789'</span>, <span class='st'>'0'</span>, <span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] "0123456789"</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>string_chomp</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "MazdaRX4"           "MazdaRX4Wag"        "Datsun710"         
+#&gt;  [4] "Hornet4Drive"       "HornetSportabout"   "Valiant"           
+#&gt;  [7] "Duster360"          "Merc240D"           "Merc230"           
+#&gt; [10] "Merc280"            "Merc280C"           "Merc450SE"         
+#&gt; [13] "Merc450SL"          "Merc450SLC"         "CadillacFleetwood" 
+#&gt; [16] "LincolnContinental" "ChryslerImperial"   "Fiat128"           
+#&gt; [19] "HondaCivic"         "ToyotaCorolla"      "ToyotaCorona"      
+#&gt; [22] "DodgeChallenger"    "AMCJavelin"         "CamaroZ28"         
+#&gt; [25] "PontiacFirebird"    "FiatX1-9"           "Porsche914-2"      
+#&gt; [28] "LotusEuropa"        "FordPanteraL"       "FerrariDino"       
+#&gt; [31] "MaseratiBora"       "Volvo142E"         </div><div class='input'><span class='fu'>string_chop</span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>mtcars</span>))</div><div class='output co'>#&gt;  [1] "Mazda RX"           "Mazda RX4 Wa"       "Datsun 71"         
+#&gt;  [4] "Hornet 4 Driv"      "Hornet Sportabou"   "Valian"            
+#&gt;  [7] "Duster 36"          "Merc 240"           "Merc 23"           
+#&gt; [10] "Merc 28"            "Merc 280"           "Merc 450S"         
+#&gt; [13] "Merc 450S"          "Merc 450SL"         "Cadillac Fleetwoo" 
+#&gt; [16] "Lincoln Continenta" "Chrysler Imperia"   "Fiat 12"           
+#&gt; [19] "Honda Civi"         "Toyota Coroll"      "Toyota Coron"      
+#&gt; [22] "Dodge Challenge"    "AMC Javeli"         "Camaro Z2"         
+#&gt; [25] "Pontiac Firebir"    "Fiat X1-"           "Porsche 914-"      
+#&gt; [28] "Lotus Europ"        "Ford Pantera "      "Ferrari Din"       
+#&gt; [31] "Maserati Bor"       "Volvo 142"         </div><div class='input'><span class='fu'>string_trim</span>(<span class='st'>"   s   "</span>)</div><div class='output co'>#&gt; [1] "s"</div><div class='input'><span class='fu'>string_cut</span>(<span class='st'>"cut this please"</span>, <span class='kw'>which</span> <span class='kw'>=</span> <span class='st'>'both'</span>)</div><div class='output co'>#&gt; [1] "ut this pleas"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

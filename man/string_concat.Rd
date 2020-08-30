@@ -5,7 +5,7 @@
 \title{Concatenate strings together}
 \usage{
 %&%
-string_concat(a, b)
+string_concat(a, b, ...)
 string_prefix(s, prefix)
 string_suffix(s, suffix)
 string_flag(s, flag, width, which = c('left', 'right', 'both'))
@@ -16,6 +16,8 @@ string_flagv(s, ...)
 
 \item{b}{A string (character) vector.}
 
+\item{...}{Parameters passed to \code{paste0()} or \code{string_flag()}.}
+
 \item{s}{A string (character) vector.}
 
 \item{collapse}{A string by which to separate the elements of a vector.}
@@ -25,8 +27,6 @@ string_flagv(s, ...)
 \item{width}{Number of characters a string should be.}
 
 \item{which}{Side to flag a string.}
-
-\item{...}{Parameters passed to \code{string_flag()}.}
 }
 \value{
 Character vector.
@@ -35,7 +35,7 @@ Character vector.
 Concatenate strings together.
 }
 \details{
-The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two elements together.
+The \code{\%&\%} operator acts similar to BASIC's \code{&}, concatenating two elements together. For more general usage, use \code{string_concat()}, whose optional inputs get passed to \code{paste0()}.
 
 \code{string_prefix()} and its synonyms prefix a string to a vector, while \code{string_suffix()} and its synonyms suffix a string to a vector.
 
