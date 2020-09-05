@@ -57,7 +57,9 @@ string_titlecase <- function(s) {
   splits5 <- lapply(splits4, function(x) string_join(x, " "))
   
   # Output should remove the last separator.
-  output  <- sapply(splits5, string_chop)
+  output  <- paste(splits5, sep = '')
+  
+  output  <- string_remove(output, ' $')
   
   output
 
