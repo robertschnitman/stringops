@@ -1,5 +1,4 @@
-`stringops`: String-processing Tools for R
-==========================================
+# `stringops`: String-processing Tools for R
 
 When creating syntax, one has to ask themselves about the naming scheme:
 should I make the functions short for typing efficiency, or long for
@@ -10,13 +9,12 @@ scheme–however, some functions have synonyms to help those from other
 programming languages learn Ruby faster (e.g. `reduce` and `inject` do
 the same thing). On the other hand, the `stringr` library has a
 consisent naming scheme for its functions, but does not have synonyms,
-so you are forced to learn the `stringr` way. Thirdly, and perhaps
-tagentially, R does not have concatenation operator (only functions)
-like in Ruby and BASIC, which is odd, as many situations require
-concatenation; so using the `paste/paste0()` functions can make code
-less readable. As such, I am introducing a new package to take these
-considerations into account: `stringops`, a library consisting of tools
-for processing strings in R.
+so you are forced to learn the `stringr` way. Thirdly, R does not have
+concatenation operator (only functions) like in Ruby and BASIC, which is
+odd, as many situations require concatenation; so using the
+`paste/paste0()` functions can make code less readable. As such, I am
+introducing a new package to take these considerations into account:
+`stringops`, a library consisting of tools for processing strings in R.
 
 What this package brings are (1) a consistent naming-scheme for
 functions, (2) synonyms for said functions, and (3) a concatenation
@@ -29,8 +27,7 @@ item’s benefit is more readable code by avoiding the function syntax of
 `paste/paste0()`. Ultimately, these items will hopefully make processing
 strings in R more fun for the user!
 
-Installation
-============
+# Installation
 
 This package currently is only available on GitHub–there are no plans to
 submit this package to CRAN at this time. As such, please use the
