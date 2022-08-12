@@ -1,9 +1,9 @@
 {
-    "path" : "~/MEGA/Personal/Scripts/R/stringops/R",
-    "sortOrder" : [
+    "path": "G:/MEGA/Prog/R/stringops",
+    "sortOrder": [
         {
-            "ascending" : true,
-            "columnIndex" : 2
+            "columnIndex": 2,
+            "ascending": true
         }
     ]
 }
